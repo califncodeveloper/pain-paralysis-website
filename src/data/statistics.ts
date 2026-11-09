@@ -1,8 +1,14 @@
 import type { StatisticItem } from "@/types";
 
 /**
- * The 4 verified reference metrics from https://painandparalysis.com/
- * Note: Metric values reflect published reference site figures.
+ * Clinical Statistics Dataset
+ * Audited under Phase 13 for clinical evidence and authorization compliance.
+ *
+ * Authorization Protocol:
+ * - Only numerical claims with verified primary documentation and explicit clinic sign-off
+ *   may have `isApproved: true`.
+ * - All unverified figures, estimated headcounts, and unconfirmed patient volumes
+ *   are flagged with `isApproved: false` and withheld from the public UI.
  */
 export const statisticsData: StatisticItem[] = [
   {
@@ -11,8 +17,11 @@ export const statisticsData: StatisticItem[] = [
     numericValue: 10,
     suffix: "+",
     label: "Years of Experience",
-    description: "A decade of pioneering non-invasive spine and paralysis rehabilitation.",
-    awaitingConfirmation: false,
+    description: "A decade of dedicated non-invasive spine and paralysis rehabilitation care.",
+    awaitingConfirmation: true,
+    authorizationStatus: "Awaiting clinic documentation and authorization",
+    sourceDocument: "Reference website https://painandparalysis.com/ (Elementor widget .counter.default)",
+    isApproved: false,
   },
   {
     id: "stat-specialists",
@@ -20,8 +29,11 @@ export const statisticsData: StatisticItem[] = [
     numericValue: 30,
     suffix: "+",
     label: "Our Specialists",
-    description: "Multi-disciplinary team of certified chiropractors, physical therapists, and spine experts.",
-    awaitingConfirmation: true, // Marked awaiting client verification of active roster count
+    description: "Multidisciplinary team of certified chiropractors, physical therapists, and spine rehabilitation specialists.",
+    awaitingConfirmation: true,
+    authorizationStatus: "Awaiting clinic roster verification and authorization",
+    sourceDocument: "Reference website https://painandparalysis.com/ (Elementor widget .counter.default)",
+    isApproved: false,
   },
   {
     id: "stat-customers",
@@ -29,8 +41,11 @@ export const statisticsData: StatisticItem[] = [
     numericValue: 12000,
     suffix: "k",
     label: "Happy Customers",
-    description: "Thousands of patients restored to active, pain-free lifestyles across Tamil Nadu and beyond.",
-    awaitingConfirmation: false,
+    description: "Patients treated across Tamil Nadu for chronic spinal and neuromuscular conditions.",
+    awaitingConfirmation: true,
+    authorizationStatus: "Awaiting clinic patient volume audit and authorization",
+    sourceDocument: "Reference website https://painandparalysis.com/ (Elementor widget .counter.default)",
+    isApproved: false,
   },
   {
     id: "stat-team",
@@ -38,8 +53,10 @@ export const statisticsData: StatisticItem[] = [
     numericValue: 25,
     suffix: "+",
     label: "Team Members",
-    description: "Dedicated clinical rehabilitation, diagnostic, and patient support personnel.",
-    awaitingConfirmation: true, // Marked awaiting client verification of clinic staff total
+    description: "Clinical rehabilitation assistants, physical therapists, and dedicated healthcare staff.",
+    awaitingConfirmation: true,
+    authorizationStatus: "Awaiting clinic staff roster verification and authorization",
+    sourceDocument: "Reference website https://painandparalysis.com/ (Elementor widget .counter.default)",
+    isApproved: false,
   },
 ];
-

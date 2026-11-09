@@ -8,4 +8,5 @@ export interface TestimonialItem {
   location?: string;
   date?: string;
   authorizationStatus: "Verified" | "Awaiting client confirmation" | "Consent pending";
+  isApproved: boolean;
 }

@@ -1,7 +1,9 @@
-export interface CertificationItem {
+export interface CredentialAuditItem {
   title: string;
-  institution: string;
+  institution?: string;
   credentialId?: string;
+  source: string;
+  verificationStatus: "Awaiting clinic confirmation" | "Verified";
 }
 
 export interface TeamMemberItem {
@@ -10,10 +12,10 @@ export interface TeamMemberItem {
   designation: string;
   department: string;
   experienceYears?: number;
-  qualifications: string[];
+  clinicalFocus: string[];
+  qualifications?: string[];
   bio: string[];
   image: string;
   featured: boolean;
-  certifications?: CertificationItem[];
+  certifications?: CredentialAuditItem[];
 }
-

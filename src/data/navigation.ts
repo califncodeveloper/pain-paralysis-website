@@ -91,7 +91,18 @@ export const clinicContactInfo: ClinicContactInfo = {
   phone: "8015559609",
   phoneDisplay: "+91 80155 59609",
   mapsUrl: "https://maps.app.goo.gl/KFe9nQc8Qc85PVAK9",
-  workingHours: "Mon - Sat: 9:00 AM - 8:00 PM",
+  mapEmbedUrl:
+    "https://maps.google.com/maps?q=13.0182,80.1415&hl=en&z=16&output=embed",
+  facilityImage: "/images/common/clinic-exterior.webp",
+  coordinates: {
+    lat: 13.0182,
+    lng: 80.1415,
+  },
+  workingHours: "Mon - Sat: 8:00 AM - 9:00 PM",
+  sundayHours: "Sun: 10:00 AM - 2:00 PM",
+  awaitingConfirmation: true,
+  authorizationStatus:
+    "Awaiting final clinic confirmation before production publication",
 };
 
 export const socialLinks: SocialLink[] = [

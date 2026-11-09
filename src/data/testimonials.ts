@@ -14,6 +14,7 @@ export const testimonialsData: TestimonialItem[] = [
     rating: 5,
     avatarUrl: "/images/testimonials/dharshini.webp",
     authorizationStatus: "Awaiting client confirmation",
+    isApproved: false,
   },
   {
     id: "testimonial-02",
@@ -24,6 +25,7 @@ export const testimonialsData: TestimonialItem[] = [
     rating: 5,
     avatarUrl: "/images/testimonials/annadurai.webp",
     authorizationStatus: "Awaiting client confirmation",
+    isApproved: false,
   },
   {
     id: "testimonial-03",
@@ -35,5 +37,6 @@ export const testimonialsData: TestimonialItem[] = [
     avatarUrl: "/images/testimonials/sudha.webp",
     location: "Adyar, Chennai",
     authorizationStatus: "Awaiting client confirmation",
+    isApproved: false,
   },
 ];

@@ -4,4 +4,8 @@ export * from "./ServicesSection";
 export * from "./AboutSection";
 export * from "./WhatWeDoSection";
 export * from "./BeforeAfterSection";
-
+export * from "./TestimonialsSection";
+export * from "./TeamSection";
+export * from "./StatisticsSection";
+export * from "./LocationSection";
+export * from "./FAQSection";

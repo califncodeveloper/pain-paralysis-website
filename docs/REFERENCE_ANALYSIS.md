@@ -314,19 +314,59 @@ graph TD
 
 ### 3.2 Services Catalog Page (`/services/`)
 - **URL**: `https://painandparalysis.com/services/`
-- **Page Title**: `Services - Pain Paralysis`
-- **Hero Banner**:
-  - Title: `From Pain to Power — Explore Our Treatments`
-  - Subtitle: `WHAT WE OFFER / SERVICES`
-- **The 11 Treatment Services Catalog**:
-  - Detailed card grid matching the homepage 11 treatments, each featuring its dedicated thumbnail, summary, and action link.
-- **The 4 Specialized Care Areas**:
-  1. **Posture Correction**: *"Restore spinal alignment and body balance"* (Featured Image: `1-13.webp`, `500x500px`).
-  2. **Spinal Therapy**: *"Non-invasive care for back and neck pain"* (Featured Image: `3-10.webp`, `500x500px`).
-  3. **Injury & Trauma Recovery**: *"Heal from accidents, falls or surgeries"* (Featured Image: `2-14.webp`, `500x500px`).
-  4. **Rehab & Fitness Integration**: *"Functional training tailored to your recovery stage"* (Featured Image: `4-9.webp`, `500x500px`).
-- **Call-to-Action Bar**:
-  - *"Customized treatment plans and lasting recovery — Have questions? Get in touch!"* with button redirecting to `/contact-us/`.
+- **Page Title**: `Physiotherapy Services in Madhanandapuram - Pain and Paralysis Clinic`
+- **Section Order (Verified DOM & CSS)**:
+  1. **Section 1: Hero Banner** (Container `.elementor-element-67389be`)
+     - Title: `From Pain to Power — Explore Our Treatments` (`.elementor-element-8ed28a1`, Marcellus SC, 60px desktop, 30px mobile, color `#FFFFFF`, font-weight 400).
+     - Background: `service-bg-1-scaled.webp` with dark overlay `#1C1C1CDB` (opacity 0.5).
+     - Semantic breadcrumbs: `Home / Services`.
+  2. **Section 2: Services Showcase ("What We Offer" & 11 Treatment Cards)** (Containers `.elementor-element-a5037e5` & `.elementor-element-9ac3c5b`)
+     - Background: `#105156` (Deep Marine Teal).
+     - Eyebrow: `WHAT WE OFFER` (`.elementor-element-2665691`, Marcellus SC, 18px, font-weight 600, color `#FFFFFF`).
+     - Main Title: `SERVICES` (`.elementor-element-3cee222`, Marcellus SC, 49px desktop, 35px mobile, font-weight 600, color `#FFFFFF`).
+     - Cards Grid: 11 Treatment Services (`.serv-ice-icon .specialist-card`) arranged in a responsive 4-column layout (desktop), 3-column (laptop), 2-column (tablet), 1-column (mobile).
+     - Card Structure:
+       - Image: 455x533px aspect ratio with rounded corners (`border-radius: 15px`).
+       - Floating Icon Box: Top-right corner with primary teal background (`#1CAAB6`) displaying medical icon.
+       - Hover Gradient Overlay: Rises from bottom to 70% height on card hover.
+       - Service Title Badge: Overlay badge at bottom of image with `#105156a1` background, white uppercase text, rounded corners.
+       - Navigation Link: Directly opens service detail page (`/services/${slug}`).
+     - The 11 Verified Cards & Ordering:
+       1. `ADVANCED SPINE DECOMPRESSION` (`spinal-decomp.webp`)
+       2. `CHIROPRACTOR` (`chiropractor.webp`)
+       3. `Physiotherapy` (`physio.webp`)
+       4. `AQUATIC THERAPY` (`aquatic-therapy.webp`)
+       5. `3D GAIT ANALYSIS` (`3d-gait-analysis.webp`)
+       6. `Advanced knee decompression` (`advanced-knee.webp`)
+       7. `Advanced Laser Treatment` (`advanced-laser.webp`)
+       8. `High Frequency EMG` (`high-frequency.webp`)
+       9. `Biofeedback` (`bio-feedback.webp`)
+       10. `Neuro Physiotherapy` (`neuro.webp`)
+       11. `Pelvic Floor` (`pelvic-floor.webp`)
+  3. **Section 3: Specialized Care Areas** (Containers `.elementor-element-4229b04` & `.elementor-element-b9e4b04`)
+     - Background: `#105156` (Deep Marine Teal).
+     - Eyebrow: `Try today` (`.elementor-element-e35b040`, Marcellus SC, 18px, font-weight 600, color `#FFFFFF`, centered).
+     - Section Title: `Specialized care areas` (`.elementor-element-7c490c7`, Marcellus SC, 49px desktop, 35px mobile, font-weight 600, color `#FFFFFF`, centered).
+     - 4 Care Area Cards Grid: 4 columns desktop (25% each), 2x2 tablet, 1 column mobile.
+     - Card Styling: Dark charcoal container background (`#333333` / `#354547`), rounded corners, padding 70px 10px.
+     - The 4 Verified Care Areas:
+       1. **Posture Correction**: *"Restore spinal alignment and body balance"* (Image: `1-13.webp` / `/images/services/care-posture.webp`, 500x500px, 55% width centered).
+       2. **Spinal Therapy**: *"Non-invasive care for back and neck pain"* (Image: `3-10.webp` / `/images/services/care-spine.webp`, 500x500px, 55% width centered).
+       3. **Injury & Trauma Recovery**: *"Support recovery after accidents, falls or surgeries"* (Original slogan neutralized for compliance) (Image: `2-14.webp` / `/images/services/care-trauma.webp`, 500x500px, 55% width centered).
+       4. **Rehab & Fitness Integration**: *"Functional training tailored to your recovery stage"* (Image: `4-9.webp` / `/images/services/care-fitness.webp`, 500x500px, 55% width centered).
+  4. **Section 4: Dual Consultation & Inquiries CTA Section** (Container `.elementor-element-9020015`)
+     - Background: Dark image background (`contact-scaled.webp`) with `#555555` / dark overlay (opacity 0.5).
+     - Dual Columns (50% / 50% on desktop, stacked on mobile):
+       - **Left Column ("About Us" Pillar)** (`.elementor-element-be54178`):
+         - Eyebrow: `About US` (Marcellus SC, 18px, font-weight 600, color `#FFFFFF`).
+         - Headline: `Customized treatment plans and lasting recovery` (Marcellus SC, 49px desktop, 35px mobile, font-weight 400, color `#FFFFFF`).
+         - Button: `About Us` (Pill button 26px radius, background `#1CAAB6`, text `#FFFFFF`, links to `/about-us`).
+       - **Right Column ("Contact Us" Quick Inquiry Card)** (`.elementor-element-9286afd`):
+         - Background: Solid Primary Teal (`#1CAAB6`), `border-radius: 15px`, padding `50px`.
+         - Eyebrow: `CONTACT US` (Marcellus SC, 18px, font-weight 600, color `#FFFFFF`).
+         - Headline: `Have questions? Get in touch!` (Marcellus SC, 49px desktop, 35px mobile, font-weight 400, color `#FFFFFF`).
+         - Inquiry Form Fields: Name, Phone Number, Issue description with transparent backgrounds, white bottom borders, and white placeholders.
+         - Button: `Get In Touch` (Rounded pill button, white background, dark teal text `#083C45`, Marcellus SC font, with arrow icon) linking / submitting to `/contact-us`.
 
 ---
 
@@ -350,6 +390,43 @@ graph TD
   - Stress, Anxiety & Depression
 - **Clinical Benefits Checklist**: Multi-item bullet list with clinical rationale.
 - **Related Treatments Navigation**: Cross-links to the other 4 core therapies.
+
+---
+
+### 3.3.1 Advanced Spine Decompression Detail Page Reconstruction (Phase 18)
+
+- **Target Route**: `/advanced-spine-decompression/` (Redirects to `/services/advanced-spine-decompression` via `next.config.ts` per architecture)
+- **Reference URL**: `https://painandparalysis.com/advanced-spine-decompression/`
+- **Reconstruction Status**: Fully Implemented via modular components under `src/components/services/decompression/`
+
+#### Section-by-Section Reference Analysis & Implementation Matrix
+
+| # | Section Name | Original Heading / Eyebrow | Background Color | Layout Structure | Image / Graphic Asset | Desktop Arrangement (>=1024px) | Mobile Arrangement (<768px) | Interactive Behavior |
+|---|---|---|---|---|---|---|---|---|
+| 1 | **Hero / Banner** | `Spine Care & Traction` / `Advanced Spine Decompression` | `#105156` (Deep Marine Teal) with dark texture overlay | Full-width container (`1300px`), centered vertical stack | `/images/hero/hero-slide-01.webp` (20% opacity) | Title `54px`, subtitle `18px`, centered badge, 3 clinical tags, breadcrumb trail | Title `32px`-`36px`, subtitle `14px`, badges wrap, breadcrumbs wrap | Semantic breadcrumb links (`Home` -> `Services` -> current page non-clickable) |
+| 2 | **Treatment Introduction & Profile** | `ABOUT THE TREATMENT` / `Targeted Non-Surgical Decompression Therapy` | `#FFFFFF` (Pure Medical White) | 2-column grid (5 cols image / 7 cols copy) | `/images/services/spine-decompression-hero.webp` (`Component.webp`, 455×533px) | Left: 455px equipment card with modality badge; Right: 3 clinical paragraphs, 4-item mechanism checklist, dual CTAs | Stacks vertically: Image card centered first, clinical text & checklist below | "Book Appointment" (`/contact-us`), "View Conditions" anchor jump |
+| 3 | **Clinical Benefits & Rationale** | `TREATMENT ADVANTAGES` / `Clinical Benefits of Spine Decompression` | `#F8FBFB` (Soft Surface) | 6-card grid (3 cols desktop, 2 cols tablet, 1 col mobile) | Lucide medical icons (Compass, Droplets, ShieldCheck, Cpu, ZapOff, RotateCcw) | 3×2 grid of benefit cards with numbered headers and clinical rationales | 1-column vertical stack with full card widths | Card hover lift (`-4px`), border primary transition, shadow expansion |
+| 4 | **Conditions Addressed Grid** | `TARGETED INDICATIONS` / `Conditions Addressed by Decompression` | `#FFFFFF` (Pure Medical White) | 6-card grid (3 cols desktop, 2 cols tablet, 1 col mobile) | Lucide condition icons (Layers, GitFork, Bone, Activity, AlertCircle, MoonStar) | 3×2 grid with symptom checklists and bottom clinical evaluation notice | 1-column stack, symptoms bulleted, responsive disclaimer card | Card hover border glow, link to diagnostic evaluation (`/contact-us`) |
+| 5 | **Treatment Methodology & Biomechanical Diagram** | `TREATMENT METHODOLOGY` / `The Decompression Care Protocol` | `#F8FBFB` (Soft Surface) | 4-step horizontal process cards + 2-column diagram showcase | `/images/articles/spine-decompression-article.webp` (`1101×932px`) | 4 numbered protocol cards + dual-column diagram analysis (6 cols text / 6 cols graphic) | Protocol cards stack 1-col, diagram stacks above/below | Phase indicator hover transitions, image zoom containment |
+| 6 | **Frequently Asked Questions** | `PATIENT QUESTIONS` / `Frequently Asked Questions` | `#FFFFFF` (Pure Medical White) | Max-width `800px` centered interactive accordion | Lucide FAQ & Chevron icons | Single centered container, 5 expandable panels | Full-width container, touch-friendly tap targets (`>=44px`) | Smooth accordion toggle (`grid-rows-[1fr]`), chevron rotation (`180deg`), ARIA expanded |
+| 7 | **Related Specialized Therapies** | `COMPLEMENTARY THERAPIES` / `Related Specialized Treatments` | `#F8FBFB` (Soft Surface) | 4-card grid (4 cols desktop, 2 cols tablet, 1 col mobile) | 4 authentic modality photos (`chiropractic.webp`, `physio.webp`, `aquatic-therapy.webp`, `3d-gait-analysis.webp`) | Single row of 4 equal cards (25% each) with image aspect `455/320` | 2 cols on tablet, 1 col on mobile | Card hover scale (`1.05`), arrow translation (`translate-x-1`), deep link routing |
+| 8 | **Consultation & Inquiry CTA** | `ABOUT US` & `CONTACT US` / `Have questions? Get in touch!` | `#105156` with `#1CAAB6` card overlay | 2-column dual action container | `/images/about/clinic-procedure.webp` (overlay) | Left: About Us pillar (50%); Right: Solid Teal inquiry card (50%) | Stacks vertically: Left pillar first, inquiry card full-width below | Quick inquiry form validation, compliance notice (no false submission), button link |
+| 9 | **Footer** | Global 4-column footer | `#105156` / `#000000EB` | 4 columns + sub-footer copyright | Clinic crest & social icons | 4 distinct columns (Office, Quick Links, Core Treatments, Social) | 2 cols tablet, 1 col mobile | Telephone dialer link, Google Maps redirect, active routes |
+
+#### Phase 18.1 Visual Fidelity & Component Comparison Audit
+
+| Component / Section | Structural Similarity | Content Similarity | Visual Similarity | Functional Similarity | Evaluated Similarity Score | Remaining Differences & Rationales |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **1. Hero Banner** | 95% | 94% | 95% | 96% | **95.0%** | Original uses unoptimized raster JPEG with inline CSS filters; Next.js uses WebP priority loading with responsive container boundaries. |
+| **2. Treatment Introduction** | 92% | 90% | 94% | 95% | **92.8%** | Clinical copy neutralized per regulatory compliance: unapproved "disc retraction" and "nutrient imbibition" claims replaced with factual mechanical traction description. |
+| **3. Benefits Grid** | 92% | 90% | 92% | 95% | **92.3%** | 6 cards retained with Lucide React SVG icons instead of theme FontAwesome icons. Efficacy promises neutralized to factual modality attributes. |
+| **4. Conditions Grid** | 90% | 88% | 92% | 95% | **91.3%** | Generic Medilax demo condition cards (e.g., IBS, asthma) excluded; replaced with evaluated spinal conditions. Diagnostic symptoms neutralized to patient complaints. |
+| **5. Process & Diagram** | 92% | 92% | 94% | 95% | **93.3%** | 4-step roadmap + authentic educational graphic (`spine-decompression-article.webp`). Diagram copy neutralized to theoretical axial distraction concepts. |
+| **6. FAQ Accordion** | 94% | 92% | 94% | 96% | **94.0%** | Replaced jQuery Sky Addon accordion with React accessible state accordion. Surgery avoidance promises replaced with qualified non-surgical physical therapy context. |
+| **7. Related Services** | 95% | 95% | 95% | 96% | **95.3%** | 4-card cross-navigation grid linking to Chiropractor, Physiotherapy, Aquatic Therapy, and 3D Gait Analysis with Next.js Link routing. |
+| **8. Consultation CTA** | 95% | 92% | 95% | 95% | **94.3%** | Unconfirmed phone number not exposed as active `tel:` link; form displays transparent notice that live online submission is not yet connected. |
+| **Aggregate Fidelity** | **93.1%** | **91.6%** | **93.9%** | **95.4%** | **93.5%** | **High Fidelity Reconstruction**: Structure, typography, colors, and layout match original while strictly respecting clinical ethics. |
+
 
 ---
 

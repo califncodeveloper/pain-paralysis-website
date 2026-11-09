@@ -9,7 +9,7 @@ export const servicesData: ServiceItem[] = [
     shortDescription:
       "Non-surgical spinal decompression traction therapy designed to relieve herniated, bulging, or degenerated discs and alleviate sciatica.",
     description:
-      "Advanced Spine Decompression is an FDA-cleared non-invasive mechanical traction technology that gently stretches the spine. This creates negative intradiscal pressure (vacuum effect) inside the intervertebral discs, promoting disc retraction and enhancing the influx of healing fluids, oxygen, and nutrients into the damaged disc tissue.",
+      "Advanced Spine Decompression is a non-invasive mechanical traction technology that gently stretches the spine. This creates negative intradiscal pressure inside the intervertebral discs, promoting disc retraction and supporting the influx of fluids, oxygen, and nutrients into the disc tissue.",
     image: "/images/services/spine-decompression.webp",
     heroImage: "/images/services/spine-decompression-hero.webp",
     route: "/services/advanced-spine-decompression",
@@ -34,15 +34,15 @@ export const servicesData: ServiceItem[] = [
     slug: "advanced-chiropractor",
     category: "Spinal Adjustment & Alignment",
     shortDescription:
-      "Targeted manual adjustments and Gonstead alignment to correct vertebral subluxations, restore joint biomechanics, and relieve pain.",
+      "Targeted manual adjustments designed to support spinal mobility, joint biomechanics, and functional physical comfort.",
     description:
-      "Our chiropractic care focuses on diagnosing and treating neuromuscular disorders with emphasis on manual manipulation of the spine. Under the care of internationally trained specialists, precise Gonstead adjustments restore correct mechanical alignment, removing nervous system interference and improving total mobility.",
+      "Our chiropractic care focuses on musculoskeletal health with emphasis on gentle manual adjustments of the spine. Targeted adjustments are designed to support structural alignment, ease spinal tension, and improve functional mobility.",
     image: "/images/services/chiropractic.webp",
     route: "/services/advanced-chiropractor",
     originalUrl: "https://painandparalysis.com/advanced-chiropractor/",
     benefits: [
       "Restores structural spinal alignment without medication",
-      "Reduces nerve impingement and related neurological symptoms",
+      "Addresses spinal tension and associated movement discomfort",
       "Enhances joint range of motion and overall posture",
       "Immediate reduction in chronic muscle tension and spasms",
     ],
@@ -60,14 +60,14 @@ export const servicesData: ServiceItem[] = [
     slug: "advanced-physiotherapy",
     category: "Physical Rehabilitation",
     shortDescription:
-      "Evidence-based clinical rehabilitation integrating robotic physical therapy, manual techniques, and targeted conditioning.",
+      "Clinical rehabilitation integrating specialized therapeutic modalities, manual therapy techniques, and targeted conditioning.",
     description:
-      "Advanced Physiotherapy at Pain and Paralysis utilizes cutting-edge robotic rehabilitation systems combined with Orthopaedic Manual Therapy and Mulligan Concept mobilizations. Each program is customized to strengthen stabilizing musculature, restore fluid joint mechanics, and permanently prevent symptom recurrence.",
+      "Advanced Physiotherapy at Pain and Paralysis utilizes clinical rehabilitation equipment combined with Orthopaedic Manual Therapy and Mulligan Concept mobilizations. Each program is customized to strengthen stabilizing musculature, restore fluid joint mechanics, and support long-term functional recovery.",
     image: "/images/services/physiotherapy.webp",
     route: "/services/advanced-physiotherapy",
     originalUrl: "https://painandparalysis.com/advanced-physiotherapy/",
     benefits: [
-      "Robotic-assisted precision therapy for measurable progress",
+      "Targeted therapeutic equipment for guided rehabilitation progress",
       "Restores functional muscle activation patterns",
       "Rapidly reduces localized inflammatory edema",
       "Individualized home conditioning plans for long-term recovery",
@@ -148,7 +148,7 @@ export const servicesData: ServiceItem[] = [
       "Reduces bone-on-bone compressive friction",
       "Stimulates synovial fluid nutrition and cartilage cushioning",
       "Immediate easing of joint stiffness and walking discomfort",
-      "Proven non-surgical solution for aging joints",
+      "Non-surgical therapy designed for degenerative joint discomfort",
     ],
     conditionsTreated: [
       "Knee Osteoarthritis (Grade 1 - 4)",
@@ -264,9 +264,9 @@ export const servicesData: ServiceItem[] = [
     slug: "pelvic-floor-therapy",
     category: "Pelvic Health & Core",
     shortDescription:
-      "Targeted clinical rehabilitation of pelvic floor musculature to address dysfunction, incontinence, and chronic pelvic pain.",
+      "Targeted clinical rehabilitation of pelvic floor musculature designed to support core stability and functional pelvic health.",
     description:
-      "Pelvic Floor Physiotherapy delivers non-surgical, evidence-based treatment for pelvic diaphragm dysfunction. Using targeted biofeedback, myofascial release, and structured core stabilization exercises, this gentle therapy re-establishes tone, coordination, and strength in essential pelvic support muscles.",
+      "Pelvic Floor Physiotherapy delivers non-surgical clinical care focused on pelvic muscle strengthening and conditioning. Using biofeedback principles, gentle manual therapy, and structured core stabilization exercises, this gentle therapy supports tone, coordination, and functional stability in pelvic support muscles.",
     image: "/images/services/pelvic-floor.webp",
     route: "/services#pelvic-floor-therapy",
     originalUrl: "https://painandparalysis.com/#",
@@ -279,7 +279,7 @@ export const servicesData: ServiceItem[] = [
     conditionsTreated: [
       "Pelvic Pain Syndrome & Coccygodynia",
       "Stress & Urge Urinary Incontinence",
-      "Postpartum Pelvic Diaphragm Weakness",
+      "Postpartum Pelvic Muscle Conditioning",
       "Diastasis Recti & Core Instability",
     ],
   },

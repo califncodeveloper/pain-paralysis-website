@@ -99,3 +99,29 @@ The inspection discovered template routes that shipped with the WordPress theme 
 
 **Clean Solution**: In the Next.js App Router reconstruction, unmatched legacy URLs will cleanly trigger `src/app/not-found.tsx` with friendly guidance back to the active clinical services.
 
+---
+
+## 6. Service Detail Route Architecture & Canonical URL Specification (Phase 18.1 Audit)
+
+### 6.1 Architectural Decision Record: Nested vs. Root Service Detail URLs
+
+- **Legacy Live WordPress URL**: `https://painandparalysis.com/advanced-spine-decompression/`
+- **Target Canonical Next.js Route**: `https://painandparalysis.com/services/advanced-spine-decompression`
+- **File System Handler**: `src/app/services/[slug]/page.tsx`
+- **Redirect Rule (`next.config.ts`)**:
+  ```ts
+  {
+    source: "/advanced-spine-decompression",
+    destination: "/services/advanced-spine-decompression",
+    permanent: true,
+  }
+  ```
+
+### 6.2 Architectural Evaluation & Verification
+
+1. **Intentional Architecture Decision**: The nested URL path `/services/advanced-spine-decompression` is an intentional App Router design choice established in Phase 1 (Route Map Section 2 & 3). All 11 clinical therapies reside under the `/services/` namespace, allowing dynamic static param generation (`generateStaticParams`), shared layout primitives, and scalable sub-routing.
+2. **Canonical Alignment**: In Phase 18.1, the canonical metadata URL in `src/app/services/[slug]/page.tsx` was audited and updated to point strictly to `https://painandparalysis.com/services/advanced-spine-decompression`. This resolves the canonical-to-redirect mismatch, ensuring the canonical tag points to the final destination URL rather than the redirected legacy root URL.
+3. **Redirect Loop Prevention**: `next.config.ts` enforces a unidirectional permanent redirect from `/advanced-spine-decompression` (and `/advanced-spine-decompression/`) to `/services/advanced-spine-decompression`. No reverse redirects or rewrites exist, eliminating any risk of redirect loops.
+4. **Internal Link Uniformity**: All internal links across header menus, footer navigation (`src/data/navigation.ts`), service cards (`src/components/services/ServicesOverviewCard.tsx`), and related service cards (`SpineDecompressionRelated.tsx`) consistently point directly to `/services/advanced-spine-decompression`.
+
+

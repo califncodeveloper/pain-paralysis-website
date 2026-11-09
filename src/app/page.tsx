@@ -5,6 +5,11 @@ import {
   AboutSection,
   WhatWeDoSection,
   BeforeAfterSection,
+  TestimonialsSection,
+  TeamSection,
+  StatisticsSection,
+  LocationSection,
+  FAQSection,
 } from "@/components/home";
 
 export const metadata: Metadata = {
@@ -30,7 +35,21 @@ export default function HomePage() {
 
       {/* Section 8: Before & After Posture Comparison Slider */}
       <BeforeAfterSection />
+
+      {/* Section 9: Testimonials – Patient Reviews Carousel */}
+      <TestimonialsSection />
+
+      {/* Section 10: Our Team – Doctor & Clinical Team Feature */}
+      <TeamSection />
+
+      {/* Section 11: Clinical Statistics & Metrics Counter */}
+      <StatisticsSection />
+
+      {/* Section 12: Location & Facility – Clinic Address & Map */}
+      <LocationSection />
+
+      {/* Section 13: Frequently Asked Questions – Clinical & Treatment FAQs */}
+      <FAQSection />
     </>
   );
 }
-

@@ -6,5 +6,7 @@ export interface StatisticItem {
   suffix?: string;
   description?: string;
   awaitingConfirmation?: boolean;
+  authorizationStatus?: string;
+  sourceDocument?: string;
+  isApproved: boolean;
 }
-

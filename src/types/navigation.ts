@@ -36,5 +36,14 @@ export interface ClinicContactInfo {
   phone: string;
   phoneDisplay: string;
   mapsUrl: string;
+  mapEmbedUrl?: string;
+  facilityImage?: string;
+  coordinates?: {
+    lat: number;
+    lng: number;
+  };
   workingHours: string;
+  sundayHours?: string;
+  awaitingConfirmation?: boolean;
+  authorizationStatus?: string;
 }
