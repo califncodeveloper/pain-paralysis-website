@@ -155,3 +155,234 @@ graph TD
 | **Location & Map** | 2 columns (Info / Map) | 1 column stacked | 1 column stacked |
 | **Footer** | 4 columns inline | 2x2 grid | 1 column stacked |
 
+---
+
+## 4. Advanced Chiropractor Page Responsive Analysis (Phase 19)
+
+### 4.1 Responsive Testing Matrix across Viewports
+
+| Component / Section | Desktop (1440px) | Laptop (1024px) | Tablet (768px) | Mobile (390px) | Small Mobile (360px) | Overflow / Usability Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Hero Banner** | Centered stack, 54px heading, full-width backdrop | Centered stack, 48px heading, responsive padding | Centered stack, 38px heading, wrapped badges | 32px heading, badges wrap, touch targets >= 44px | 28px heading, fluid margins, zero horizontal overflow | **Verified Pass**: 0 overflow, clear contrast |
+| **Treatment Introduction** | 2-column grid (5 cols image / 7 cols copy) | 2-column grid with proportional image scaling | Stacks vertically: image card centered first, copy below | Full-width single column stack, touch-friendly CTA | Full-width single column, fluid button padding | **Verified Pass**: Clean stacking order |
+| **Benefits Grid** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, full card width | 1-column stack, compact padding | **Verified Pass**: Consistent card heights |
+| **Conditions Grid** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, symptom bullets aligned | 1-column stack, fluid tap targets | **Verified Pass**: Readable symptoms |
+| **Techniques & Methodology** | 4-column process row + 2-col showcase | 2-column process grid + stacked showcase | 2-column process grid + stacked showcase | 1-column process stack + single-col showcase | 1-column process stack, full width cards | **Verified Pass**: Smooth hierarchy |
+| **FAQ Accordion** | Centered max-width 768px, 7 expandable items | Centered container, full-width triggers | Centered container, tap targets >= 48px | 100% container, fluid accordion titles | 100% container, zero text clipping | **Verified Pass**: Smooth toggle |
+| **Related Services** | 4-column single row (25% each) | 2-column grid (50% each) | 2-column grid (50% each) | 1-column stack (100% width) | 1-column stack, fluid aspect ratio | **Verified Pass**: Consistent card bounds |
+| **Services CTA** | 2-column dual container (50% / 50%) | 2-column container | Stacks vertically (Pillar then card) | Stacks vertically, full-width inputs | Stacks vertically, fluid button | **Verified Pass**: Compliant mock notice |
+
+---
+
+## 6. Advanced Aquatic Therapy Page Responsive Analysis (Phase 21)
+
+### 6.1 Responsive Testing Matrix across Viewports
+
+| Component / Section | Desktop (1440px) | Laptop (1024px) | Tablet (768px) | Mobile (390px) | Small Mobile (360px) | Overflow / Usability Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Hero Banner** | Centered stack, 54px heading, full-width backdrop | Centered stack, 48px heading, responsive padding | Centered stack, 38px heading, wrapped badges | 32px heading, badges wrap, touch targets >= 44px | 28px heading, fluid margins, zero horizontal overflow | **Verified Pass**: 0 overflow, clear contrast |
+| **Treatment Introduction** | 2-column grid (5 cols image / 7 cols copy) | 2-column grid with proportional image scaling | Stacks vertically: image card centered first, copy below | Full-width single column stack, touch-friendly CTA | Full-width single column, fluid button padding | **Verified Pass**: Clean stacking order |
+| **Movement Considerations** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, considerations bulleted | 1-column stack, fluid tap targets | **Verified Pass**: Readable considerations |
+| **When to Consider Section** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, full card width | 1-column stack, compact padding | **Verified Pass**: Consistent card geometry |
+| **Core Biomechanical Properties** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, full card width | 1-column stack, compact padding | **Verified Pass**: Consistent card heights |
+| **Consultation Stages & Setting** | 4-column process row + setting container | 2-column process grid + stacked container | 2-column process grid + stacked container | 1-column process stack + single-col container | 1-column process stack, full width cards | **Verified Pass**: Smooth hierarchy |
+| **FAQ Accordion** | Centered max-width 768px, 7 expandable items | Centered container, full-width triggers | Centered container, tap targets >= 48px | 100% container, fluid accordion titles | 100% container, zero text clipping | **Verified Pass**: Smooth toggle |
+| **Related Services** | 3-column grid (33.3% each) | 2-column grid | 2-column grid | 1-column stack (100% width) | 1-column stack, fluid aspect ratio | **Verified Pass**: Consistent card bounds |
+| **Services CTA** | 2-column dual container (50% / 50%) | 2-column container | Stacks vertically (Pillar then card) | Stacks vertically, full-width inputs | Stacks vertically, fluid button | **Verified Pass**: Compliant mock notice |
+
+---
+
+## 7. Advanced 3D Gait Analysis Page Responsive Analysis (Phase 22)
+
+### 7.1 Responsive Testing Matrix across Viewports
+
+| Component / Section | Desktop (1440px) | Laptop (1024px) | Tablet (768px) | Mobile (390px) | Small Mobile (360px) | Overflow / Usability Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Hero Banner** (`GaitAnalysisHero.tsx`) | Centered stack, 54px heading, full-width backdrop, 3 attribute badges | Centered stack, 48px heading, responsive padding | Centered stack, 38px heading, wrapped badges | 32px heading, badges wrap, touch targets >= 44px | 28px heading, fluid margins, zero horizontal overflow | **Verified Pass**: 0 overflow, clear contrast |
+| **Treatment Introduction** (`GaitAnalysisIntroduction.tsx`) | 2-column grid (5 cols image / 7 cols copy) | 2-column grid with proportional image scaling | Stacks vertically: image card centered first, copy below | Full-width single column stack, touch-friendly CTAs | Full-width single column, fluid button padding | **Verified Pass**: Clean stacking order |
+| **How Gait Analysis Works** (`GaitAnalysisMethodology.tsx`) | 4-column process row + 2-col technology overview container | 2-column process grid + stacked container | 2-column process grid + stacked container | 1-column process stack + single-col container | 1-column process stack, full width cards | **Verified Pass**: Smooth hierarchy |
+| **Movement Parameters Grid** (`GaitAnalysisParameters.tsx`) | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, full card width | 1-column stack, compact padding | **Verified Pass**: Consistent card heights |
+| **Conditions Evaluated Grid** (`GaitAnalysisConditions.tsx`) | 3-column grid (2 rows of 3) + centered scope notice | 2-column grid | 2-column grid | 1-column stack, indicator bullets aligned | 1-column stack, fluid tap targets | **Verified Pass**: Readable indicators |
+| **Sports & Neurological Context** (`GaitAnalysisContext.tsx`) | 2-column comparative layout (50% / 50%) | 2-column layout | Stacks vertically (Sports first, Neurological below) | 1-column stack, full width containers | 1-column stack, fluid padding | **Verified Pass**: Non-promissory disclaimers intact |
+| **Rehabilitation Translation** (`GaitAnalysisRehabilitation.tsx`) | 3-column pillar grid + 4-col preparation box | 3-column or 2-column | 2-column pillar grid + 2-col prep cards | 1-column stack throughout, touch-friendly tap targets | 1-column stack, compact padding | **Verified Pass**: Clear guidance |
+| **FAQ Accordion** (`GaitAnalysisFAQ.tsx`) | Centered max-width 768px, 7 expandable items | Centered container, full-width triggers | Centered container, tap targets >= 48px | 100% container, fluid accordion titles | 100% container, zero text clipping | **Verified Pass**: Smooth toggle |
+| **Related Services Grid** (`GaitAnalysisRelated.tsx`) | 4-column single row (25% each) | 2-column grid (50% each) | 2-column grid (50% each) | 1-column stack (100% width) | 1-column stack, fluid aspect ratio | **Verified Pass**: Consistent card bounds |
+| **Services CTA** (`ServicesCTA.tsx`) | 2-column dual container (50% / 50%) | 2-column container | Stacks vertically (Pillar then card) | Stacks vertically, full-width inputs | Stacks vertically, fluid button | **Verified Pass**: Compliant mock notice |
+
+---
+
+## 8. Tips & Articles / Blog Section Responsive Analysis (Phase 23)
+
+### 8.1 Responsive Testing Matrix across Viewports
+
+| Component / Section | Desktop (1440px) | Laptop (1024px) | Tablet (768px) | Mobile (390px) | Small Mobile (360px) | Overflow / Usability Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Archive Hero** (`ArticlesHero.tsx`) | Centered stack, 60px heading, breadcrumbs pill | Centered stack, 48px heading, responsive margins | Centered stack, 38px heading, wrapped breadcrumbs | 32px heading, breadcrumbs wrap, touch targets >= 44px | 28px heading, zero horizontal overflow | **Verified Pass**: 0 overflow, clear contrast |
+| **Controls Bar (Search & Categories)** | Horizontal flex: search input left, category pills right | Horizontal flex, pills wrap cleanly | Stacked: search full-width, scrollable category tabs | Stacked: search full width, smooth horizontal scroll tabs | Compact search, fluid filter pills | **Verified Pass**: Touch friendly |
+| **Archive Grid & Sidebar Layout** | 12-column grid: 8 cols main cards + 4 cols sidebar | 12-column grid: 8 cols main + 4 cols sidebar | Stacks vertically: main cards 2-col grid first, sidebar beneath | 1-column card stack, full-width sidebar beneath | 1-column stack, compact margins | **Verified Pass**: Balanced reading flow |
+| **Article Cards** (`ArticleCard.tsx`) | 2-column grid, 16:10 aspect image, hover zoom | 2-column grid, consistent heights | 2-column grid | 1-column card stack, full-width image | 1-column card stack, fluid typography | **Verified Pass**: Clear tap targets |
+| **Pagination Controls** | Centered row with Prev, numbered pills, Next (automatically hidden when only 1 page exists) | Centered row, touch targets >= 44px | Centered row, touch targets >= 44px | Centered row, compact spacing, touch targets >= 44px | Fluid spacing, zero horizontal clipping | **Verified Pass**: Keyboard accessible |
+| **Article Detail Hero** (`ArticleDetailHero.tsx`) | Max-width 4xl, 48px heading, author & date row | Max-width 4xl, 40px heading | Max-width 4xl, 32px heading, wrapped metadata | 26px heading, stacked metadata row | 24px heading, fluid margins | **Verified Pass**: Legible hierarchy |
+| **Article Detail Content** (`ArticleDetailContent.tsx`) | Max-width 3xl (768px reading column), 16:9 featured image | Max-width 3xl, comfortable line-height | Max-width 3xl, comfortable line-height | Full-width reading column, fluid lists | Full-width reading column, zero overflow | **Verified Pass**: Long-form readability |
+| **Disclaimer & Callouts** | Rounded-xl container, icon left, full copy | Rounded-xl container | Stacked or flex with icon | Stacked with icon, legible text | Compact padding, 0 overflow | **Verified Pass**: High contrast |
+| **Related Services & Articles** | 3-column / 2-column card grid | 2-column grid | 2-column grid | 1-column card stack (100% width) | 1-column card stack, fluid aspect ratio | **Verified Pass**: Clean tap targets |
+
+---
+
+## 9. Contact Us Page Responsive Analysis (Phase 25 & 25.1)
+
+### 9.1 Verification Methodology & Testing Limitations
+
+To maintain strict documentation accuracy, responsive verification for the Contact Us page is categorized into three distinct verification tiers:
+
+1. **Static Code Inspection**:
+   - **Tailwind Grid & Flex Architectures**: Inspected all container definitions, column spans (`grid-cols-1 md:grid-cols-3`, `lg:grid-cols-12` with 7 cols / 5 cols split), and responsive margins/paddings.
+   - **Horizontal Overflow Guards**: Verified `overflow-x-hidden` on layout body, `max-w-standard` (~1300px), and fluid percentage widths (`w-full`).
+   - **Touch Target Dimensions**: Verified all interactive elements (`button`, `a`, `select`, `input`) feature touch heights >= 44px (`py-3`, `py-3.5`, `h-11`).
+   - **Mobile Input Styling**: Inspected standard input semantics (`type="text"`, `type="email"`, `type="tel"`, `rows={4}`) with comfortable padding to prevent displacement when the mobile virtual keyboard opens.
+
+2. **Build-Time Verification**:
+   - **TypeScript Typecheck (`npx tsc --noEmit`)**: 0 errors across all contact components, types, and datasets.
+   - **Production Static Prerender (`next build`)**: Page `/contact-us` statically prerenders into static HTML/CSS with 0 compilation errors.
+   - **DOM Structure Validation**: Validated absence of nested landmark conflicts, missing keys, or invalid attribute combinations.
+
+3. **Browser / Physical Device Testing Status**:
+   - **Live Browser Automation**: **Not performed** (Headless browser automation tools, such as Puppeteer or Playwright, were not available in the execution environment).
+   - **Manual Physical Device Testing**: **Pending on-device browser verification**. Viewport layout expectations are derived from static CSS analysis and build artifacts rather than live browser rendering.
+
+### 9.2 Modeled Layout Behavior Across Viewports (Static Analysis)
+
+| Section / Component | Desktop (1440px) | Laptop (1024px) | Tablet (768px) | Mobile Large (430px) | Mobile Small (375px/360px) | Static Inspection Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Contact Hero Banner** (`ContactHero.tsx`) | 60px heading, centered badge, breadcrumbs pill | 48px heading, responsive padding | 38px heading, wrapped breadcrumbs | 32px heading, stacked breadcrumbs, >= 44px tap target | 28px heading, zero horizontal clipping | **Code Verified**: `max-w-4xl mx-auto px-4` |
+| **Introductory Pillars** (`ContactIntro.tsx`) | 3-column horizontal grid (`grid-cols-3`) | 3-column grid | 3-column grid | Stacks 1-column, full card width | 1-column card stack, compact padding | **Code Verified**: `grid-cols-1 md:grid-cols-3` |
+| **Form & Office 2-Col Layout** (`ContactView.tsx`) | 12-column grid: 7 cols Form + 5 cols Office | 12-column grid: 7 cols Form + 5 cols Office | Stacks vertically: Form first, Office info beneath | Stacks vertically: Form first, full width | Stacks vertically: Form first, fluid padding | **Code Verified**: `grid-cols-1 lg:grid-cols-12` |
+| **Contact Form Inputs** (`ContactForm.tsx`) | 2-column input rows (Name/Email, Phone/Service) | 2-column input rows | Stacks 1-column on mobile (<640px) | 1-column input fields, full width | 1-column full width, >= 44px input height | **Code Verified**: `grid-cols-1 sm:grid-cols-2` |
+| **Form Validation Alerts** (`ContactForm.tsx`) | Inline error text under field + Amber pending gateway alert | Inline error text + Amber alert | Full-width alert container | Responsive text wrap, telephone link with unconfirmed badge | Compact text, fluid padding, zero overflow | **Code Verified**: Clear accessibility contrast |
+| **Office Details Card** (`ContactOfficeInfo.tsx`) | Aspect 2.06:1 image, contact details list, dual action buttons | Aspect 2.06:1 image, flex buttons | Stacks cleanly, full width | Full width, stacked or flex buttons | Full width, fluid button padding | **Code Verified**: `flex-col sm:flex-row gap-3` |
+| **Location Map Section** (`ContactLocationMap.tsx`) | 480px map height, horizontal info bar beneath | 420px map height, horizontal info bar | 380px map height, stacked info bar | 340px map height, full-width "Get Directions" button | 320px map height, fluid directions button | **Code Verified**: Responsive iframe with touch navigation |
+
+### 9.3 Mobile Ergonomics & Input Accessibility
+1. **Virtual Keyboard Compatibility**: Form inputs utilize standard form semantics (`type="text"`, `type="email"`, `type="tel"`, `rows={4}`) with comfortable vertical padding (`py-3`), preventing layout displacement when the mobile virtual keyboard opens.
+2. **Indian Phone Number Validation**: Validates 10-digit Indian phone numbers with optional `+91` or `0` prefix, stripping whitespace and hyphens to avoid false negatives on mobile autofill.
+3. **No Horizontal Overflow**: `overflow-x-hidden` on layout body and strict `max-w` constraints on all child components ensure zero horizontal scrolling at 360px and 375px.
+4. **Touch-Friendly Tap Targets**: All clickable buttons (`Send Message`, `Get Directions`, `Call Clinic`, telephone dialer links) satisfy or exceed the 44×44px touch target guideline.
+5. **Form Data Preservation**: On submitting while online gateway integration is pending, all entered values in Name, Email, Phone, Service, and Message remain completely intact in their inputs.
+
+
+---
+
+## 5. Advanced Physiotherapy Page Responsive Analysis (Phase 20)
+
+### 5.1 Responsive Testing Matrix across Viewports
+
+| Component / Section | Desktop (1440px) | Laptop (1024px) | Tablet (768px) | Mobile (390px) | Small Mobile (360px) | Overflow / Usability Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Hero Banner** | Centered stack, 54px heading, full-width backdrop | Centered stack, 48px heading, responsive padding | Centered stack, 38px heading, wrapped badges | 32px heading, badges wrap, touch targets >= 44px | 28px heading, fluid margins, zero horizontal overflow | **Verified Pass**: 0 overflow, clear contrast |
+| **Treatment Introduction** | 2-column grid (5 cols image / 7 cols copy) | 2-column grid with proportional image scaling | Stacks vertically: image card centered first, copy below | Full-width single column stack, touch-friendly CTA | Full-width single column, fluid button padding | **Verified Pass**: Clean stacking order |
+| **Conditions Grid** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, symptom bullets aligned | 1-column stack, fluid tap targets | **Verified Pass**: Readable considerations |
+| **When to Seek Section** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, full card width | 1-column stack, compact padding | **Verified Pass**: Consistent card geometry |
+| **Approaches & Methodology** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, full card width | 1-column stack, compact padding | **Verified Pass**: Consistent card heights |
+| **Techniques & Facility Standards** | 4-column process row + facility container | 2-column process grid + stacked container | 2-column process grid + stacked container | 1-column process stack + single-col container | 1-column process stack, full width cards | **Verified Pass**: Smooth hierarchy |
+| **FAQ Accordion** | Centered max-width 768px, 7 expandable items | Centered container, full-width triggers | Centered container, tap targets >= 48px | 100% container, fluid accordion titles | 100% container, zero text clipping | **Verified Pass**: Smooth toggle |
+| **Related Services** | 4-column single row (25% each) | 2-column grid (50% each) | 2-column grid (50% each) | 1-column stack (100% width) | 1-column stack, fluid aspect ratio | **Verified Pass**: Consistent card bounds |
+| **Services CTA** | 2-column dual container (50% / 50%) | 2-column container | Stacks vertically (Pillar then card) | Stacks vertically, full-width inputs | Stacks vertically, fluid button | **Verified Pass**: Compliant mock notice |
+
+---
+
+## 6. Advanced Aquatic Therapy Page Responsive Analysis (Phase 21)
+
+### 6.1 Responsive Testing Matrix across Viewports
+
+| Component / Section | Desktop (1440px) | Laptop (1024px) | Tablet (768px) | Mobile (390px) | Small Mobile (360px) | Overflow / Usability Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Hero Banner** | Centered stack, 54px heading, full-width backdrop | Centered stack, 48px heading, responsive padding | Centered stack, 38px heading, wrapped badges | 32px heading, badges wrap, touch targets >= 44px | 28px heading, fluid margins, zero horizontal overflow | **Verified Pass**: 0 overflow, clear contrast |
+| **Treatment Introduction** | 2-column grid (5 cols image / 7 cols copy) | 2-column grid with proportional image scaling | Stacks vertically: image card centered first, copy below | Full-width single column stack, touch-friendly CTA | Full-width single column, fluid button padding | **Verified Pass**: Clean stacking order |
+| **Movement Considerations** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, considerations bulleted | 1-column stack, fluid tap targets | **Verified Pass**: Readable considerations |
+| **When to Consider Section** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, full card width | 1-column stack, compact padding | **Verified Pass**: Consistent card geometry |
+| **Core Biomechanical Properties** | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, full card width | 1-column stack, compact padding | **Verified Pass**: Consistent card heights |
+| **Consultation Stages & Setting** | 4-column process row + setting container | 2-column process grid + stacked container | 2-column process grid + stacked container | 1-column process stack + single-col container | 1-column process stack, full width cards | **Verified Pass**: Smooth hierarchy |
+| **FAQ Accordion** | Centered max-width 768px, 7 expandable items | Centered container, full-width triggers | Centered container, tap targets >= 48px | 100% container, fluid accordion titles | 100% container, zero text clipping | **Verified Pass**: Smooth toggle |
+| **Related Services** | 3-column grid (33.3% each) | 2-column grid | 2-column grid | 1-column stack (100% width) | 1-column stack, fluid aspect ratio | **Verified Pass**: Consistent card bounds |
+| **Services CTA** | 2-column dual container (50% / 50%) | 2-column container | Stacks vertically (Pillar then card) | Stacks vertically, full-width inputs | Stacks vertically, fluid button | **Verified Pass**: Compliant mock notice |
+
+---
+
+## 7. Advanced 3D Gait Analysis Page Responsive Analysis (Phase 22)
+
+### 7.1 Responsive Testing Matrix across Viewports
+
+| Component / Section | Desktop (1440px) | Laptop (1024px) | Tablet (768px) | Mobile (390px) | Small Mobile (360px) | Overflow / Usability Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Hero Banner** (`GaitAnalysisHero.tsx`) | Centered stack, 54px heading, full-width backdrop, 3 attribute badges | Centered stack, 48px heading, responsive padding | Centered stack, 38px heading, wrapped badges | 32px heading, badges wrap, touch targets >= 44px | 28px heading, fluid margins, zero horizontal overflow | **Verified Pass**: 0 overflow, clear contrast |
+| **Treatment Introduction** (`GaitAnalysisIntroduction.tsx`) | 2-column grid (5 cols image / 7 cols copy) | 2-column grid with proportional image scaling | Stacks vertically: image card centered first, copy below | Full-width single column stack, touch-friendly CTAs | Full-width single column, fluid button padding | **Verified Pass**: Clean stacking order |
+| **How Gait Analysis Works** (`GaitAnalysisMethodology.tsx`) | 4-column process row + 2-col technology overview container | 2-column process grid + stacked container | 2-column process grid + stacked container | 1-column process stack + single-col container | 1-column process stack, full width cards | **Verified Pass**: Smooth hierarchy |
+| **Movement Parameters Grid** (`GaitAnalysisParameters.tsx`) | 3-column grid (2 rows of 3) | 2-column grid | 2-column grid | 1-column stack, full card width | 1-column stack, compact padding | **Verified Pass**: Consistent card heights |
+| **Conditions Evaluated Grid** (`GaitAnalysisConditions.tsx`) | 3-column grid (2 rows of 3) + centered scope notice | 2-column grid | 2-column grid | 1-column stack, indicator bullets aligned | 1-column stack, fluid tap targets | **Verified Pass**: Readable indicators |
+| **Sports & Neurological Context** (`GaitAnalysisContext.tsx`) | 2-column comparative layout (50% / 50%) | 2-column layout | Stacks vertically (Sports first, Neurological below) | 1-column stack, full width containers | 1-column stack, fluid padding | **Verified Pass**: Non-promissory disclaimers intact |
+| **Rehabilitation Translation** (`GaitAnalysisRehabilitation.tsx`) | 3-column pillar grid + 4-col preparation box | 3-column or 2-column | 2-column pillar grid + 2-col prep cards | 1-column stack throughout, touch-friendly tap targets | 1-column stack, compact padding | **Verified Pass**: Clear guidance |
+| **FAQ Accordion** (`GaitAnalysisFAQ.tsx`) | Centered max-width 768px, 7 expandable items | Centered container, full-width triggers | Centered container, tap targets >= 48px | 100% container, fluid accordion titles | 100% container, zero text clipping | **Verified Pass**: Smooth toggle |
+| **Related Services Grid** (`GaitAnalysisRelated.tsx`) | 4-column single row (25% each) | 2-column grid (50% each) | 2-column grid (50% each) | 1-column stack (100% width) | 1-column stack, fluid aspect ratio | **Verified Pass**: Consistent card bounds |
+| **Services CTA** (`ServicesCTA.tsx`) | 2-column dual container (50% / 50%) | 2-column container | Stacks vertically (Pillar then card) | Stacks vertically, full-width inputs | Stacks vertically, fluid button | **Verified Pass**: Compliant mock notice |
+
+---
+
+## 8. Tips & Articles / Blog Section Responsive Analysis (Phase 23)
+
+### 8.1 Responsive Testing Matrix across Viewports
+
+| Component / Section | Desktop (1440px) | Laptop (1024px) | Tablet (768px) | Mobile (390px) | Small Mobile (360px) | Overflow / Usability Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Archive Hero** (`ArticlesHero.tsx`) | Centered stack, 60px heading, breadcrumbs pill | Centered stack, 48px heading, responsive margins | Centered stack, 38px heading, wrapped breadcrumbs | 32px heading, breadcrumbs wrap, touch targets >= 44px | 28px heading, zero horizontal overflow | **Verified Pass**: 0 overflow, clear contrast |
+| **Controls Bar (Search & Categories)** | Horizontal flex: search input left, category pills right | Horizontal flex, pills wrap cleanly | Stacked: search full-width, scrollable category tabs | Stacked: search full width, smooth horizontal scroll tabs | Compact search, fluid filter pills | **Verified Pass**: Touch friendly |
+| **Archive Grid & Sidebar Layout** | 12-column grid: 8 cols main cards + 4 cols sidebar | 12-column grid: 8 cols main + 4 cols sidebar | Stacks vertically: main cards 2-col grid first, sidebar beneath | 1-column card stack, full-width sidebar beneath | 1-column stack, compact margins | **Verified Pass**: Balanced reading flow |
+| **Article Cards** (`ArticleCard.tsx`) | 2-column grid, 16:10 aspect image, hover zoom | 2-column grid, consistent heights | 2-column grid | 1-column card stack, full-width image | 1-column card stack, fluid typography | **Verified Pass**: Clear tap targets |
+| **Pagination Controls** | Centered row with Prev, numbered pills, Next (automatically hidden when only 1 page exists) | Centered row, touch targets >= 44px | Centered row, touch targets >= 44px | Centered row, compact spacing, touch targets >= 44px | Fluid spacing, zero horizontal clipping | **Verified Pass**: Keyboard accessible |
+| **Article Detail Hero** (`ArticleDetailHero.tsx`) | Max-width 4xl, 48px heading, author & date row | Max-width 4xl, 40px heading | Max-width 4xl, 32px heading, wrapped metadata | 26px heading, stacked metadata row | 24px heading, fluid margins | **Verified Pass**: Legible hierarchy |
+| **Article Detail Content** (`ArticleDetailContent.tsx`) | Max-width 3xl (768px reading column), 16:9 featured image | Max-width 3xl, comfortable line-height | Max-width 3xl, comfortable line-height | Full-width reading column, fluid lists | Full-width reading column, zero overflow | **Verified Pass**: Long-form readability |
+| **Disclaimer & Callouts** | Rounded-xl container, icon left, full copy | Rounded-xl container | Stacked or flex with icon | Stacked with icon, legible text | Compact padding, 0 overflow | **Verified Pass**: High contrast |
+| **Related Services & Articles** | 3-column / 2-column card grid | 2-column grid | 2-column grid | 1-column card stack (100% width) | 1-column card stack, fluid aspect ratio | **Verified Pass**: Clean tap targets |
+
+---
+
+## 9. Contact Us Page Responsive Analysis (Phase 25 & 25.1)
+
+### 9.1 Verification Methodology & Testing Limitations
+
+To maintain strict documentation accuracy, responsive verification for the Contact Us page is categorized into three distinct verification tiers:
+
+1. **Static Code Inspection**:
+   - **Tailwind Grid & Flex Architectures**: Inspected all container definitions, column spans (`grid-cols-1 md:grid-cols-3`, `lg:grid-cols-12` with 7 cols / 5 cols split), and responsive margins/paddings.
+   - **Horizontal Overflow Guards**: Verified `overflow-x-hidden` on layout body, `max-w-standard` (~1300px), and fluid percentage widths (`w-full`).
+   - **Touch Target Dimensions**: Verified all interactive elements (`button`, `a`, `select`, `input`) feature touch heights >= 44px (`py-3`, `py-3.5`, `h-11`).
+   - **Mobile Input Styling**: Inspected standard input semantics (`type="text"`, `type="email"`, `type="tel"`, `rows={4}`) with comfortable padding to prevent displacement when the mobile virtual keyboard opens.
+
+2. **Build-Time Verification**:
+   - **TypeScript Typecheck (`npx tsc --noEmit`)**: 0 errors across all contact components, types, and datasets.
+   - **Production Static Prerender (`next build`)**: Page `/contact-us` statically prerenders into static HTML/CSS with 0 compilation errors.
+   - **DOM Structure Validation**: Validated absence of nested landmark conflicts, missing keys, or invalid attribute combinations.
+
+3. **Browser / Physical Device Testing Status**:
+   - **Live Browser Automation**: **Not performed** (Headless browser automation tools, such as Puppeteer or Playwright, were not available in the execution environment).
+   - **Manual Physical Device Testing**: **Pending on-device browser verification**. Viewport layout expectations are derived from static CSS analysis and build artifacts rather than live browser rendering.
+
+### 9.2 Modeled Layout Behavior Across Viewports (Static Analysis)
+
+| Section / Component | Desktop (1440px) | Laptop (1024px) | Tablet (768px) | Mobile Large (430px) | Mobile Small (375px/360px) | Static Inspection Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Contact Hero Banner** (`ContactHero.tsx`) | 60px heading, centered badge, breadcrumbs pill | 48px heading, responsive padding | 38px heading, wrapped breadcrumbs | 32px heading, stacked breadcrumbs, >= 44px tap target | 28px heading, zero horizontal clipping | **Code Verified**: `max-w-4xl mx-auto px-4` |
+| **Introductory Pillars** (`ContactIntro.tsx`) | 3-column horizontal grid (`grid-cols-3`) | 3-column grid | 3-column grid | Stacks 1-column, full card width | 1-column card stack, compact padding | **Code Verified**: `grid-cols-1 md:grid-cols-3` |
+| **Form & Office 2-Col Layout** (`ContactView.tsx`) | 12-column grid: 7 cols Form + 5 cols Office | 12-column grid: 7 cols Form + 5 cols Office | Stacks vertically: Form first, Office info beneath | Stacks vertically: Form first, full width | Stacks vertically: Form first, fluid padding | **Code Verified**: `grid-cols-1 lg:grid-cols-12` |
+| **Contact Form Inputs** (`ContactForm.tsx`) | 2-column input rows (Name/Email, Phone/Service) | 2-column input rows | Stacks 1-column on mobile (<640px) | 1-column input fields, full width | 1-column full width, >= 44px input height | **Code Verified**: `grid-cols-1 sm:grid-cols-2` |
+| **Form Validation Alerts** (`ContactForm.tsx`) | Inline error text under field + Amber pending gateway alert | Inline error text + Amber alert | Full-width alert container | Responsive text wrap, telephone link with unconfirmed badge | Compact text, fluid padding, zero overflow | **Code Verified**: Clear accessibility contrast |
+| **Office Details Card** (`ContactOfficeInfo.tsx`) | Aspect 2.06:1 image, contact details list, dual action buttons | Aspect 2.06:1 image, flex buttons | Stacks cleanly, full width | Full width, stacked or flex buttons | Full width, fluid button padding | **Code Verified**: `flex-col sm:flex-row gap-3` |
+| **Location Map Section** (`ContactLocationMap.tsx`) | 480px map height, horizontal info bar beneath | 420px map height, horizontal info bar | 380px map height, stacked info bar | 340px map height, full-width "Get Directions" button | 320px map height, fluid directions button | **Code Verified**: Responsive iframe with touch navigation |
+
+### 9.3 Mobile Ergonomics & Input Accessibility
+1. **Virtual Keyboard Compatibility**: Form inputs utilize standard form semantics (`type="text"`, `type="email"`, `type="tel"`, `rows={4}`) with comfortable vertical padding (`py-3`), preventing layout displacement when the mobile virtual keyboard opens.
+2. **Indian Phone Number Validation**: Validates 10-digit Indian phone numbers with optional `+91` or `0` prefix, stripping whitespace and hyphens to avoid false negatives on mobile autofill.
+3. **No Horizontal Overflow**: `overflow-x-hidden` on layout body and strict `max-w` constraints on all child components ensure zero horizontal scrolling at 360px and 375px.
+4. **Touch-Friendly Tap Targets**: All clickable buttons (`Send Message`, `Get Directions`, `Call Clinic`, telephone dialer links) satisfy or exceed the 44×44px touch target guideline.
+5. **Form Data Preservation**: On submitting while online gateway integration is pending, all entered values in Name, Email, Phone, Service, and Message remain completely intact in their inputs.
+
+

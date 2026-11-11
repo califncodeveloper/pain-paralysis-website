@@ -47,7 +47,10 @@ export const SpineDecompressionDetail: React.FC = () => {
       <SpineDecompressionRelated />
 
       {/* 8. Consultation & Quick Inquiry CTA */}
-      <ServicesCTA />
+      <ServicesCTA
+        heading="Discuss Your Spine Decompression Options"
+        description="Have questions about your spinal condition or decompression therapy options? Consult our clinical team in Madhanandapuram, Chennai for non-surgical spine care tailored to your functional needs."
+      />
     </article>
   );
 };

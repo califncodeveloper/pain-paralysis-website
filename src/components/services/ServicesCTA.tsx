@@ -14,7 +14,7 @@ import { Container, Section } from "@/components/ui";
  * - Background: Dark image background with classic #555555 overlay (opacity 0.5)
  * - Left Column:
  *   - Eyebrow: "ABOUT US" (Marcellus SC, 18px, font-weight 600, color #FFFFFF)
- *   - Headline: "Customized treatment plans and lasting recovery" (Marcellus SC, 49px desktop, 35px mobile)
+ *   - Headline: "Discuss Your Physiotherapy Consultation Options" (Marcellus SC, 49px desktop, 35px mobile)
  *   - Button: "About Us" pill button (radius 26px, background #1CAAB6, text #FFFFFF)
  * - Right Column:
  *   - Background: Solid Primary Teal (#1CAAB6), border-radius 15px, padding 50px
@@ -23,12 +23,25 @@ import { Container, Section } from "@/components/ui";
  *   - Quick Inquiry Fields: Name, Phone, Issue description with bottom-border transparent styling
  *   - Action Button: "Get In Touch" with arrow icon (white pill, dark teal text #083C45)
  *
- * Compliance Safeguards (Phase 17.1):
+ * Compliance Safeguards (Phase 17.1 & Phase 20.3):
  * - Contact Number Safeguard: Unconfirmed phone number is not exposed as an active call action.
  * - Form Safeguard: No false success message; transparently notifies that live backend submission is not yet connected.
  * - Personal Data: No personal form data is stored or transmitted.
+ * - Content Safeguard: Non-promissory consultation heading without outcome guarantees.
  */
-export const ServicesCTA: React.FC = () => {
+export interface ServicesCTAProps {
+  heading?: string;
+  description?: string;
+  badge?: string;
+  buttonText?: string;
+}
+
+export const ServicesCTA: React.FC<ServicesCTAProps> = ({
+  heading = "Discuss Your Physiotherapy Consultation Options",
+  description = "Have questions about your condition or treatment options? Consult our clinical team in Madhanandapuram, Chennai for non-surgical spine care, focused chiropractic adjustments, and specialized clinical rehabilitation consultations tailored to your functional needs.",
+  badge = "ABOUT US",
+  buttonText = "About Us",
+}) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -72,17 +85,15 @@ export const ServicesCTA: React.FC = () => {
           <div className="flex flex-col items-start justify-center text-left">
             <span className="section-badge mb-3 font-semibold tracking-[0.12em] uppercase text-xs sm:text-sm text-accent inline-flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-accent" aria-hidden="true" />
-              ABOUT US
+              {badge}
             </span>
 
             <h2 className="font-heading font-semibold text-3xl sm:text-4xl md:text-[44px] lg:text-[48px] leading-[1.2] text-white tracking-tight text-balance">
-              Customized treatment plans and lasting recovery
+              {heading}
             </h2>
 
             <p className="mt-5 font-sans text-sm sm:text-base md:text-lg leading-relaxed text-white/85 max-w-xl">
-              Have questions about your condition or treatment options? Consult our clinical team
-              in Madhanandapuram, Chennai for non-surgical spine care, focused chiropractic adjustments,
-              and specialized clinical rehabilitation tailored to your recovery goals.
+              {description}
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -90,7 +101,7 @@ export const ServicesCTA: React.FC = () => {
                 href="/about-us"
                 className="inline-flex items-center justify-center font-heading font-semibold text-base sm:text-lg text-white bg-primary hover:bg-white hover:text-secondary px-8 py-3.5 rounded-[26px] shadow-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
-                About Us
+                {buttonText}
               </Link>
 
               <Link

@@ -7,4 +7,6 @@ export * from "./articles";
 export * from "./statistics";
 export * from "./hero-slides";
 export * from "./team";
+export * from "./gallery";
+export * from "./contact";
 

@@ -54,7 +54,10 @@ export default function ServicesPage() {
       <SpecializedCareAreas />
 
       {/* 4. Consultation & Inquiry Call to Action ("About US" & "CONTACT US") */}
-      <ServicesCTA />
+      <ServicesCTA
+        heading="Discuss Your Consultation Options"
+        description="Have questions about your condition or treatment options? Consult our clinical team in Madhanandapuram, Chennai for non-surgical spine care, focused chiropractic adjustments, and specialized clinical rehabilitation consultations tailored to your functional needs."
+      />
     </>
   );
 }

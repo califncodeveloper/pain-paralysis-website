@@ -17,15 +17,15 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Original singular articles catalog URL redirect to canonical /tips-articles
+      // Plural articles catalog URL redirect to canonical /tips-article
       {
-        source: "/tips-article",
-        destination: "/tips-articles",
+        source: "/tips-articles",
+        destination: "/tips-article",
         permanent: true,
       },
       {
-        source: "/tips-article/:slug*",
-        destination: "/tips-articles/:slug*",
+        source: "/tips-articles/:slug*",
+        destination: "/tips-article/:slug*",
         permanent: true,
       },
       // Original WordPress service URLs mapped to local /services/[slug]
@@ -60,6 +60,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/3d-gait-analysis",
+        destination: "/services/advanced-3d-gait-analysis",
+        permanent: true,
+      },
+      {
         source: "/advanced-knee-decompression",
         destination: "/services/advanced-knee-decompression",
         permanent: true,
@@ -89,20 +94,30 @@ const nextConfig: NextConfig = {
         destination: "/services/pelvic-floor-therapy",
         permanent: true,
       },
-      // Original WordPress root article URLs mapped to /tips-articles/[slug]
+      // Original WordPress root article URLs mapped to /tips-article/[slug]
       {
         source: "/how-does-spine-decompression-therapy-ease-back-pain",
-        destination: "/tips-articles/how-does-spine-decompression-therapy-ease-back-pain",
+        destination: "/tips-article/how-does-spine-decompression-therapy-ease-back-pain",
         permanent: true,
       },
       {
         source: "/the-role-of-physiotherapy-in-chronic-back-pain-management",
-        destination: "/tips-articles/the-role-of-physiotherapy-in-chronic-back-pain-management",
+        destination: "/tips-article/the-role-of-physiotherapy-in-chronic-back-pain-management",
         permanent: true,
       },
       {
         source: "/deep-tissue-thermotherapy-for-neck-and-shoulder-pain",
-        destination: "/tips-articles/deep-tissue-thermotherapy-for-neck-and-shoulder-pain",
+        destination: "/tips-article/deep-tissue-thermotherapy-for-neck-and-shoulder-pain",
+        permanent: true,
+      },
+      {
+        source: "/the-benefits-of-aquatic-therapy-for-injury-prevention-and-recovery",
+        destination: "/tips-article",
+        permanent: true,
+      },
+      {
+        source: "/benefits-of-physiotherapy",
+        destination: "/tips-article",
         permanent: true,
       },
     ];

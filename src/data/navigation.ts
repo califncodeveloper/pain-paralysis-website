@@ -21,7 +21,7 @@ export const mainNavigation: NavItem[] = [
   },
   {
     title: "Tips & Articles",
-    href: "/tips-articles",
+    href: "/tips-article",
   },
   {
     title: "Gallery",
@@ -48,7 +48,7 @@ export const footerNavigation: FooterSection[] = [
       { title: "Home", href: "/" },
       { title: "About Us", href: "/about-us" },
       { title: "Services", href: "/services" },
-      { title: "Tips & Articles", href: "/tips-articles" },
+      { title: "Tips & Articles", href: "/tips-article" },
       { title: "Gallery", href: "/gallery" },
       { title: "FAQs", href: "/faqs" },
     ],

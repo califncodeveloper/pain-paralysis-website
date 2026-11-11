@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { servicesData } from "@/data/services";
-import { SpineDecompressionDetail } from "@/components/services";
+import {
+  SpineDecompressionDetail,
+  ChiropractorDetail,
+  PhysiotherapyDetail,
+  AquaticTherapyDetail,
+  GaitAnalysisDetail,
+} from "@/components/services";
 
 interface ServiceDetailPageProps {
   params: Promise<{
@@ -53,6 +59,110 @@ export async function generateMetadata({
     };
   }
 
+  if (slug === "advanced-chiropractor") {
+    return {
+      title: "Advanced Chiropractor | Pain & Paralysis Clinic Chennai",
+      description:
+        "Targeted manual adjustments, musculoskeletal joint mobilizations, and postural alignment protocols at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+      alternates: {
+        canonical: "https://painandparalysis.com/services/advanced-chiropractor",
+      },
+      openGraph: {
+        title: "Advanced Chiropractor | Pain & Paralysis Clinic Chennai",
+        description:
+          "Targeted manual adjustments, musculoskeletal joint mobilizations, and postural alignment protocols at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+        url: "https://painandparalysis.com/services/advanced-chiropractor",
+        siteName: "Pain & Paralysis Clinic",
+        images: [
+          {
+            url: "/images/services/chiropractic.webp",
+            width: 455,
+            height: 533,
+            alt: "Advanced Chiropractor manual adjustment at Pain and Paralysis Clinic Chennai",
+          },
+        ],
+      },
+    };
+  }
+
+  if (slug === "advanced-physiotherapy") {
+    return {
+      title: "Advanced Physiotherapy | Pain & Paralysis Clinic Chennai",
+      description:
+        "Outpatient physical therapy consultations and clinical movement evaluation at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+      alternates: {
+        canonical: "https://painandparalysis.com/services/advanced-physiotherapy",
+      },
+      openGraph: {
+        title: "Advanced Physiotherapy | Pain & Paralysis Clinic Chennai",
+        description:
+          "Outpatient physical therapy consultations and clinical movement evaluation at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+        url: "https://painandparalysis.com/services/advanced-physiotherapy",
+        siteName: "Pain & Paralysis Clinic",
+        images: [
+          {
+            url: "/images/services/physiotherapy.webp",
+            width: 455,
+            height: 533,
+            alt: "Advanced Physiotherapy consultation at Pain and Paralysis Clinic Chennai",
+          },
+        ],
+      },
+    };
+  }
+
+  if (slug === "advanced-aquatic-therapy") {
+    return {
+      title: "Advanced Aquatic Therapy | Pain & Paralysis Clinic Chennai",
+      description:
+        "Educational overview and outpatient consultation discussing the principles of water-based movement, low-impact exercise, and physical mobility at Pain & Paralysis Clinic Chennai.",
+      alternates: {
+        canonical: "https://painandparalysis.com/services/advanced-aquatic-therapy",
+      },
+      openGraph: {
+        title: "Advanced Aquatic Therapy | Pain & Paralysis Clinic Chennai",
+        description:
+          "Educational overview and outpatient consultation discussing the principles of water-based movement, low-impact exercise, and physical mobility at Pain & Paralysis Clinic Chennai.",
+        url: "https://painandparalysis.com/services/advanced-aquatic-therapy",
+        siteName: "Pain & Paralysis Clinic",
+        images: [
+          {
+            url: "/images/services/aquatic-therapy.webp",
+            width: 455,
+            height: 533,
+            alt: "Advanced Aquatic Therapy educational consultation overview at Pain and Paralysis Clinic Chennai",
+          },
+        ],
+      },
+    };
+  }
+
+  if (slug === "advanced-3d-gait-analysis") {
+    return {
+      title: "Advanced 3D Gait Analysis | Pain & Paralysis Clinic Chennai",
+      description:
+        "Educational overview and outpatient clinical evaluation of walking mechanics, movement symmetry, and functional biomechanics at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+      alternates: {
+        canonical: "https://painandparalysis.com/services/advanced-3d-gait-analysis",
+      },
+      openGraph: {
+        title: "Advanced 3D Gait Analysis | Pain & Paralysis Clinic Chennai",
+        description:
+          "Educational overview and outpatient clinical evaluation of walking mechanics, movement symmetry, and functional biomechanics at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+        url: "https://painandparalysis.com/services/advanced-3d-gait-analysis",
+        siteName: "Pain & Paralysis Clinic",
+        images: [
+          {
+            url: "/images/services/3d-gait-analysis.webp",
+            width: 455,
+            height: 533,
+            alt: "Educational illustration of three-dimensional human gait and movement analysis",
+          },
+        ],
+      },
+    };
+  }
+
   return {
     title: `${service.title} | Pain & Paralysis Clinic Chennai`,
     description: service.shortDescription,
@@ -87,6 +197,26 @@ export default async function ServiceDetailPage({
   // Phase 18: Advanced Spine Decompression Detail Page Reconstruction
   if (slug === "advanced-spine-decompression") {
     return <SpineDecompressionDetail />;
+  }
+
+  // Phase 19: Advanced Chiropractor Detail Page Reconstruction
+  if (slug === "advanced-chiropractor") {
+    return <ChiropractorDetail />;
+  }
+
+  // Phase 20: Advanced Physiotherapy Detail Page Reconstruction
+  if (slug === "advanced-physiotherapy") {
+    return <PhysiotherapyDetail />;
+  }
+
+  // Phase 21: Advanced Aquatic Therapy Detail Page Reconstruction
+  if (slug === "advanced-aquatic-therapy") {
+    return <AquaticTherapyDetail />;
+  }
+
+  // Phase 22: Advanced 3D Gait Analysis Detail Page Reconstruction
+  if (slug === "advanced-3d-gait-analysis") {
+    return <GaitAnalysisDetail />;
   }
 
   // Default dynamic template for other service detail pages
