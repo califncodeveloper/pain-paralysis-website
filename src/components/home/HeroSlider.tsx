@@ -202,10 +202,16 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
                     </span>
                   </div>
 
-                  {/* Main Slide Title */}
-                  <h1 className="font-heading font-semibold !text-white text-[22px] sm:text-3xl md:text-4xl lg:text-5xl xl:text-[52px] leading-[1.18] tracking-tight">
-                    {slide.heading}
-                  </h1>
+                  {/* Main Slide Title (Only primary slide renders H1 for semantic SEO hierarchy) */}
+                  {index === 0 ? (
+                    <h1 className="font-heading font-semibold !text-white text-[22px] sm:text-3xl md:text-4xl lg:text-5xl xl:text-[52px] leading-[1.18] tracking-tight">
+                      {slide.heading}
+                    </h1>
+                  ) : (
+                    <h2 className="font-heading font-semibold !text-white text-[22px] sm:text-3xl md:text-4xl lg:text-5xl xl:text-[52px] leading-[1.18] tracking-tight">
+                      {slide.heading}
+                    </h2>
+                  )}
 
                   {/* Supporting Description */}
                   <p className="mt-3 sm:mt-5 !text-white/90 font-sans text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl">

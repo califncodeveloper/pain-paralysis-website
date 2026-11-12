@@ -7,15 +7,14 @@ import {
 } from "@/components/services";
 
 export const metadata: Metadata = {
-  title: "Physiotherapy & Rehabilitation Services in Madhanandapuram | Pain & Paralysis Clinic",
+  title: "Specialized Treatments & Rehabilitation Services - Madhanandapuram",
   description:
     "Explore specialized non-surgical spine decompression, targeted chiropractic adjustments, specialized physiotherapy, aquatic therapy, and neurological rehabilitation in Chennai.",
   alternates: {
     canonical: "https://painandparalysis.com/services",
   },
   openGraph: {
-    title:
-      "Physiotherapy & Rehabilitation Services in Madhanandapuram | Pain & Paralysis Clinic",
+    title: "Specialized Treatments & Rehabilitation Services | Pain & Paralysis Clinic",
     description:
       "Explore specialized non-surgical spine decompression, targeted chiropractic adjustments, specialized physiotherapy, aquatic therapy, and neurological rehabilitation in Chennai.",
     url: "https://painandparalysis.com/services",

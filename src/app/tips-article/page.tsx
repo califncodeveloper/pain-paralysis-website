@@ -4,14 +4,14 @@ import { ArticlesHero, ArticleArchiveView } from "@/components/articles";
 import { ServicesCTA } from "@/components/services";
 
 export const metadata: Metadata = {
-  title: "Health Tips & Physiotherapy Articles - Pain and Paralysis Clinic",
+  title: "Health Tips & Clinical Articles",
   description:
     "Read expert physiotherapy tips and health articles from Pain and Paralysis clinic in madhanandapuram. Stay informed with evidence-based advice for better mobility.",
   alternates: {
     canonical: "https://painandparalysis.com/tips-article",
   },
   openGraph: {
-    title: "Health Tips & Physiotherapy Articles - Pain and Paralysis Clinic",
+    title: "Health Tips & Clinical Articles | Pain & Paralysis Clinic",
     description:
       "Read expert physiotherapy tips and health articles from Pain and Paralysis clinic in madhanandapuram. Stay informed with evidence-based advice for better mobility.",
     url: "https://painandparalysis.com/tips-article",

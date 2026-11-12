@@ -9,14 +9,14 @@ import {
 } from "@/components/about";
 
 export const metadata: Metadata = {
-  title: "About Us | Pain & Paralysis Clinic Chennai",
+  title: "About Us - Spine Care & Rehabilitation Specialists",
   description:
     "Learn about Pain and Paralysis Clinic in Chennai, our lead specialist Dr. Dinesh Anandhan, evidence-based chiropractic protocols, and non-surgical spine rehabilitation.",
   alternates: {
     canonical: "https://painandparalysis.com/about-us",
   },
   openGraph: {
-    title: "About Us | Pain & Paralysis Clinic Chennai",
+    title: "About Us - Spine Care & Rehabilitation Specialists | Pain & Paralysis Clinic",
     description:
       "Specialized healthcare clinic in Chennai for non-surgical spine decompression, evidence-based chiropractic alignment, and paralysis rehabilitation.",
     url: "https://painandparalysis.com/about-us",

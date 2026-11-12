@@ -94,6 +94,94 @@ const nextConfig: NextConfig = {
         destination: "/services/pelvic-floor-therapy",
         permanent: true,
       },
+      // Verified legacy redirects & SEO duplicate mappings (Phase 29)
+      {
+        source: "/physiotherapy-centre",
+        destination: "/services/advanced-physiotherapy",
+        permanent: true,
+      },
+      {
+        source: "/physiotherapy-chennai",
+        destination: "/services/advanced-physiotherapy",
+        permanent: true,
+      },
+      {
+        source: "/chiropractic-treatment-centre",
+        destination: "/services/advanced-chiropractor",
+        permanent: true,
+      },
+      {
+        source: "/aquatic-therapy",
+        destination: "/services/advanced-aquatic-therapy",
+        permanent: true,
+      },
+      {
+        source: "/advanced-spine-decompression-2",
+        destination: "/services/advanced-spine-decompression",
+        permanent: true,
+      },
+      {
+        source: "/emg-therapy",
+        destination: "/services/high-frequency-emg",
+        permanent: true,
+      },
+      {
+        source: "/biofeedback-therapy",
+        destination: "/services/biofeedback",
+        permanent: true,
+      },
+      {
+        source: "/neuro-physiotherapy-2",
+        destination: "/services/neuro-physiotherapy",
+        permanent: true,
+      },
+      {
+        source: "/neuro-physiotherapy-3",
+        destination: "/services/neuro-physiotherapy",
+        permanent: true,
+      },
+      // Theme Medilax CPT archive & service detail redirects
+      {
+        source: "/all-services",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/all-services/3d-gait-analysis",
+        destination: "/services/advanced-3d-gait-analysis",
+        permanent: true,
+      },
+      {
+        source: "/all-services/advanced-spine-decompression",
+        destination: "/services/advanced-spine-decompression",
+        permanent: true,
+      },
+      {
+        source: "/all-services/chiropractor",
+        destination: "/services/advanced-chiropractor",
+        permanent: true,
+      },
+      {
+        source: "/all-services/aquatic-therapy",
+        destination: "/services/advanced-aquatic-therapy",
+        permanent: true,
+      },
+      {
+        source: "/all-services/:slug*",
+        destination: "/services",
+        permanent: true,
+      },
+      // Theme appointment page aliases
+      {
+        source: "/appointment",
+        destination: "/contact-us",
+        permanent: true,
+      },
+      {
+        source: "/appointments",
+        destination: "/contact-us",
+        permanent: true,
+      },
       // Original WordPress root article URLs mapped to /tips-article/[slug]
       {
         source: "/how-does-spine-decompression-therapy-ease-back-pain",
@@ -118,6 +206,23 @@ const nextConfig: NextConfig = {
       {
         source: "/benefits-of-physiotherapy",
         destination: "/tips-article",
+        permanent: true,
+      },
+      // Privacy policy alias
+      {
+        source: "/privacy",
+        destination: "/privacy-policy",
+        permanent: true,
+      },
+      // Terms and conditions aliases
+      {
+        source: "/terms",
+        destination: "/terms-and-conditions",
+        permanent: true,
+      },
+      {
+        source: "/terms-conditions",
+        destination: "/terms-and-conditions",
         permanent: true,
       },
     ];

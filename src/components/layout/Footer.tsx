@@ -207,9 +207,29 @@ export const Footer: React.FC = () => {
 
         {/* Sub-footer Copyright Bar */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-teal-100/70">
-          <p className="text-center sm:text-left m-0">
-            &copy; 2025 Pain And Paralysis | All Rights Reserved.
-          </p>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1">
+            <p className="text-center sm:text-left m-0">
+              &copy; 2025 Pain And Paralysis | All Rights Reserved.
+            </p>
+            <span className="hidden sm:inline text-white/30" aria-hidden="true">
+              •
+            </span>
+            <Link
+              href="/privacy-policy"
+              className="hover:text-primary underline underline-offset-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+            >
+              Privacy Policy
+            </Link>
+            <span className="hidden sm:inline text-white/30" aria-hidden="true">
+              •
+            </span>
+            <Link
+              href="/terms-and-conditions"
+              className="hover:text-primary underline underline-offset-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+            >
+              Terms & Conditions
+            </Link>
+          </div>
           <p className="text-center sm:text-right m-0">
             Developed by{" "}
             <a

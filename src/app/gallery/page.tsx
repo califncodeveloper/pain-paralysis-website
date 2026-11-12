@@ -3,14 +3,14 @@ import { getGalleryAwards, getOfficeGalleryItem, getAllGalleryItems } from "@/da
 import { GalleryHero, GalleryView } from "@/components/gallery";
 
 export const metadata: Metadata = {
-  title: "Gallery - Pain Paralysis",
+  title: "Gallery & Honors",
   description:
     "Explore public honors, event felicitations, and clinic facility imagery of Pain & Paralysis Clinic in Chennai.",
   alternates: {
     canonical: "https://painandparalysis.com/gallery",
   },
   openGraph: {
-    title: "Gallery - Pain Paralysis",
+    title: "Gallery & Honors | Pain & Paralysis Clinic",
     description:
       "Explore public honors, event felicitations, and clinic facility imagery of Pain & Paralysis Clinic in Chennai.",
     url: "https://painandparalysis.com/gallery",
@@ -45,7 +45,7 @@ export default function GalleryPage() {
   const allGalleryItems = getAllGalleryItems();
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* 1. Hero Banner */}
       <GalleryHero />
 
@@ -55,6 +55,6 @@ export default function GalleryPage() {
         officeItem={officeItem}
         allGalleryItems={allGalleryItems}
       />
-    </main>
+    </div>
   );
 }

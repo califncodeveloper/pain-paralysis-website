@@ -774,3 +774,49 @@ During live DOM and REST API inspection of `https://painandparalysis.com/tips-ar
     - Field 5: Message / Symptoms (`textarea[name="textarea-59"]`)
     - Submit Button: `Send Message` / `Book Consultation`
 
+---
+
+### 3.8 Privacy Policy Page Investigation (`/privacy-policy/`, Phase 26 Audit)
+- **Investigated URL**: `https://painandparalysis.com/privacy-policy/`
+- **HTTP Status Code**: `404 Not Found` (WordPress LiteSpeed 404 handler)
+- **Alternative Legal Routes Probed**:
+  - `https://painandparalysis.com/privacy/` -> `404 Not Found`
+  - `https://painandparalysis.com/terms-and-conditions/` -> `404 Not Found`
+  - `https://painandparalysis.com/terms-conditions/` -> `404 Not Found`
+  - `https://painandparalysis.com/disclaimer/` -> `404 Not Found`
+- **Sitemap Findings**: Neither `sitemap_index.xml`, `page-sitemap.xml`, nor `post-sitemap.xml` index any legal, privacy, terms, or disclaimer documents.
+- **Wayback Machine Archives**: CDX API search across all historical captures of `painandparalysis.com` confirms that no privacy policy or legal pages were ever archived or linked.
+- **Footer DOM Analysis**: The reference homepage footer includes a hidden Contact Form 7 newsletter container (`my-sub elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile`) containing an unlinked checkbox text: `<label><input type="checkbox" name="checkbox-393[]" value="I agree to the Privacy Policy" /><span class="wpcf7-list-item-label">I agree to the Privacy Policy</span></label>`. There are no anchor links (`<a>`) pointing to any privacy or legal URL.
+- **Implementation Strategy (Phase 26 & 26.1 Evidence Correction)**:
+  - The reference Privacy Policy page was completely unavailable (HTTP 404) and no approved policy text was supplied.
+  - In Phase 26.1, all provisional legal clauses, diagnostic server-log descriptions, data retention statements, security claims, and simulated privacy contact procedures were removed because they lacked authoritative clinic confirmation.
+  - The route `/privacy-policy` intentionally displays a transparent visitor-facing temporary notice stating that policy information is awaiting confirmation from the clinic and will be published following appropriate review.
+  - The page explicitly makes no representations regarding data collection, storage, sharing, retention, or security practices pending authoritative clinic review.
+  - Connected via the global footer sub-bar alongside the copyright statement.
+
+---
+
+### 3.9 Terms & Conditions Page Investigation (`/terms-and-conditions/`, Phase 27 Audit)
+- **Investigated Canonical URL**: `https://painandparalysis.com/terms-and-conditions/`
+- **HTTP Status Code**: `404 Not Found` (WordPress LiteSpeed 404 handler)
+- **Alternative Legal Routes Probed**:
+  - `https://painandparalysis.com/terms-conditions/` -> `404 Not Found`
+  - `https://painandparalysis.com/terms/` -> `404 Not Found`
+  - `https://painandparalysis.com/terms-of-service/` -> `404 Not Found`
+  - `https://painandparalysis.com/terms-of-use/` -> `404 Not Found`
+- **Sitemap Findings**:
+  - `sitemap_index.xml`: Indexes 15 sub-sitemaps.
+  - `page-sitemap.xml`: Contains 67 page URLs; no Terms & Conditions, Terms of Service, or contractual legal pages exist.
+  - `medilax_footer_build-sitemap.xml`: Contains 6 footer variations (`footer-v1` through `footer-two`); none contains terms or legal links.
+- **Reference Website DOM Analysis**:
+  - Inspected reference homepage DOM and script payloads. The sole occurrence of "Terms and Conditions" is in a dormant WordPress theme localization variable (`"msg_not_agree":"Please, read and check 'Terms and Conditions'"` inside `TRX_ADDONS_STORAGE`).
+  - No user-visible or crawlable links to Terms & Conditions exist in the header, body, or footer.
+- **Implementation Strategy (Path B – No Approved Content Exists)**:
+  - In strict compliance with legal content accuracy requirements, no fabricated terms, obligations, or legal disclaimers were created.
+  - The route `/terms-and-conditions` displays a minimal visitor-facing placeholder consistent with `/privacy-policy`.
+  - Placeholder explicitly states that terms and conditions are awaiting confirmation from the clinic and will be published after clinic review, and disclaims establishing contractual terms or legal conditions.
+  - Symmetrically integrated into the global footer sub-bar next to Privacy Policy.
+  - Route aliases `/terms` and `/terms-conditions` redirect to `/terms-and-conditions` via `next.config.ts`.
+
+
+

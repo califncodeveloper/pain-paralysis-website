@@ -33,10 +33,7 @@ export async function generateMetadata({
   const article = getArticleBySlug(slug);
 
   if (!article || article.publicationStatus !== "published") {
-    return {
-      title: "Article Not Found - Pain and Paralysis Clinic",
-      description: "The requested clinical educational article could not be found.",
-    };
+    notFound();
   }
 
   const canonicalUrl = `https://painandparalysis.com/tips-article/${article.slug}`;

@@ -167,7 +167,7 @@ export const ArticleArchiveView: React.FC<ArticleArchiveViewProps> = ({
         {/* Layout: Main Articles Grid (8 cols) + Sidebar (4 cols) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Main Article Content */}
-          <main className="lg:col-span-8">
+          <div className="lg:col-span-8">
             {paginatedArticles.length > 0 ? (
               <div className="space-y-8">
                 {/* Responsive Article Cards Grid */}
@@ -266,7 +266,7 @@ export const ArticleArchiveView: React.FC<ArticleArchiveViewProps> = ({
                 </button>
               </div>
             )}
-          </main>
+          </div>
 
           {/* Sidebar */}
           <div className="lg:col-span-4">

@@ -27,7 +27,7 @@ export const ServicesOverviewCard: React.FC<ServicesOverviewCardProps> = ({
 }) => {
   return (
     <Link
-      href={`/services/${service.slug}`}
+      href={service.route}
       className="group relative flex h-full w-full flex-col overflow-hidden rounded-2xl bg-white/95 border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.18)] transition-all duration-300 ease-out hover:-translate-y-2 hover:border-primary/60 hover:shadow-[0_20px_40px_rgba(28,170,182,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
       aria-label={`Explore ${service.title} clinical treatment`}
     >

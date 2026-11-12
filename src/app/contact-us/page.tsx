@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { ContactHero, ContactView } from "@/components/contact";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Pain Paralysis",
+  title: "Contact Us - Consultations & Appointments",
   description:
     "Get in touch with Pain & Paralysis Clinic in Madhanandapuram, Chennai. Schedule non-surgical spine decompression, chiropractic consultations, and rehabilitation assessments.",
   alternates: {
     canonical: "https://painandparalysis.com/contact-us",
   },
   openGraph: {
-    title: "Contact Us - Pain Paralysis",
+    title: "Contact Us - Consultations & Appointments | Pain & Paralysis Clinic",
     description:
       "Get in touch with Pain & Paralysis Clinic in Madhanandapuram, Chennai. Schedule non-surgical spine decompression, chiropractic consultations, and rehabilitation assessments.",
     url: "https://painandparalysis.com/contact-us",

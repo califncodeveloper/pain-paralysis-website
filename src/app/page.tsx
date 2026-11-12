@@ -13,7 +13,9 @@ import {
 } from "@/components/home";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: {
+    absolute: "Pain & Paralysis Clinic | Integrated Spine Care & Rehabilitation",
+  },
   description:
     "Specialized Healthcare Clinic in Chennai for Pain Management and Paralysis Rehabilitation.",
 };

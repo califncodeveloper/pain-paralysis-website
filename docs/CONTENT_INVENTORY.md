@@ -63,33 +63,43 @@ Contains all 11 verified clinical treatment modalities:
 6. `advanced-knee-decompression` — **Advanced Knee Decompression**
    - Category: *Joint Decompression*
    - Image: `/images/services/knee-decompression.webp`
-   - Route: `/services#advanced-knee-decompression`
-   - Reference URL: `https://painandparalysis.com/#`
+   - Route: `/services/advanced-knee-decompression`
+   - Reference URL: `https://painandparalysis.com/advanced-knee-decompression/`
+   - Status: *Phase 30 Bespoke Service Detail Page Implemented*
 7. `advanced-laser-treatment` — **Advanced Laser Treatment**
    - Category: *Photobiomodulation*
    - Image: `/images/services/laser-therapy.webp`
-   - Route: `/services#advanced-laser-treatment`
-   - Reference URL: `https://painandparalysis.com/#`
+   - Route: `/services/advanced-laser-treatment`
+   - Reference URL: `https://painandparalysis.com/advanced-laser-treatment/`
+   - Status: *Phase 31 Bespoke Service Detail Page Implemented*
 8. `high-frequency-emg` — **High Frequency EMG**
-   - Category: *Neuromuscular Diagnostics*
+   - Category: *Neuromuscular Assessment*
    - Image: `/images/services/emg-therapy.webp`
-   - Route: `/services#high-frequency-emg`
+   - Hero Background: `/images/hero/hero-slide-01.webp`
+   - Route: `/services/high-frequency-emg`
    - Reference URL: `https://painandparalysis.com/#`
+   - Status: *Phase 32 Bespoke Service Detail Page Implemented*
 9. `biofeedback` — **Biofeedback**
    - Category: *Neuromuscular Re-education*
    - Image: `/images/services/biofeedback.webp`
-   - Route: `/services#biofeedback`
+   - Hero Background: `/images/hero/hero-slide-01.webp`
+   - Route: `/services/biofeedback`
    - Reference URL: `https://painandparalysis.com/#`
+   - Status: *Phase 33 Bespoke Service Detail Page Implemented*
 10. `neuro-physiotherapy` — **Neuro Physiotherapy**
     - Category: *Neurological Rehabilitation*
     - Image: `/images/services/neuro-physiotherapy.webp`
-    - Route: `/services#neuro-physiotherapy`
+    - Hero Background: `/images/hero/hero-slide-01.webp`
+    - Route: `/services/neuro-physiotherapy`
     - Reference URL: `https://painandparalysis.com/#`
+    - Status: *Phase 34 Bespoke Service Detail Page Implemented*
 11. `pelvic-floor-therapy` — **Pelvic Floor**
     - Category: *Pelvic Health & Core*
     - Image: `/images/services/pelvic-floor.webp`
-    - Route: `/services#pelvic-floor-therapy`
+    - Hero Background: `/images/hero/hero-slide-01.webp`
+    - Route: `/services/pelvic-floor-therapy`
     - Reference URL: `https://painandparalysis.com/#`
+    - Status: *Phase 35 Bespoke Service Detail Page Implemented*
 
 ---
 
@@ -527,6 +537,135 @@ Reconstructed, forensically audited, and converted to genuine WebP (`RIFF....WEB
 2. **In-Person Assessment**: Clinical consultations occur on-site at the Madhanandapuram facility to review personal case history and discuss conservative care options.
 3. **Practice Scope**: Non-surgical musculoskeletal care designed to address postural strain, joint mobility restrictions, and physical rehabilitation.
 *All outcome guarantees, credential assertions, and unverified clinical capabilities withheld.*
+
+---
+
+### 3.26 Phase 26 & 26.1 Privacy Policy Content Accuracy & Evidence Correction Inventory (`src/data/privacy-policy.ts`)
+
+#### A. Reference Source & Provenance Audit:
+- **Reference URL Inspected**: `https://painandparalysis.com/privacy-policy/`
+- **Audit Finding**: Returned HTTP 404 (Not Found). Sitemaps (`sitemap_index.xml`, `page-sitemap.xml`, `post-sitemap.xml`) and Wayback Machine CDX archives contain no indexed legal, privacy, terms, or disclaimer documents.
+- **Elementor Footer Analysis**: Contained only an unlinked plain text checkbox inside a hidden newsletter widget (`I agree to the Privacy Policy`) without a destination target.
+- **Supply Status**: No approved Privacy Policy text was provided or available from clinic records.
+
+#### B. Phase 26.1 Unsupported Statements Audit & Removal:
+In accordance with Phase 26.1 evidence standards, a disclaimer stating that content is awaiting approval does not make an unsupported statement safe to publish. The following 11 categories of unverified claims were identified and completely excised from the codebase:
+1. **Server Logs & Diagnostics**: Claims regarding IP address, browser type, device OS, and server access log collection.
+2. **Data Storage & Retention**: Claims describing storage mechanisms, processing procedures, and data retention schedules.
+3. **Third-Party Data Sharing**: Representations concerning non-sale, non-rental, or non-disclosure of personal data to commercial aggregators.
+4. **Security Controls**: Technical claims regarding HTTPS encryption assurances or data security safeguards.
+5. **Financial Data Handling**: Operational claims asserting that online payments or financial data are not collected.
+6. **Patient Data Rights**: Representations regarding patient rights to inspect, update, correct, or delete inquiry data.
+7. **Media & Photography Consent**: Statements describing patient photography consent and case summary governance.
+8. **Emergency Care Directives**: Instructions concerning hospital emergency departments and non-emergency communication boundaries.
+9. **Clinical Relationship Disclaimers**: Disclaimers asserting that inquiries do not establish a doctor-patient relationship.
+10. **Statutory Obligations**: References to India's Digital Personal Data Protection Act, 2023 (DPDP Act) and international regulatory frameworks (HIPAA, GDPR).
+11. **Fabricated Metadata & Badges**: Removed fabricated "Last Updated: November 2026" date and approval badges suggesting that legal review has taken place.
+
+#### C. Active Visitor-Facing Temporary Notice (`src/data/privacy-policy.ts`):
+The route `/privacy-policy` intentionally presents a minimal, transparent notice:
+- **Title**: `Privacy Policy`
+- **Notice Paragraph 1**: *"Privacy Policy information for Pain & Paralysis Clinic is currently awaiting confirmation from the clinic. The policy will be published after the clinic confirms its website data-handling practices and the content has undergone the appropriate review."*
+- **Notice Paragraph 2**: *"Until then, this page does not make representations about the clinic's data collection, storage, sharing, retention, or security practices."*
+
+#### D. Required Clinic Information for Future Full Policy Publication:
+Before publishing a full Privacy Policy, the clinic must authoritatively provide and confirm:
+1. Exact website technical architecture (hosting provider, automated logging, and inquiry storage location).
+2. Outpatient inquiry handling procedures (who receives website form submissions and where inquiries are stored).
+3. Explicit data retention periods for prospective patient contact details.
+4. Third-party vendor services connected to the website (e.g., hosting, email relay, analytics, or map services).
+5. Formal patient data rights and designated contact channel (specific email or physical officer).
+6. Formal review and approval by qualified healthcare legal counsel under applicable Indian laws (DPDP Act 2023).
+
+---
+
+### 3.27 Phase 27 Terms & Conditions Content Accuracy & Evidence Inventory (`src/data/terms-and-conditions.ts`)
+
+#### A. Reference Source & Provenance Audit:
+- **Reference URLs Inspected**:
+  - `https://painandparalysis.com/terms-and-conditions/` (Returned HTTP 404 Not Found)
+  - `https://painandparalysis.com/terms-conditions/` (Returned HTTP 404 Not Found)
+  - `https://painandparalysis.com/terms/` (Returned HTTP 404 Not Found)
+- **Sitemap Analysis**: Inspected `sitemap_index.xml`, `page-sitemap.xml`, and `medilax_footer_build-sitemap.xml`. No Terms & Conditions, Terms of Service, or contractual legal pages are indexed or linked.
+- **Reference Homepage & Footer Analysis**: Only occurrence of "terms" on the reference site was inside an unrendered JavaScript localization string (`msg_not_agree: Please, read and check 'Terms and Conditions'` within `TRX_ADDONS_STORAGE`). No visitor-accessible legal terms link exists in header or footer.
+- **Supply Status**: No clinic-approved Terms & Conditions document or website usage conditions have been provided.
+
+#### B. Content Decision: Path B (No Approved Content Exists):
+In strict accordance with Phase 27 legal content accuracy guidelines, no fabricated terms, obligations, or contractual clauses were generated. The following 11 categories of unverified commitments are explicitly excluded:
+1. **User Obligations & Code of Conduct**: No fabricated user conduct rules or account responsibilities.
+2. **Payment, Billing & Refund Policies**: No fabricated payment terms, fee schedules, or refund rules.
+3. **Cancellation & Rescheduling Policies**: No invented appointment cancellation penalties or timeframes.
+4. **Appointment Booking Conditions**: No fabricated contractual booking obligations or guarantees.
+5. **Medical Disclaimers & Advice Boundaries**: No manufactured doctor-patient disclaimers or clinical scope declarations.
+6. **Liability Limitations & Indemnity**: No unverified limitation of liability or indemnification clauses.
+7. **Intellectual Property Ownership Claims**: No unverified copyright/trademark claims beyond standard copyright notice.
+8. **Governing Law & Jurisdiction Clauses**: No fabricated jurisdiction (e.g., Chennai courts) or dispute resolution forums.
+9. **Dispute Resolution Procedures**: No invented arbitration or mediation procedures.
+10. **Termination Rights**: No fabricated website access termination provisions.
+11. **Data Protection Provisions**: No unverified data handling clauses (handled transparently via `/privacy-policy`).
+
+#### C. Active Visitor-Facing Temporary Notice (`src/data/terms-and-conditions.ts`):
+The route `/terms-and-conditions` displays a minimal, transparent visitor notice:
+- **Title**: `Terms & Conditions`
+- **Notice Paragraph 1**: *"Terms & Conditions for Pain & Paralysis Clinic are currently awaiting confirmation from the clinic. The terms will be published after the clinic provides and approves the applicable website usage conditions and the content undergoes appropriate review."*
+- **Notice Paragraph 2**: *"Until then, this page does not establish or represent the clinic's contractual terms, legal obligations, or conditions of service."*
+
+#### D. Required Clinic/Legal Information for Future Full Terms Publication:
+Before publishing a binding Terms & Conditions document, the clinic must authoritatively provide and confirm:
+1. Clinic's formal legal entity name and registered medical practice credentials.
+2. Applicable website usage conditions and intellectual property policies.
+3. Appointment scheduling, cancellation, and fee policies (if applicable to website inquiries).
+4. Treatment consultation disclaimers and emergency advice policies approved by clinical leadership.
+5. Limitation of liability and governing law/jurisdiction designations reviewed by qualified legal counsel in Tamil Nadu/India.
+
+---
+
+### 3.30 Phase 30 Advanced Knee Decompression Clinical Content & Scope Resolution Matrix
+
+Comprehensive resolution matrix of audited clinic services, specific mechanical traction claims, equipment verification, and service-scope boundaries for Advanced Knee Decompression (`/services/advanced-knee-decompression`):
+
+| Audited Scope / Claim / Content Area | Supporting Documentation Available | Regulatory & Verification Finding | Action Taken in Phase 30 Implementation | Clinic Approval Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Articular Cartilage Regeneration Claims ("Regrows lost cartilage", "Rebuilds knee joint")** | Reference marketing copy | **Prohibited Outcome Guarantee** (Medical regulations strictly prohibit promising tissue regeneration without histological proof) | **Completely Excised**: Framed around mechanical offloading, joint lubrication, and synovial fluid exchange. Added explicit limitation: *"Decompression does not regrow completely eroded hyaline cartilage or rebuild fused joint margins."* | Compliant & Disclaimed. |
+| **2. Surgery Avoidance Guarantees ("Permanent cure", "Avoid knee replacement 100%")** | Marketing claims on reference domains | **Exaggerated Surgical Claims** (Violates ethical guidelines; severe structural deformities require orthopedic consultation) | **Reframed & Disclaimed**: Positioned as conservative, non-invasive outpatient care for mild-to-moderate joint wear. Explicitly stated: *"Knee decompression is not a universal substitute for orthopedic surgery. Severe bone-on-bone deformity, advanced mechanical malalignment, or unstable fractures require orthopedic surgical review."* | Grounded in Clinical Reality. |
+| **3. Non-Diagnostic Physical Scope Notice** | Clinical review standards | **Diagnostic Scope Boundary** (Mechanical traction is a therapeutic modality, not an independent diagnostic tool) | **Mandatory Notice Integrated**: Added prominent notice in Introduction and Conditions sections emphasizing that decompression is an adjunctive therapy and requires clinical assessment and prior imaging (X-rays/MRI) review. | Verified Non-Diagnostic. |
+| **4. Equipment & Traction Mechanism Verification** | Asset `knee-decompression.webp` (455x533) | **Authorized Modality Representation** | **Authentic Equipment Presentation**: Modality photo featured on 2-column layout with badge *"Clinical Modality"*, accompanied by objective description of computerized tensile regulation, ergonomic restraints, and safety override switch. | Fully Authorized. |
+| **5. Candidacy & Contraindications Review** | Orthopedic and traction safety guidelines | **Clinical Safety Screening Boundary** | **Structured 2-Column Screening**: Documented favorable candidate considerations (mild-to-moderate osteoarthritis, stiffness, meniscus strain) alongside clear contraindications (acute fractures, septic arthritis, ligament instability, DVT, bone tumors, loose arthroplasty hardware). | Transparent Safety Screening. |
+| **6. Cross-Service Navigation Integrity** | Service routing architecture | **Clean Bespoke Cross-Navigation** | **Synchronized to Approved Services**: Related section links directly to the 5 approved, bespoke service pages (Spine Decompression, Chiropractor, Physiotherapy, Aquatic Therapy, 3D Gait Analysis) with zero broken or placeholder links. | 100% Verified. |
+
+---
+
+### 3.31 Phase 31 Advanced Laser Treatment Clinical Content & Scope Resolution Matrix
+
+Comprehensive resolution matrix of audited clinic services, photobiomodulation claims, equipment verification, and service-scope boundaries for Advanced Laser Treatment (`/services/advanced-laser-treatment`):
+
+| Audited Scope / Claim / Content Area | Supporting Documentation Available | Regulatory & Verification Finding | Action Taken in Phase 31 Implementation | Clinic Approval Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Universal Anti-Inflammatory & Pain-Relief Claims ("Rapidly eliminates inflammation", "No side effects")** | Reference marketing copy | **Exaggerated Marketing Guarantee** (Medical advertising regulations prohibit claiming 100% cure or zero side effects without qualification) | **Completely Excised & Grounded**: Reframed around photobiomodulation principles, cellular ATP synthesis, and microcirculation. Replaced absolute claims with explicit clinical realities: *"Laser therapy is a supportive outpatient modality; does not guarantee permanent pain resolution or instant structural cure."* | Compliant & Disclaimed. |
+| **2. Surgery Avoidance & Cartilage Regrowth Claims** | General online marketing copy | **Unverified Clinical Claim** (Laser does not regrow destroyed cartilage or replace orthopedic trauma surgery) | **Reframed & Disclaimed**: Explicitly stated in Limitations Notice that laser therapy does not replace orthopedic reconstructive surgery or regrow completely lost cartilage (bone-on-bone ankylosis). | Grounded in Clinical Reality. |
+| **3. Non-Diagnostic Physical Scope Notice** | Clinical review standards | **Diagnostic Scope Boundary** (Therapeutic laser is an adjunctive treatment, not an imaging or diagnostic device) | **Mandatory Notice Integrated**: Added prominent notice in Introduction and Conditions sections emphasizing that laser therapy is an adjunctive therapy and requires clinical assessment and diagnosis before administration. | Verified Non-Diagnostic. |
+| **4. Equipment & Optical Safety Standards** | Asset `laser-therapy.webp` (455x533) | **Authorized Modality Representation** | **Authentic Presentation & Safety Infrastructure**: Modality photo featured on 2-column layout with badge *"Clinical Modality"*, accompanied by objective description of calibrated wavelengths, continuous/pulsed delivery, and mandatory certified protective eyewear for patient and therapist. | Fully Authorized. |
+| **5. Candidacy & Contraindications Review** | Photobiomodulation safety guidelines | **Clinical Safety Screening Boundary** | **Structured 2-Column Screening**: Documented favorable candidate considerations (paraspinal strain, joint stiffness, tendinopathies, sports sprains, nerve irritation) alongside clear contraindications (active malignancies, pregnancy over abdomen/pelvis, direct thyroid irradiation, active bleeding, photosensitizing medications, eye exposure without goggles). | Transparent Safety Screening. |
+| **6. Cross-Service Navigation Integrity** | Service routing architecture | **Clean Bespoke Cross-Navigation** | **Synchronized to Approved Services**: Related section links directly to 4 approved, bespoke service pages (Physiotherapy, Spine Decompression, Knee Decompression, Chiropractor) and all services catalog (`/services`) with zero broken or placeholder links. | 100% Verified. |
+
+---
+
+### 3.35 Phase 35 Pelvic Floor Therapy Clinical Content & Scope Resolution Matrix
+
+Comprehensive resolution matrix of audited clinic services, sensitive clinical claims, internal assessment policies, and service-scope boundaries for Pelvic Floor Therapy (`/services/pelvic-floor-therapy`):
+
+| Audited Scope / Claim / Content Area | Supporting Documentation Available | Regulatory & Verification Finding | Action Taken in Phase 35 Implementation | Clinic Approval Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Universal Strengthening Assumption ("Kegels for everyone")** | Common layperson misconception | **Potentially Harmful Clinical Assumption** (Performing strengthening exercises on hypertonic/spasming pelvic muscles can aggravate pain, worsen urgency, and increase dysfunction) | **Strict Separation of Muscle Tone**: Framed clear clinical distinction between hypotonic (weak) presentations requiring gentle conditioning and hypertonic (tense/overactive) presentations requiring downtraining, diaphragmatic breathing, and release. Added explicit warning banner. | Grounded in Physical Therapy Science. |
+| **2. Internal Examination & Consent Ethics** | Ethical clinical practice guidelines | **Patient Privacy & Consent Boundary** (Internal assessment is invasive and must never be represented as mandatory or routine for every visitor) | **Clear Consent Policy**: Explicitly stated external evaluation (posture, breathing, pelvic alignment) is primary. Clarified internal evaluation is never automatically required, requires full prior explanation and informed voluntary consent, and patients have the absolute right to decline, modify, or stop at any time without compromising care. | Maximum Ethical Protection & Respect. |
+| **3. Gender & Inclusivity Assumptions** | Reference catalog stubs | **Overly Narrow Gender Stereotyping** (Assuming only postpartum women need pelvic therapy) | **Inclusive Scope**: Addressed adults of all genders (men, women, athletic individuals, post-surgical patients) experiencing pelvic floor deconditioning, urinary control challenges, tailbone pain (coccygodynia), or lumbo-pelvic instability. | Inclusive & Respectful. |
+| **4. Continence & Pain Relief Guarantees ("100% cure", "Permanent repair")** | Reference marketing copy | **Exaggerated Marketing Guarantee** (Medical advertising regulations prohibit claiming guaranteed cure of incontinence or chronic pain) | **Conservative Functional Framing**: Highlighted conservative goals (sensorimotor awareness, coordination timing, behavioral strategies, pressure management). Added comprehensive limitations notice clarifying therapy does not replace surgery or guarantee full cessation of symptoms. | Compliant & Disclaimed. |
+| **5. Non-Diagnostic Physical Scope Notice** | Clinical review standards | **Diagnostic Scope Boundary** (Physical therapy does not diagnose visceral infections, urological malignancies, or severe organ prolapse) | **Prominent Disclaimers Integrated**: Added explicit notices emphasizing that acute pain, infection, unexplained bleeding, or structural prolapse requiring surgery must be formally evaluated by treating urologists, gynaecologists, or physicians. | Verified Non-Diagnostic. |
+| **6. Equipment & Adjunct Biofeedback Retraining** | Asset `pelvic-floor.webp` (455x533) | **Authorized Modality Representation** | **Authentic Presentation & Technology Note**: Modality photo featured on 2-column layout with badge *"Pelvic Health & Core"*. Biofeedback framed accurately as an optional, adjunct sensorimotor training tool evaluated individually, not mandatory for all programs. | Fully Authorized. |
+| **7. Cross-Service Navigation Integrity** | Service routing architecture | **Clean Bespoke Cross-Navigation** | **Synchronized to Approved Services**: Related section links directly to 4 approved, bespoke service pages (Advanced Physiotherapy, Biofeedback, High Frequency EMG, Neuro Physiotherapy) and all services catalog (`/services`) with zero broken or placeholder links. | 100% Verified. |
+
+
+
 
 
 

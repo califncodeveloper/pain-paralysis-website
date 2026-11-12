@@ -20,6 +20,8 @@ graph TD
     Root --> Gallery["/gallery (Awards & Accreditations)"]
     Root --> FAQs["/faqs (Patient Questions & Answers)"]
     Root --> Contact["/contact-us (Consultation & Appointments)"]
+    Root --> Privacy["/privacy-policy (Privacy Policy & Data Ethics)"]
+    Root --> Terms["/terms-and-conditions (Terms & Conditions)"]
     
     Services --> S1["/services/advanced-spine-decompression"]
     Services --> S2["/services/advanced-chiropractor"]
@@ -45,6 +47,8 @@ graph TD
 | `https://painandparalysis.com/gallery/` | Gallery — Clinic Awards & Honors | Main Nav (Item 5) | `/gallery` | `src/app/gallery/page.tsx` |
 | `https://painandparalysis.com/faqs/` | FAQs — Frequently Asked Patient Questions | Main Nav (Item 6) | `/faqs` | `src/app/faqs/page.tsx` |
 | `https://painandparalysis.com/contact-us/` | Contact Us — Appointments & Location | Header CTA Button | `/contact-us` | `src/app/contact-us/page.tsx` |
+| `https://painandparalysis.com/privacy-policy/` | Privacy Policy — Patient Data Ethics & Inquiry Governance | Sub-footer Link | `/privacy-policy` | `src/app/privacy-policy/page.tsx` |
+| `https://painandparalysis.com/terms-and-conditions/` | Terms & Conditions — Clinic Terms & Usage Conditions | Sub-footer Link | `/terms-and-conditions` | `src/app/terms-and-conditions/page.tsx` |
 | `https://painandparalysis.com/advanced-spine-decompression/` | Advanced Spine Decompression Detail | Footer & Service Link | `/services/advanced-spine-decompression` | `src/app/services/[slug]/page.tsx` |
 | `https://painandparalysis.com/advanced-chiropractor/` | Advanced Chiropractor Detail | Footer & Service Link | `/services/advanced-chiropractor` | `src/app/services/[slug]/page.tsx` |
 | `https://painandparalysis.com/advanced-physiotherapy/` | Advanced Physiotherapy Detail | Footer & Service Link | `/services/advanced-physiotherapy` | `src/app/services/[slug]/page.tsx` |
@@ -86,6 +90,7 @@ graph TD
   - LinkedIn: `https://www.linkedin.com/feed/`
 - **Sub-footer**:
   - Copyright line: `© 2025 Pain And Paralysis | All Rights Reserved.`
+  - Legal links: `Privacy Policy` (`/privacy-policy`), `Terms & Conditions` (`/terms-and-conditions`)
   - Developer credit: `Developed by Indiafloats.` (`https://indiafloats.in/`)
 
 ---
@@ -257,6 +262,135 @@ Each page emits its verified canonical URL, openGraph metadata, structured JSON-
 - **Hero Slider "Book Appointment" CTAs**: Route to `/contact-us`.
 - **Treatment Detail CTAs**: Route to `/contact-us`.
 - **Footer Contact Links**: Route to `/contact-us` and Google Maps destination.
+
+---
+
+## 9. Privacy Policy Route Architecture (Phase 26 & 26.1)
+
+### 9.1 Canonical Architecture & Route Mapping
+- **Reference Target URL**: `https://painandparalysis.com/privacy-policy/` (Returned HTTP 404 in pre-implementation audit)
+- **Target Canonical Next.js Route**: `/privacy-policy`
+- **File System Handler**: `src/app/privacy-policy/page.tsx`
+- **Component Handlers**:
+  - `PrivacyPolicyHero`: Clean hero banner with neutral clinic notice tag, "Privacy Policy" heading, and semantic breadcrumb trail (`Home` -> `Privacy Policy`). Contains no fabricated last-updated dates, approval badges, or unverified claims.
+  - `PrivacyPolicyView`: Focused reader container (`max-w-[860px]`) ensuring optimal typography and responsive padding.
+  - `PrivacyPolicyContent`: Body content component rendering the transparent visitor-facing placeholder notice:
+    - Informs visitors that Privacy Policy information is awaiting confirmation from the clinic.
+    - Explicitly disclaims representations regarding data collection, storage, sharing, retention, or security practices pending authoritative clinic review.
+    - Excludes unsupported clauses, server-log claims, legal promises, and simulated privacy request channels.
+- **Canonical URL**: Confirmed set to `https://painandparalysis.com/privacy-policy` via static metadata in `src/app/privacy-policy/page.tsx`.
+- **Route Alias Redirect**: `/privacy` permanently redirects (HTTP 308) to `/privacy-policy` via `next.config.ts`.
+
+### 9.2 Navigation Integration
+- **Footer Sub-footer Link**: Integrated into the bottom copyright bar (`Footer.tsx`), directly accessible alongside the copyright notice with visible keyboard focus styling.
+
+---
+
+## 10. Terms & Conditions Route Architecture (Phase 27)
+
+### 10.1 Canonical Architecture & Route Mapping
+- **Reference Target URL**: `https://painandparalysis.com/terms-and-conditions/` (Returned HTTP 404 in pre-implementation audit; `/terms-conditions/` and `/terms/` also returned HTTP 404)
+- **Target Canonical Next.js Route**: `/terms-and-conditions`
+- **File System Handler**: `src/app/terms-and-conditions/page.tsx`
+- **Component Handlers**:
+  - `TermsHero`: Hero banner with neutral clinic notice tag, "Terms & Conditions" heading, and semantic breadcrumb trail (`Home` -> `Terms & Conditions`). Contains no fabricated last-updated dates, approval badges, or unverified claims.
+  - `TermsView`: Focused reader container (`max-w-[860px]`) ensuring optimal typography and responsive padding.
+  - `TermsContent`: Body content component rendering the transparent visitor-facing placeholder notice:
+    - Informs visitors that Terms & Conditions information is awaiting confirmation from the clinic.
+    - Explicitly disclaims representations regarding contractual terms, legal obligations, or conditions of service pending authoritative clinic review.
+    - Excludes unverified user conduct rules, refund commitments, cancellation fees, liability disclaimers, or dispute resolution clauses.
+- **Canonical URL**: Confirmed set to `https://painandparalysis.com/terms-and-conditions` via static metadata in `src/app/terms-and-conditions/page.tsx`.
+- **Route Alias Redirects**: `/terms` and `/terms-conditions` permanently redirect (HTTP 308) to `/terms-and-conditions` via `next.config.ts`.
+
+### 10.2 Navigation Integration
+- **Footer Sub-footer Link**: Integrated into the bottom copyright bar (`Footer.tsx`), directly accessible alongside the Privacy Policy link and copyright notice with visible keyboard focus styling.
+
+---
+
+## 12. Legacy Redirect Hardening & Service Route Corrections (Phase 29)
+
+### 12.1 Canonical Service Routes Specification
+
+All 11 clinical services offered by Pain & Paralysis Clinic reside strictly under the canonical `/services/[slug]` route namespace:
+
+| # | Service Name | Canonical Route | Implementation Component | Card Route (`services.ts`) | Status |
+|---|---|---|---|---|---|
+| 1 | Advanced Spine Decompression | `/services/advanced-spine-decompression` | `<SpineDecompressionDetail />` | `/services/advanced-spine-decompression` | Fully Implemented (Bespoke) |
+| 2 | Advanced Chiropractor | `/services/advanced-chiropractor` | `<ChiropractorDetail />` | `/services/advanced-chiropractor` | Fully Implemented (Bespoke) |
+| 3 | Advanced Physiotherapy | `/services/advanced-physiotherapy` | `<PhysiotherapyDetail />` | `/services/advanced-physiotherapy` | Fully Implemented (Bespoke) |
+| 4 | Advanced Aquatic Therapy | `/services/advanced-aquatic-therapy` | `<AquaticTherapyDetail />` | `/services/advanced-aquatic-therapy` | Fully Implemented (Bespoke) |
+| 5 | Advanced 3D Gait Analysis | `/services/advanced-3d-gait-analysis` | `<GaitAnalysisDetail />` | `/services/advanced-3d-gait-analysis` | Fully Implemented (Bespoke) |
+| 6 | Advanced Knee Decompression | `/services/advanced-knee-decompression` | `<KneeDecompressionDetail />` | `/services/advanced-knee-decompression` | Fully Implemented (Bespoke - Phase 30) |
+| 7 | Advanced Laser Treatment | `/services/advanced-laser-treatment` | `<LaserTreatmentDetail />` | `/services/advanced-laser-treatment` | Fully Implemented (Bespoke - Phase 31) |
+| 8 | High Frequency EMG | `/services/high-frequency-emg` | `<HighFrequencyEMGDetail />` | `/services/high-frequency-emg` | Fully Implemented (Bespoke - Phase 32) |
+| 9 | Biofeedback | `/services/biofeedback` | `<BiofeedbackDetail />` | `/services/biofeedback` | Fully Implemented (Bespoke - Phase 33) |
+| 10 | Neuro Physiotherapy | `/services/neuro-physiotherapy` | `<NeuroPhysiotherapyDetail />` | `/services/neuro-physiotherapy` | Fully Implemented (Bespoke - Phase 34) |
+| 11 | Pelvic Floor | `/services/pelvic-floor-therapy` | `<PelvicFloorDetail />` | `/services/pelvic-floor-therapy` | Fully Implemented (Bespoke - Phase 35) |
+
+### 12.2 Verified Permanent Redirects Implemented (`next.config.ts`)
+
+In Phase 29, the verified legacy URL mappings from the Phase 28 audit were added to `next.config.ts` using HTTP 308 permanent redirects:
+
+| Incoming Legacy URL Pattern | HTTP Status | Canonical Destination Route | Classification & Purpose |
+|---|---|---|---|
+| `/physiotherapy-centre` | 308 Permanent | `/services/advanced-physiotherapy` | SEO landing page consolidation |
+| `/physiotherapy-chennai` | 308 Permanent | `/services/advanced-physiotherapy` | Local SEO duplicate consolidation |
+| `/chiropractic-treatment-centre` | 308 Permanent | `/services/advanced-chiropractor` | Local SEO duplicate consolidation |
+| `/aquatic-therapy` | 308 Permanent | `/services/advanced-aquatic-therapy` | Local SEO duplicate consolidation |
+| `/advanced-spine-decompression-2` | 308 Permanent | `/services/advanced-spine-decompression` | WordPress duplicate page redirect |
+| `/emg-therapy` | 308 Permanent | `/services/high-frequency-emg` | Legacy shorthand therapy slug redirect |
+| `/biofeedback-therapy` | 308 Permanent | `/services/biofeedback` | Legacy therapy slug redirect |
+| `/neuro-physiotherapy-2` | 308 Permanent | `/services/neuro-physiotherapy` | WordPress duplicate page redirect |
+| `/neuro-physiotherapy-3` | 308 Permanent | `/services/neuro-physiotherapy` | WordPress duplicate page redirect |
+| `/all-services` | 308 Permanent | `/services` | Medilax CPT theme archive template redirect |
+| `/all-services/3d-gait-analysis` | 308 Permanent | `/services/advanced-3d-gait-analysis` | Legacy empty Medilax CPT item redirect |
+| `/all-services/advanced-spine-decompression` | 308 Permanent | `/services/advanced-spine-decompression` | Legacy Medilax CPT item redirect |
+| `/all-services/chiropractor` | 308 Permanent | `/services/advanced-chiropractor` | Legacy Medilax CPT item redirect |
+| `/all-services/aquatic-therapy` | 308 Permanent | `/services/advanced-aquatic-therapy` | Legacy Medilax CPT item redirect |
+| `/all-services/:slug*` | 308 Permanent | `/services` | Fallback for unknown/unsupported CPT URLs to canonical catalog (prevents invalid `/services/[slug]` 404s) |
+| `/appointment` | 308 Permanent | `/contact-us` | Medilax demo appointment page alias |
+| `/appointments` | 308 Permanent | `/contact-us` | Medilax demo appointments page alias |
+
+### 12.3 Physiotherapy Centre Content Preservation for Future Consolidation
+
+The legacy URL `https://painandparalysis.com/physiotherapy-centre/` was permanently redirected to `/services/advanced-physiotherapy`. To prevent silent content loss, the unique educational elements identified in the Phase 28 audit have been recorded for Phase 36 (Physiotherapy Content Consolidation):
+
+1. **Structured Physiotherapy Services Table**:
+   - Compares manual physiotherapy, electrotherapy, exercise therapy, and specialized modalities with target indications and recovery timeframes.
+2. **First Session Expectations Guide**:
+   - Outlines intake history review, physical mobility assessment, diagnostic tests review, and baseline milestone establishment.
+3. **Factors Influencing Physiotherapy Cost**:
+   - Transparent explanation of outpatient therapy pricing drivers (session duration, specialized equipment, condition complexity, recovery frequency).
+4. **5 Specialized Patient FAQs**:
+   - Clinical FAQs regarding treatment duration, referral requirements, clothing recommendations, post-session soreness management, and home exercise adherence.
+5. **Medical Content Safeguards**:
+   - Unsupported marketing claims regarding "robotic-assisted physiotherapy that eliminates human error" or automated surgical robotics are explicitly flagged as requiring clinical verification before integration.
+
+### 12.4 Service Overview & Home Card Navigation Corrections
+
+1. **`src/data/services.ts`**:
+   - Services 6–11 updated from `#` anchors (`/services#slug`) to canonical routes (`/services/[slug]`).
+2. **`src/components/services/ServicesOverviewCard.tsx`**:
+   - Link destination bound directly to `service.route` (`/services/[slug]`).
+3. **`src/components/home/ServiceCard.tsx`**:
+   - Link destination bound directly to `service.route` (`/services/[slug]`).
+4. **Related Service Components**:
+   - Canonical links validated in `SpineDecompressionRelated`, `ChiropractorRelated`, `PhysiotherapyRelated`, `AquaticTherapyRelated`, and `GaitAnalysisRelated`.
+
+### 12.5 Unresolved Mappings & Future Phasing
+
+All 12 candidate redirect categories identified in Phase 28 have been 100% resolved and verified. No unmapped active clinic pages remain. The planned future roadmap proceeds as follows:
+- **Phase 30**: Advanced Knee Decompression bespoke detail page (`/services/advanced-knee-decompression`) — **COMPLETED** (`<KneeDecompressionDetail />`).
+- **Phase 31**: Advanced Laser Treatment bespoke detail page (`/services/advanced-laser-treatment`) — **COMPLETED** (`<LaserTreatmentDetail />`).
+- **Phase 32**: High Frequency EMG bespoke detail page (`/services/high-frequency-emg`) — **COMPLETED** (`<HighFrequencyEMGDetail />`).
+- **Phase 33**: Biofeedback bespoke detail page (`/services/biofeedback`) — **COMPLETED** (`<BiofeedbackDetail />`).
+- **Phase 34**: Neuro Physiotherapy bespoke detail page (`/services/neuro-physiotherapy`) — **COMPLETED** (`<NeuroPhysiotherapyDetail />`).
+- **Phase 35**: Pelvic Floor Therapy bespoke detail page (`/services/pelvic-floor-therapy`) — **COMPLETED** (`<PelvicFloorDetail />`).
+- **Phase 36**: Physiotherapy Content Consolidation (integrating preserved table and FAQs into `/services/advanced-physiotherapy`).
+
+
+
+
 
 
 

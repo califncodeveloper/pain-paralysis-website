@@ -118,3 +118,67 @@ Comprehensive asset inventory for `/gallery` following Phase 24.2 genuine WebP c
 3. **Synchronized Aliases**: Both `public/images/gallery/` and `public/images/awards/` directories were converted and updated to identical genuine WebP assets.
 4. **Zero 404s**: Every project reference resolves successfully to a verified WebP binary asset.
 
+---
+
+## 6. Phase 30 Advanced Knee Decompression Asset Deployment
+
+| Deployment Location | Asset Path | Dimensions | Role & Attribution | Compliance & Alt Text |
+| :--- | :--- | :--- | :--- | :--- |
+| **Hero Background Overlay** | `public/images/hero/hero-slide-03.webp` | 1920 × 929 px | Ambient background texture (20% opacity, mix-blend-overlay) | *"Pain and Paralysis Clinic advanced joint therapy consultation room"* |
+| **Modality Profile Showcase** | `public/images/services/knee-decompression.webp` | 455 × 533 px | Authentic clinical modality photo | *"Advanced Knee Decompression specialized mechanical traction modality at Pain and Paralysis Clinic"* (Tagged with "Clinical Modality" & equipment capability callout) |
+| **Related Service Cards (4 items)** | `public/images/services/3d-gait-analysis.webp`<br>`public/images/services/spine-decompression-hero.webp`<br>`public/images/services/physiotherapy.webp`<br>`public/images/services/aquatic-therapy.webp` | 455 × 320 px (rendered) | Cross-navigation preview banners | Authentic modality photos linking strictly to approved Phase 18, 20, 21, and 22 bespoke pages |
+
+---
+
+## 7. Phase 31 Advanced Laser Treatment Asset Deployment
+
+| Deployment Location | Asset Path | Dimensions | Role & Attribution | Compliance & Alt Text |
+| :--- | :--- | :--- | :--- | :--- |
+| **Hero Background Overlay** | `public/images/hero/slide-recovery.webp` | 1920 × 929 px | Ambient background texture (20% opacity, mix-blend-overlay) | *"Pain and Paralysis Clinic advanced therapeutic laser consultation room"* |
+| **Modality Profile Showcase** | `public/images/services/laser-therapy.webp` | 455 × 533 px | Authentic clinical modality photo | *"Advanced Laser Treatment therapeutic photobiomodulation modality at Pain and Paralysis Clinic"* (Tagged with "Clinical Modality" & equipment capability callout) |
+| **Related Service Cards (4 items)** | `public/images/services/physiotherapy.webp`<br>`public/images/services/spine-decompression-hero.webp`<br>`public/images/services/knee-decompression.webp`<br>`public/images/services/chiropractic.webp` | 455 × 320 px (rendered) | Cross-navigation preview banners | Authentic modality photos linking strictly to approved Phase 18, 19, 20, and 30 bespoke pages |
+
+---
+
+## 8. Phase 32 High Frequency EMG Asset Deployment
+
+| Deployment Location | Asset Path | Dimensions | Role & Attribution | Compliance & Alt Text |
+| :--- | :--- | :--- | :--- | :--- |
+| **Hero Background Overlay** | `public/images/hero/hero-slide-01.webp` | 1920 × 929 px | Ambient background texture (20% opacity, mix-blend-overlay) | *"Pain and Paralysis Clinic advanced clinical consultation and assessment room"* |
+| **Modality Profile Showcase** | `public/images/services/emg-therapy.webp` | 455 × 533 px | Authentic clinical equipment photo | *"High Frequency EMG surface electromyography assessment instrumentation at Pain and Paralysis Clinic Chennai"* (Tagged with "Clinical Equipment" & bioelectric instrumentation callout) |
+| **Related Service Cards (4 items)** | `public/images/services/physiotherapy.webp`<br>`public/images/services/laser-therapy.webp`<br>`public/images/services/spine-decompression-hero.webp`<br>`public/images/services/knee-decompression.webp` | 455 × 320 px (rendered) | Cross-navigation preview banners | Authentic modality photos linking strictly to approved Phase 18, 20, 30, and 31 bespoke pages |
+
+---
+
+## 9. Phase 33 Biofeedback Asset Deployment
+
+| Deployment Location | Asset Path | Dimensions | Role & Attribution | Compliance & Alt Text |
+| :--- | :--- | :--- | :--- | :--- |
+| **Hero Background Overlay** | `public/images/hero/hero-slide-01.webp` | 1920 × 929 px | Ambient background texture (20% opacity, mix-blend-overlay) | *"Pain and Paralysis Clinic advanced clinical consultation and assessment room"* |
+| **Modality Profile Showcase** | `public/images/services/biofeedback.webp` | 455 × 533 px | Authentic clinical service photo (`bio-feedback.webp`) | *"Biofeedback clinical consultation and neuromuscular sensor retraining at Pain and Paralysis Clinic Chennai"* (Tagged with "Neuromuscular Retraining" & sensor-guided learning callout) |
+| **Related Service Cards (4 items)** | `public/images/services/emg-therapy.webp`<br>`public/images/services/physiotherapy.webp`<br>`public/images/services/laser-therapy.webp`<br>`public/images/services/chiropractic.webp` | 455 × 320 px (rendered) | Cross-navigation preview banners | Authentic modality photos linking strictly to approved Phase 19, 20, 31, and 32 bespoke pages |
+
+---
+
+## 10. Phase 34 Neuro Physiotherapy Asset Deployment
+
+| Deployment Location | Asset Path | Dimensions | Role & Attribution | Compliance & Alt Text |
+| :--- | :--- | :--- | :--- | :--- |
+| **Hero Background Overlay** | `public/images/hero/hero-slide-01.webp` | 1920 × 929 px | Ambient background texture (20% opacity, mix-blend-overlay) | *"Pain and Paralysis Clinic clinical consultation and neurological rehabilitation facility"* |
+| **Modality Profile Showcase** | `public/images/services/neuro-physiotherapy.webp` | 455 × 533 px | Authentic clinical service photo (`neuro.webp`, 276,642 B) | *"Neuro Physiotherapy clinical consultation and neurological rehabilitation at Pain and Paralysis Clinic Chennai"* (Tagged with "Neurological Rehabilitation" & functional movement callout) |
+| **Related Service Cards (4 items)** | `public/images/services/physiotherapy.webp`<br>`public/images/services/biofeedback.webp`<br>`public/images/services/emg-therapy.webp`<br>`public/images/services/chiropractic.webp` | 455 × 320 px (rendered) | Cross-navigation preview banners | Authentic modality photos linking strictly to approved Phase 19, 20, 32, and 33 bespoke pages |
+
+---
+
+## 11. Phase 35 Pelvic Floor Therapy Asset Deployment
+
+| Deployment Location | Asset Path | Dimensions | Role & Attribution | Compliance & Alt Text |
+| :--- | :--- | :--- | :--- | :--- |
+| **Hero Background Overlay** | `public/images/hero/hero-slide-01.webp` | 1920 × 929 px | Ambient background texture (20% opacity, mix-blend-overlay) | *"Pain and Paralysis Clinic clinical consultation and outpatient rehabilitation facility"* |
+| **Modality Profile Showcase** | `public/images/services/pelvic-floor.webp` | 455 × 533 px | Authentic clinical service photo (`pelvic-floor.webp`, 145,448 B) | *"Pelvic Floor Therapy clinical consultation and rehabilitation at Pain and Paralysis Clinic Chennai"* (Tagged with "Pelvic Health & Core" & respectful care callout) |
+| **Related Service Cards (4 items)** | `public/images/services/physiotherapy.webp`<br>`public/images/services/biofeedback.webp`<br>`public/images/services/emg-therapy.webp`<br>`public/images/services/neuro-physiotherapy.webp` | 455 × 320 px (rendered) | Cross-navigation preview banners | Authentic modality photos linking strictly to approved Phase 20, 32, 33, and 34 bespoke pages |
+
+
+
+
+

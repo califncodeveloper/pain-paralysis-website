@@ -152,6 +152,27 @@ This checklist defines every interactive component observed on `https://painandp
 | **Get Directions Button** (`ContactOfficeInfo.tsx`, `ContactLocationMap.tsx`) | Click / Tap | Button transitions from primary teal to marine teal. | Opens verified clinic coordinates (`13.0182, 80.1415`) directly in Google Maps in new tab (`target="_blank"`, `rel="noopener noreferrer"`). |
 | **Google Maps Embed Frame** (`ContactLocationMap.tsx`) | Pan / Zoom / Interact | Interactive Google Maps iframe. | Accessible iframe with descriptive `title` and `aria-label`; lazy-loaded for performance. |
 
+---
+
+## 9. Privacy Policy Page Interactions (`/privacy-policy`, Phase 26 & 26.1)
+
+| Interactive Element | Trigger / Event | Visual & CSS Feedback | Functional & Accessibility Behavior |
+| :--- | :--- | :--- | :--- |
+| **Breadcrumb Navigation** (`PrivacyPolicyHero.tsx`) | Click / Tap | Link transitions to accent cyan (`#07CCEC`), visible keyboard focus ring. | Semantic breadcrumb `nav[aria-label="Breadcrumbs"]` with `aria-current="page"` on current route. Focus-visible outline for keyboard navigation. |
+| **Footer Sub-footer Privacy Link** (`Footer.tsx`) | Click / Tap | Underlined text transitions to primary teal; visible focus ring on Tab. | Accessible Next.js Link routing to canonical `/privacy-policy` with `focus-visible:ring-2`. |
+
+---
+
+## 10. Terms & Conditions Page Interactions (`/terms-and-conditions`, Phase 27)
+
+| Interactive Element | Trigger / Event | Visual & CSS Feedback | Functional & Accessibility Behavior |
+| :--- | :--- | :--- | :--- |
+| **Breadcrumb Navigation** (`TermsHero.tsx`) | Click / Tap | Home link transitions to accent cyan (`#07CCEC`); visible keyboard focus ring (`ring-2 ring-accent`). | Semantic breadcrumb `nav[aria-label="Breadcrumbs"]` with `aria-current="page"` on Terms & Conditions. Focus-visible outline for keyboard users. |
+| **Footer Sub-footer Terms Link** (`Footer.tsx`) | Click / Tap | Underlined text transitions to primary teal (`#1CAAB6`); visible focus ring on Tab (`focus-visible:ring-2 focus-visible:ring-primary`). | Accessible Next.js Link routing to canonical `/terms-and-conditions`. |
+| **Redirect Aliases** (`next.config.ts`) | Direct URL request (`/terms`, `/terms-conditions`) | Browser navigates seamlessly with HTTP 308 permanent redirect. | Next.js server-side permanent redirects resolving to canonical `/terms-and-conditions`. |
+
+
+
 
 
 
