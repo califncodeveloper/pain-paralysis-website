@@ -2,6 +2,21 @@ import type { ServiceOption } from "@/types";
 
 export const contactServiceOptions: ServiceOption[] = [
   {
+    id: "inpatient-care",
+    label: "Inpatient Rehabilitation & Hospital Care",
+    slug: "inpatient-care",
+  },
+  {
+    id: "robotic-neuro-rehabilitation",
+    label: "Robotic Neuro Rehabilitation",
+    slug: "robotic-neuro-rehabilitation",
+  },
+  {
+    id: "pain-management",
+    label: "Comprehensive Pain Management",
+    slug: "pain-management",
+  },
+  {
     id: "advanced-spine-decompression",
     label: "Advanced Spine Decompression",
     slug: "advanced-spine-decompression",
@@ -10,6 +25,11 @@ export const contactServiceOptions: ServiceOption[] = [
     id: "advanced-chiropractor",
     label: "Advanced Chiropractor",
     slug: "advanced-chiropractor",
+  },
+  {
+    id: "neuro-physiotherapy",
+    label: "Neuro Physiotherapy",
+    slug: "neuro-physiotherapy",
   },
   {
     id: "advanced-physiotherapy",
@@ -28,25 +48,25 @@ export const contactServiceOptions: ServiceOption[] = [
   },
   {
     id: "other-consultation",
-    label: "Other Specialized Rehabilitation / Consultation",
+    label: "Other Hospital Service / Clinical Consultation",
   },
 ];
 
 export const contactIntroPoints = [
   {
-    title: "Outpatient Consultation",
+    title: "Hospital & Inpatient Inquiries",
     description:
-      "General consultations regarding non-surgical spine decompression, chiropractic care, and physical therapy services cataloged at the clinic.",
+      "Direct admissions and consultations for our 25-bed, 24-hour hospital facility in Virugambakkam, Chennai.",
   },
   {
-    title: "In-Person Assessment",
+    title: "In-Person Clinical Assessment",
     description:
-      "Clinical consultations occur on-site at the Madhanandapuram facility to review personal case history and discuss conservative care options.",
+      "Clinical consultations occur on-site at our Virugambakkam hospital to review personal case history, imaging reports, and discuss tailored care options.",
   },
   {
-    title: "Practice Scope",
+    title: "Hospital & Rehabilitation Scope",
     description:
-      "Non-surgical musculoskeletal care designed to address postural strain, joint mobility restrictions, and physical rehabilitation.",
+      "Comprehensive hospital inpatient care, robotic neurological rehabilitation, computerized spinal decompression, and conservative pain management.",
   },
 ];
 

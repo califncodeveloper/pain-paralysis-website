@@ -16,25 +16,25 @@ import { Container } from "@/components/ui";
 export const ArticlesHero: React.FC = () => {
   return (
     <section
-      className="relative w-full overflow-hidden bg-secondary pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 lg:pt-40 lg:pb-24 text-white border-b border-white/10"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#0a3134] via-[#105156] to-[#0d3f43] pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 lg:pt-40 lg:pb-24 text-white border-b border-white/10"
       aria-label="Tips and Articles Hero Banner"
     >
       {/* Background Clinical Texture & Subtle Gradient Vignette */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
           src="/images/hero/hero-slide-03.webp"
           alt="Pain and Paralysis Clinic health education and clinical library background"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-20 mix-blend-overlay"
+          className="object-cover object-center opacity-25 mix-blend-overlay"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#1C1C1C]/90 via-secondary/95 to-secondary"
+          className="absolute inset-0 bg-gradient-to-b from-[#0a3134]/95 via-secondary/90 to-secondary"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/25 via-transparent to-transparent"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/30 via-transparent to-transparent"
           aria-hidden="true"
         />
       </div>
@@ -42,40 +42,40 @@ export const ArticlesHero: React.FC = () => {
       <Container size="wide" className="relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Eyebrow Clinical Badge */}
-          <span className="section-badge mb-3 sm:mb-4 font-semibold tracking-[0.14em] uppercase text-xs sm:text-sm text-accent inline-flex items-center gap-2">
+          <span className="mb-3 sm:mb-4 font-semibold tracking-[0.14em] uppercase text-xs sm:text-sm text-accent inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
             <BookOpen className="w-4 h-4 text-accent" aria-hidden="true" />
-            Helpful Tips for a Healthier You
+            EVIDENCE GUIDANCE &amp; REHABILITATION KNOWLEDGE
           </span>
 
           {/* Primary Page Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-normal tracking-wide text-white leading-tight mb-4 sm:mb-5">
-            Tips &amp; Article
+          <h1 className="font-heading font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.18] tracking-tight text-white mb-4 sm:mb-5">
+            Clinical Health Guides &amp; Insights
           </h1>
 
           {/* Neutral Educational Description */}
-          <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-sans max-w-2xl mx-auto mb-6 sm:mb-8 font-light">
+          <p className="text-sm sm:text-base md:text-lg text-teal-100/90 leading-relaxed font-sans max-w-2xl mx-auto mb-6 sm:mb-8 font-normal">
             Evidence-based health guides, non-surgical spine care insights, and clinical rehabilitation resources developed by our Chennai therapy specialists.
           </p>
 
           {/* Accessible Semantic Breadcrumb Navigation */}
           <nav
             aria-label="Breadcrumb"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs sm:text-sm text-slate-300"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs sm:text-sm text-white/90"
           >
             <ol className="flex items-center gap-2 list-none p-0 m-0">
               <li className="inline-flex items-center">
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-1.5 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+                  className="inline-flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors duration-200"
                 >
                   <Home className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
                   <span>Home</span>
                 </Link>
               </li>
-              <li className="inline-flex items-center text-slate-400" aria-hidden="true">
+              <li className="inline-flex items-center text-white/40" aria-hidden="true">
                 <ChevronRight className="w-3.5 h-3.5" />
               </li>
-              <li className="inline-flex items-center font-medium text-white" aria-current="page">
+              <li className="inline-flex items-center font-semibold text-accent" aria-current="page">
                 <span>Tips &amp; Article</span>
               </li>
             </ol>

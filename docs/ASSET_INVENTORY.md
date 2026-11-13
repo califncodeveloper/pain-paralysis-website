@@ -120,6 +120,19 @@ Comprehensive asset inventory for `/gallery` following Phase 24.2 genuine WebP c
 
 ---
 
+## 6. Phase 37 Hospital Services & Robotic Rehabilitation Asset Deployment
+
+In accordance with strict client guidelines against stock photos falsely representing hospital inpatient facilities or unverified robotic brands, existing authentic clinic visual assets were carefully mapped:
+
+| Service / Context | Asset Deployed | Dimensions | Authentic Subject Matter | Compliance & Integrity Policy |
+| :--- | :--- | :--- | :--- | :--- |
+| **Inpatient Rehabilitation Hero & Intro** | `public/images/common/clinic-exterior.webp`<br>`public/images/hero/hero-slide-02.webp` | 743 × 361 px<br>1920 × 929 px | Authentic reception / clinical entrance and patient recovery context | No stock hospital rooms or false ICU beds depicted. Focus is on clinical admission and recovery. Flagged for authentic room photos. |
+| **Robotic Neuro Rehabilitation Hero & Tech** | `public/images/awards/award-robotic-physio.webp`<br>`public/images/hero/hero-slide-01.webp` | 1024 × 1024 px<br>1920 × 929 px | Authentic award trophy honoring clinic robotic physiotherapy & clinical posture | No generic or unrelated robotic exoskeleton images used. Preserves authentic clinic documentation. |
+| **Comprehensive Pain Management Hero & Intro** | `public/images/services/care-spine.webp`<br>`public/images/hero/hero-slide-03.webp` | 500 × 500 px<br>1920 × 929 px | Authentic spinal rehabilitation visual & active therapy ambient background | Conservative physical therapy representation without unverified medical procedures. |
+| **Hospital Location & Trust Highlights** | `public/images/common/clinic-exterior.webp` | 743 × 361 px | Authentic clinic facility building | Accurately represents the Virugambakkam facility without stock replacement. |
+
+---
+
 ## 6. Phase 30 Advanced Knee Decompression Asset Deployment
 
 | Deployment Location | Asset Path | Dimensions | Role & Attribution | Compliance & Alt Text |

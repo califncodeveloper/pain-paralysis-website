@@ -1,16 +1,16 @@
 "use client";
 
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { X, Phone, Clock, MapPin } from "lucide-react";
+import { X, Phone, Clock, MapPin, ChevronDown, Calendar, ArrowRight, ShieldCheck } from "lucide-react";
 import {
   mainNavigation,
   headerConfig,
   clinicContactInfo,
-  socialLinks,
 } from "@/data/navigation";
+import { Button } from "@/components/ui";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -19,6 +19,7 @@ interface MobileMenuProps {
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
+  const [isServicesExpanded, setIsServicesExpanded] = useState(false);
 
   // Handle ESC key press to close drawer
   const handleKeyDown = useCallback(
@@ -81,14 +82,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         role="dialog"
         aria-modal="true"
         aria-label="Mobile Navigation Menu"
-        className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-[320px] sm:max-w-[360px] bg-white shadow-2xl flex flex-col transition-all duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-[340px] sm:max-w-[380px] bg-white shadow-2xl flex flex-col transition-all duration-300 ease-in-out ${
           isOpen
             ? "translate-x-0 opacity-100"
-            : "translate-x-full opacity-0 pointer-events-none hidden"
+            : "translate-x-full opacity-0 pointer-events-none"
         }`}
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-black/10">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 bg-[#F8FBFB]">
           <Link
             href="/"
             onClick={onClose}
@@ -99,41 +100,116 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               src="/images/logo/logo-color.webp"
               alt="Pain and Paralysis Clinic"
               width={180}
-              height={51}
-              priority
-              className="h-10 w-auto object-contain"
+              height={50}
+              className="h-9 w-auto object-contain"
             />
           </Link>
+
           <button
             type="button"
             onClick={onClose}
             aria-label="Close navigation menu"
-            className="p-2 rounded-md text-secondary hover:text-primary hover:bg-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-white text-secondary hover:bg-black/5 hover:text-primary transition-colors border border-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5 stroke-current" />
           </button>
         </div>
 
-        {/* Drawer Body (Scrollable) */}
-        <div className="flex-1 overflow-y-auto px-6 py-5 space-y-6">
-          {/* Main Navigation Links */}
-          <nav aria-label="Mobile Links">
-            <ul className="space-y-1">
+        {/* Drawer Body - Scrollable Navigation */}
+        <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
+          {/* Main Navigation Stack */}
+          <nav aria-label="Mobile Navigation">
+            <ul className="space-y-1.5 m-0 p-0 list-none">
               {mainNavigation.map((item) => {
                 const active = isLinkActive(item.href);
+                const isServices = item.href === "/services";
+
+                if (isServices) {
+                  return (
+                    <li key={item.href} className="border-b border-black/5 pb-1">
+                      <div className="flex items-center justify-between py-2">
+                        <Link
+                          href={item.href}
+                          onClick={onClose}
+                          aria-current={active ? "page" : undefined}
+                          className={`text-base font-medium transition-colors ${
+                            active
+                              ? "text-primary font-semibold"
+                              : "text-secondary hover:text-primary"
+                          }`}
+                        >
+                          {item.title}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => setIsServicesExpanded(!isServicesExpanded)}
+                          className="p-1 text-secondary/70 hover:text-primary transition-colors"
+                          aria-label="Toggle all 14 services submenu"
+                        >
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform duration-200 ${
+                              isServicesExpanded ? "rotate-180 text-primary" : ""
+                            }`}
+                          />
+                        </button>
+                      </div>
+
+                      {/* Expandable Services Accordion */}
+                      {isServicesExpanded && (
+                        <div className="pl-3 pr-1 py-2 my-1 space-y-1 bg-[#F8FBFB] rounded-xl border border-black/5">
+                          <Link
+                            href="/services/inpatient-care"
+                            onClick={onClose}
+                            className="flex items-center justify-between text-xs font-medium text-secondary hover:text-primary py-1.5 px-2 rounded hover:bg-white transition-colors"
+                          >
+                            <span>Hospital &amp; Inpatient Care</span>
+                            <ArrowRight className="w-3 h-3 text-primary/40 shrink-0" />
+                          </Link>
+                          <Link
+                            href="/services/robotic-neuro-rehabilitation"
+                            onClick={onClose}
+                            className="flex items-center justify-between text-xs font-medium text-secondary hover:text-primary py-1.5 px-2 rounded hover:bg-white transition-colors"
+                          >
+                            <span>Neurological &amp; Advanced Rehabilitation</span>
+                            <ArrowRight className="w-3 h-3 text-primary/40 shrink-0" />
+                          </Link>
+                          <Link
+                            href="/services/pain-management"
+                            onClick={onClose}
+                            className="flex items-center justify-between text-xs font-medium text-secondary hover:text-primary py-1.5 px-2 rounded hover:bg-white transition-colors"
+                          >
+                            <span>Pain Management &amp; Spine Care</span>
+                            <ArrowRight className="w-3 h-3 text-primary/40 shrink-0" />
+                          </Link>
+                          <div className="pt-1 mt-1 border-t border-black/5">
+                            <Link
+                              href="/services"
+                              onClick={onClose}
+                              className="flex items-center justify-between text-xs font-semibold text-primary py-1.5 px-2 rounded hover:bg-primary/5 transition-colors"
+                            >
+                              <span>View All Services</span>
+                              <ArrowRight className="w-3 h-3 text-primary shrink-0" />
+                            </Link>
+                          </div>
+                        </div>
+                      )}
+                    </li>
+                  );
+                }
+
                 return (
-                  <li key={item.href}>
+                  <li key={item.href} className="border-b border-black/5 pb-1">
                     <Link
                       href={item.href}
                       onClick={onClose}
                       aria-current={active ? "page" : undefined}
-                      className={`flex items-center justify-between px-4 py-3 rounded-md text-[15px] font-medium transition-colors ${
+                      className={`block py-2.5 text-base font-medium transition-colors ${
                         active
-                          ? "bg-primary/10 text-primary font-semibold border-l-4 border-primary"
-                          : "text-secondary hover:text-primary hover:bg-surface"
+                          ? "text-primary font-semibold pl-2 border-l-2 border-primary"
+                          : "text-secondary hover:text-primary"
                       }`}
                     >
-                      <span>{item.title}</span>
+                      {item.title}
                     </Link>
                   </li>
                 );
@@ -141,119 +217,47 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             </ul>
           </nav>
 
-          {/* CTA Action */}
-          <div className="pt-2">
-            <Link
+          {/* Quick CTA Actions */}
+          <div className="space-y-3 pt-2">
+            <Button
               href={headerConfig.ctaButton.href}
               onClick={onClose}
-              className="btn btn-primary w-full text-center py-3.5 shadow-sm text-[15px] font-semibold"
+              variant="primary"
+              size="md"
+              rounded="full"
+              icon={<Calendar className="w-4 h-4" />}
+              iconPosition="left"
+              className="w-full text-center justify-center font-semibold shadow-md"
             >
               {headerConfig.ctaButton.label}
-            </Link>
-          </div>
+            </Button>
 
-          {/* Contact Details & Quick Info */}
-          <div className="border-t border-black/10 pt-5 space-y-3.5">
-            <h3 className="font-heading text-sm text-secondary tracking-wider uppercase">
-              Quick Contact
-            </h3>
-
-            {/* Telephone */}
             <a
               href={`tel:${clinicContactInfo.phone}`}
-              className="flex items-center gap-3 text-sm text-text hover:text-primary transition-colors group"
-              aria-label={`Call Pain and Paralysis Clinic at ${clinicContactInfo.phoneDisplay}`}
+              className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-full border border-primary/30 text-secondary hover:bg-primary/5 text-sm font-semibold transition-colors"
             >
-              <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                <Phone className="w-4 h-4" />
-              </div>
-              <span className="font-medium text-text group-hover:text-primary transition-colors">
-                {clinicContactInfo.phoneDisplay}
-              </span>
-            </a>
-
-            {/* Operating Hours */}
-            <div className="flex items-center gap-3 text-sm text-text/80">
-              <div className="w-8 h-8 rounded-full bg-surface text-secondary flex items-center justify-center shrink-0">
-                <Clock className="w-4 h-4 text-primary" />
-              </div>
-              <span className="text-xs sm:text-sm">
-                {clinicContactInfo.workingHours}
-              </span>
-            </div>
-
-            {/* Address */}
-            <a
-              href={clinicContactInfo.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-3 text-sm text-text/80 hover:text-primary transition-colors group"
-            >
-              <div className="w-8 h-8 rounded-full bg-surface text-secondary flex items-center justify-center shrink-0 mt-0.5">
-                <MapPin className="w-4 h-4 text-primary" />
-              </div>
-              <span className="text-xs leading-relaxed group-hover:text-primary transition-colors">
-                {clinicContactInfo.address}
-              </span>
+              <Phone className="w-4 h-4 text-primary" />
+              <span>Call: {clinicContactInfo.phoneDisplay}</span>
             </a>
           </div>
-        </div>
 
-        {/* Drawer Footer (Social Media) */}
-        <div className="px-6 py-4 border-t border-black/10 bg-surface flex items-center justify-between">
-          <span className="text-xs text-text/70 font-medium">Follow Us</span>
-          <div className="flex items-center gap-3">
-            {socialLinks.map((social) => (
-              <a
-                key={social.platform}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="w-8 h-8 rounded-full bg-white border border-black/10 flex items-center justify-center text-secondary hover:text-white hover:bg-primary hover:border-primary transition-all shadow-xs"
-              >
-                {social.platform === "Instagram" && (
-                  <svg
-                    className="w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                  </svg>
-                )}
-                {social.platform === "Facebook" && (
-                  <svg
-                    className="w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
-                )}
-                {social.platform === "LinkedIn" && (
-                  <svg
-                    className="w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                )}
-              </a>
-            ))}
+          {/* Clinic Contact & Operating Hours */}
+          <div className="pt-4 border-t border-black/10 space-y-3 text-xs text-text/80">
+            <div className="flex items-start gap-2.5">
+              <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+              <span>{clinicContactInfo.address}</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <Clock className="w-4 h-4 text-primary shrink-0" />
+              <span>{clinicContactInfo.workingHours}</span>
+            </div>
+            <div className="flex items-center gap-2.5 text-primary font-medium">
+              <ShieldCheck className="w-4 h-4 shrink-0" />
+              <span>Specialized Non-Surgical Clinical Care</span>
+            </div>
           </div>
         </div>
       </aside>
     </>
   );
 };
-

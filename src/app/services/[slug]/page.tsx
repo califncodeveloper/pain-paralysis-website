@@ -13,6 +13,9 @@ import {
   BiofeedbackDetail,
   NeuroPhysiotherapyDetail,
   PelvicFloorDetail,
+  InpatientCareDetail,
+  RoboticNeuroDetail,
+  PainManagementDetail,
 } from "@/components/services";
 
 interface ServiceDetailPageProps {
@@ -41,14 +44,14 @@ export async function generateMetadata({
     return {
       title: "Advanced Spine Decompression",
       description:
-        "Computerized mechanical spinal decompression traction therapy and clinical evaluation for back pain and disc-related care at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+        "Computerized mechanical spinal decompression traction therapy and clinical evaluation for back pain and disc-related care at Pain & Paralysis Clinic, Virugambakkam, Chennai.",
       alternates: {
         canonical: "https://painandparalysis.com/services/advanced-spine-decompression",
       },
       openGraph: {
         title: "Advanced Spine Decompression | Pain & Paralysis Clinic",
         description:
-          "Computerized mechanical spinal decompression traction therapy and clinical evaluation for back pain and disc-related care at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+          "Computerized mechanical spinal decompression traction therapy and clinical evaluation for back pain and disc-related care at Pain & Paralysis Clinic, Virugambakkam, Chennai.",
         url: "https://painandparalysis.com/services/advanced-spine-decompression",
         siteName: "Pain & Paralysis Clinic",
         images: [
@@ -67,14 +70,14 @@ export async function generateMetadata({
     return {
       title: "Advanced Chiropractor",
       description:
-        "Targeted manual adjustments, musculoskeletal joint mobilizations, and postural alignment protocols at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+        "Targeted manual adjustments, musculoskeletal joint mobilizations, and postural alignment protocols at Pain & Paralysis Clinic, Virugambakkam, Chennai.",
       alternates: {
         canonical: "https://painandparalysis.com/services/advanced-chiropractor",
       },
       openGraph: {
         title: "Advanced Chiropractor | Pain & Paralysis Clinic",
         description:
-          "Targeted manual adjustments, musculoskeletal joint mobilizations, and postural alignment protocols at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+          "Targeted manual adjustments, musculoskeletal joint mobilizations, and postural alignment protocols at Pain & Paralysis Clinic, Virugambakkam, Chennai.",
         url: "https://painandparalysis.com/services/advanced-chiropractor",
         siteName: "Pain & Paralysis Clinic",
         images: [
@@ -93,14 +96,14 @@ export async function generateMetadata({
     return {
       title: "Advanced Physiotherapy",
       description:
-        "Outpatient physical therapy consultations and clinical movement evaluation at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+        "Outpatient physical therapy consultations and clinical movement evaluation at Pain & Paralysis Clinic, Virugambakkam, Chennai.",
       alternates: {
         canonical: "https://painandparalysis.com/services/advanced-physiotherapy",
       },
       openGraph: {
         title: "Advanced Physiotherapy | Pain & Paralysis Clinic",
         description:
-          "Outpatient physical therapy consultations and clinical movement evaluation at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+          "Outpatient physical therapy consultations and clinical movement evaluation at Pain & Paralysis Clinic, Virugambakkam, Chennai.",
         url: "https://painandparalysis.com/services/advanced-physiotherapy",
         siteName: "Pain & Paralysis Clinic",
         images: [
@@ -145,14 +148,14 @@ export async function generateMetadata({
     return {
       title: "Advanced 3D Gait Analysis",
       description:
-        "Educational overview and outpatient clinical evaluation of walking mechanics, movement symmetry, and functional biomechanics at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+        "Educational overview and outpatient clinical evaluation of walking mechanics, movement symmetry, and functional biomechanics at Pain & Paralysis Clinic, Virugambakkam, Chennai.",
       alternates: {
         canonical: "https://painandparalysis.com/services/advanced-3d-gait-analysis",
       },
       openGraph: {
         title: "Advanced 3D Gait Analysis | Pain & Paralysis Clinic",
         description:
-          "Educational overview and outpatient clinical evaluation of walking mechanics, movement symmetry, and functional biomechanics at Pain & Paralysis Clinic, Madhanandapuram, Chennai.",
+          "Educational overview and outpatient clinical evaluation of walking mechanics, movement symmetry, and functional biomechanics at Pain & Paralysis Clinic, Virugambakkam, Chennai.",
         url: "https://painandparalysis.com/services/advanced-3d-gait-analysis",
         siteName: "Pain & Paralysis Clinic",
         images: [
@@ -323,6 +326,84 @@ export async function generateMetadata({
     };
   }
 
+  if (slug === "inpatient-care") {
+    return {
+      title: "Inpatient Rehabilitation & Hospital Care - Virugambakkam",
+      description:
+        "25-bedded, 24-hour hospital-based inpatient rehabilitation in Virugambakkam, Chennai for stroke recovery, neurological conditions, post-surgical care, and coordinated physical therapy.",
+      alternates: {
+        canonical: "https://painandparalysis.com/services/inpatient-care",
+      },
+      openGraph: {
+        title: "Inpatient Rehabilitation & Hospital Care | Pain & Paralysis Hospital",
+        description:
+          "25-bedded, 24-hour hospital-based inpatient rehabilitation in Virugambakkam, Chennai for stroke recovery, neurological conditions, post-surgical care, and coordinated physical therapy.",
+        url: "https://painandparalysis.com/services/inpatient-care",
+        siteName: "Pain & Paralysis Hospital",
+        images: [
+          {
+            url: "/images/common/clinic-exterior.webp",
+            width: 743,
+            height: 361,
+            alt: "Pain and Paralysis Hospital 25-bed inpatient care facility in Virugambakkam Chennai",
+          },
+        ],
+      },
+    };
+  }
+
+  if (slug === "robotic-neuro-rehabilitation") {
+    return {
+      title: "Robotic Neuro Rehabilitation - Virugambakkam",
+      description:
+        "Technology-assisted neurological rehabilitation providing guided, repetitive task-oriented movement practice for stroke and paralysis recovery at Pain & Paralysis Hospital Chennai.",
+      alternates: {
+        canonical: "https://painandparalysis.com/services/robotic-neuro-rehabilitation",
+      },
+      openGraph: {
+        title: "Robotic Neuro Rehabilitation | Pain & Paralysis Hospital",
+        description:
+          "Technology-assisted neurological rehabilitation providing guided, repetitive task-oriented movement practice for stroke and paralysis recovery at Pain & Paralysis Hospital Chennai.",
+        url: "https://painandparalysis.com/services/robotic-neuro-rehabilitation",
+        siteName: "Pain & Paralysis Hospital",
+        images: [
+          {
+            url: "/images/awards/award-robotic-physio.webp",
+            width: 1024,
+            height: 1024,
+            alt: "Robotic Neuro Rehabilitation clinical excellence at Pain and Paralysis Hospital Chennai",
+          },
+        ],
+      },
+    };
+  }
+
+  if (slug === "pain-management") {
+    return {
+      title: "Comprehensive Pain Management - Virugambakkam",
+      description:
+        "Evidence-guided, non-surgical pain management and physical rehabilitation for chronic spine, joint, nerve, and musculoskeletal pain at Pain & Paralysis Hospital Chennai.",
+      alternates: {
+        canonical: "https://painandparalysis.com/services/pain-management",
+      },
+      openGraph: {
+        title: "Comprehensive Pain Management | Pain & Paralysis Hospital",
+        description:
+          "Evidence-guided, non-surgical pain management and physical rehabilitation for chronic spine, joint, nerve, and musculoskeletal pain at Pain & Paralysis Hospital Chennai.",
+        url: "https://painandparalysis.com/services/pain-management",
+        siteName: "Pain & Paralysis Hospital",
+        images: [
+          {
+            url: "/images/services/care-spine.webp",
+            width: 500,
+            height: 500,
+            alt: "Comprehensive Pain Management at Pain and Paralysis Hospital Chennai",
+          },
+        ],
+      },
+    };
+  }
+
   return {
     title: service.title,
     description: service.shortDescription,
@@ -407,6 +488,21 @@ export default async function ServiceDetailPage({
   // Phase 35: Pelvic Floor Therapy Detail Page Reconstruction
   if (slug === "pelvic-floor-therapy") {
     return <PelvicFloorDetail />;
+  }
+
+  // Hospital & Inpatient Services: Inpatient Care Detail Page Reconstruction
+  if (slug === "inpatient-care") {
+    return <InpatientCareDetail />;
+  }
+
+  // Neurological & Advanced Rehabilitation: Robotic Neuro Rehabilitation Detail Page Reconstruction
+  if (slug === "robotic-neuro-rehabilitation") {
+    return <RoboticNeuroDetail />;
+  }
+
+  // Pain Management & Specialized Treatments: Comprehensive Pain Management Detail Page Reconstruction
+  if (slug === "pain-management") {
+    return <PainManagementDetail />;
   }
 
   // Default dynamic template for other service detail pages

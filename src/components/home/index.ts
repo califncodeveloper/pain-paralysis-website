@@ -1,4 +1,6 @@
-export * from "./HeroSlider";
+export * from "./HeroSection";
+export { HeroSection as HeroSlider } from "./HeroSection";
+export * from "./TrustHighlights";
 export * from "./ServiceCard";
 export * from "./ServicesSection";
 export * from "./AboutSection";

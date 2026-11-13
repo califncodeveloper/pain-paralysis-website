@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import { ContactHero, ContactView } from "@/components/contact";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Consultations & Appointments",
+  title: "Contact Us - 25-Bed Hospital & Consultations in Virugambakkam",
   description:
-    "Get in touch with Pain & Paralysis Clinic in Madhanandapuram, Chennai. Schedule non-surgical spine decompression, chiropractic consultations, and rehabilitation assessments.",
+    "Get in touch with Pain & Paralysis Hospital in Virugambakkam, Chennai. Schedule 25-bed inpatient admissions, robotic neuro rehabilitation, non-surgical spine decompression, and pain management assessments.",
   alternates: {
     canonical: "https://painandparalysis.com/contact-us",
   },
   openGraph: {
-    title: "Contact Us - Consultations & Appointments | Pain & Paralysis Clinic",
+    title: "Contact Us - Hospital Care & Consultations | Pain & Paralysis Hospital",
     description:
-      "Get in touch with Pain & Paralysis Clinic in Madhanandapuram, Chennai. Schedule non-surgical spine decompression, chiropractic consultations, and rehabilitation assessments.",
+      "Get in touch with Pain & Paralysis Hospital in Virugambakkam, Chennai. Schedule 25-bed inpatient admissions, robotic neuro rehabilitation, non-surgical spine decompression, and pain management assessments.",
     url: "https://painandparalysis.com/contact-us",
-    siteName: "Pain & Paralysis Clinic",
+    siteName: "Pain & Paralysis Hospital",
     locale: "en_IN",
     type: "website",
     images: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/images/common/clinic-exterior.webp",
         width: 1200,
         height: 582,
-        alt: "Pain and Paralysis Clinic facility in Madhanandapuram, Chennai",
+        alt: "Pain and Paralysis Hospital 25-bed facility in Virugambakkam, Chennai",
       },
     ],
   },

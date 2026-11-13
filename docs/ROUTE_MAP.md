@@ -28,6 +28,9 @@ graph TD
     Services --> S3["/services/advanced-physiotherapy"]
     Services --> S4["/services/advanced-aquatic-therapy"]
     Services --> S5["/services/advanced-3d-gait-analysis"]
+    Services --> S6["/services/inpatient-care"]
+    Services --> S7["/services/robotic-neuro-rehabilitation"]
+    Services --> S8["/services/pain-management"]
 
     Articles --> A1["/tips-articles/how-does-spine-decompression-therapy-ease-back-pain"]
     Articles --> A2["/tips-articles/the-role-of-physiotherapy-in-chronic-back-pain-management"]
@@ -54,6 +57,9 @@ graph TD
 | `https://painandparalysis.com/advanced-physiotherapy/` | Advanced Physiotherapy Detail | Footer & Service Link | `/services/advanced-physiotherapy` | `src/app/services/[slug]/page.tsx` |
 | `https://painandparalysis.com/advanced-aquatic-therapy/` | Advanced Aquatic Therapy Detail | Footer & Service Link | `/services/advanced-aquatic-therapy` | `src/app/services/[slug]/page.tsx` |
 | `https://painandparalysis.com/advanced3d-gait-analysis/` | Advanced 3D Gait Analysis Detail | Footer & Service Link | `/services/advanced-3d-gait-analysis` | `src/app/services/[slug]/page.tsx` |
+| `https://painandparalysis.com/inpatient-care/` | Inpatient Care & Rehabilitation (Phase 37) | Mega Menu & Service Link | `/services/inpatient-care` | `src/app/services/[slug]/page.tsx` |
+| `https://painandparalysis.com/robotic-neuro-rehabilitation/` | Robotic Neuro Rehabilitation (Phase 37) | Mega Menu & Service Link | `/services/robotic-neuro-rehabilitation` | `src/app/services/[slug]/page.tsx` |
+| `https://painandparalysis.com/pain-management/` | Comprehensive Pain Management (Phase 37) | Mega Menu & Service Link | `/services/pain-management` | `src/app/services/[slug]/page.tsx` |
 | `https://painandparalysis.com/how-does-spine-decompression-therapy-ease-back-pain/` | Article: Spine Decompression Therapy | Article Grid Link | `/tips-article/how-does-spine-decompression-therapy-ease-back-pain` | `src/app/tips-article/[slug]/page.tsx` |
 | `https://painandparalysis.com/the-role-of-physiotherapy-in-chronic-back-pain-management/` | Article: Physiotherapy in Chronic Back Pain | Article Grid Link | `/tips-article/the-role-of-physiotherapy-in-chronic-back-pain-management` | `src/app/tips-article/[slug]/page.tsx` |
 | `https://painandparalysis.com/deep-tissue-thermotherapy-for-neck-and-shoulder-pain/` | Article: Deep Tissue Thermotherapy | Article Grid Link | `/tips-article/deep-tissue-thermotherapy-for-neck-and-shoulder-pain` | `src/app/tips-article/[slug]/page.tsx` |
@@ -387,6 +393,59 @@ All 12 candidate redirect categories identified in Phase 28 have been 100% resol
 - **Phase 34**: Neuro Physiotherapy bespoke detail page (`/services/neuro-physiotherapy`) — **COMPLETED** (`<NeuroPhysiotherapyDetail />`).
 - **Phase 35**: Pelvic Floor Therapy bespoke detail page (`/services/pelvic-floor-therapy`) — **COMPLETED** (`<PelvicFloorDetail />`).
 - **Phase 36**: Physiotherapy Content Consolidation (integrating preserved table and FAQs into `/services/advanced-physiotherapy`).
+- **Phase 37**: Hospital Positioning, 3 New Bespoke Services (`inpatient-care`, `robotic-neuro-rehabilitation`, `pain-management`), and 14-Service 3-Pillar Architecture — **COMPLETED**.
+
+---
+
+## 13. Phase 37 Hospital Services Route Architecture & Canonical Redirects
+
+### 13.1 Overview of 3 New Bespoke Clinical Services
+To reflect the updated client positioning as a **25-Bedded, 24-Hour Hospital in Virugambakkam, Chennai**, three new dedicated service routes were introduced into the App Router architecture:
+
+1. **Inpatient Rehabilitation & Hospital Care**:
+   - Canonical Route: `/services/inpatient-care`
+   - File System Handler: `src/app/services/[slug]/page.tsx`
+   - Component Handler: `src/components/services/inpatient-care/InpatientCareDetail.tsx`
+   - Permanent Redirects (`next.config.ts`):
+     - `/inpatient-care` -> `/services/inpatient-care` (308)
+     - `/inpatient-rehabilitation` -> `/services/inpatient-care` (308)
+
+2. **Robotic Neuro Rehabilitation**:
+   - Canonical Route: `/services/robotic-neuro-rehabilitation`
+   - File System Handler: `src/app/services/[slug]/page.tsx`
+   - Component Handler: `src/components/services/robotic-neuro/RoboticNeuroDetail.tsx`
+   - Permanent Redirects (`next.config.ts`):
+     - `/robotic-neuro-rehabilitation` -> `/services/robotic-neuro-rehabilitation` (308)
+     - `/robotic-rehabilitation` -> `/services/robotic-neuro-rehabilitation` (308)
+
+3. **Comprehensive Pain Management**:
+   - Canonical Route: `/services/pain-management`
+   - File System Handler: `src/app/services/[slug]/page.tsx`
+   - Component Handler: `src/components/services/pain-management/PainManagementDetail.tsx`
+   - Permanent Redirects (`next.config.ts`):
+     - `/pain-management` -> `/services/pain-management` (308)
+     - `/comprehensive-pain-management` -> `/services/pain-management` (308)
+
+### 13.2 Complete 14-Service 3-Pillar Taxonomy
+All 14 services now operate with full bespoke component suites, dedicated metadata, canonical URLs, and structured JSON-LD schemas:
+
+- **Pillar A: Hospital & Inpatient Services**
+  - `/services/inpatient-care`
+- **Pillar B: Neurological & Advanced Rehabilitation**
+  - `/services/robotic-neuro-rehabilitation`
+  - `/services/neuro-physiotherapy`
+  - `/services/advanced-physiotherapy`
+  - `/services/advanced-3d-gait-analysis`
+  - `/services/biofeedback`
+  - `/services/high-frequency-emg`
+- **Pillar C: Pain Management & Specialized Treatments**
+  - `/services/pain-management`
+  - `/services/advanced-chiropractor`
+  - `/services/advanced-spine-decompression`
+  - `/services/advanced-knee-decompression`
+  - `/services/advanced-laser-treatment`
+  - `/services/advanced-aquatic-therapy`
+  - `/services/pelvic-floor-therapy`
 
 
 

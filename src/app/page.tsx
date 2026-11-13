@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
-  HeroSlider,
+  HeroSection,
+  TrustHighlights,
   ServicesSection,
   AboutSection,
   WhatWeDoSection,
@@ -14,44 +15,47 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Pain & Paralysis Clinic | Integrated Spine Care & Rehabilitation",
+    absolute: "Pain & Paralysis Hospital | 25-Bed Hospital & Advanced Rehabilitation Chennai",
   },
   description:
-    "Specialized Healthcare Clinic in Chennai for Pain Management and Paralysis Rehabilitation.",
+    "25-Bedded, 24-Hour Hospital in Virugambakkam, Chennai specializing in inpatient rehabilitation, robotic neuro rehabilitation, and comprehensive pain management.",
 };
 
 export default function HomePage() {
   return (
     <>
-      {/* Section 3: Homepage Hero Slider */}
-      <HeroSlider />
+      {/* 1. High-Impact Editorial Hero */}
+      <HeroSection />
 
-      {/* Section 4 & 5: What We Offer – Services Section */}
-      <ServicesSection />
+      {/* 2. Trust & Clinic Highlights Bar */}
+      <TrustHighlights />
 
-      {/* Section 6: Why Pain And Paralysis? – About Section */}
+      {/* 3. Clinical Philosophy & Care Model (About Section) */}
       <AboutSection />
 
-      {/* Section 7: What We Do – Statement Section */}
+      {/* 4. Specialized Services Bento & Directory (All 11 Modalities) */}
+      <ServicesSection />
+
+      {/* 5. Treatment Approach & Clinical Pathway */}
       <WhatWeDoSection />
 
-      {/* Section 8: Before & After Posture Comparison Slider */}
+      {/* 6. Posture Evaluation & Alignment Comparison */}
       <BeforeAfterSection />
 
-      {/* Section 9: Testimonials – Patient Reviews Carousel */}
-      <TestimonialsSection />
-
-      {/* Section 10: Our Team – Doctor & Clinical Team Feature */}
+      {/* 7. Clinical Leadership & Lead Specialist Feature */}
       <TeamSection />
 
-      {/* Section 11: Clinical Statistics & Metrics Counter */}
+      {/* 8. Verified Clinical Statistics (Conditionally rendered when approved) */}
       <StatisticsSection />
 
-      {/* Section 12: Location & Facility – Clinic Address & Map */}
-      <LocationSection />
+      {/* 9. Patient Testimonials (Conditionally rendered when approved) */}
+      <TestimonialsSection />
 
-      {/* Section 13: Frequently Asked Questions – Clinical & Treatment FAQs */}
+      {/* 10. Patient Frequently Asked Questions */}
       <FAQSection />
+
+      {/* 11. Facility Location, Office Hours & Inquiries */}
+      <LocationSection />
     </>
   );
 }

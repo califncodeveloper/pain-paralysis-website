@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   size?: "wide" | "standard" | "narrow" | "full";
+  wide?: boolean;
   className?: string;
   as?: React.ElementType;
 }
@@ -20,10 +21,13 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 export const Container: React.FC<ContainerProps> = ({
   children,
   size = "standard",
+  wide,
   className,
   as: Component = "div",
   ...props
 }) => {
+  const effectiveSize = wide ? "wide" : size;
+
   const sizeClasses = {
     wide: "max-w-[1300px]",
     standard: "max-w-[1200px]",
@@ -35,7 +39,7 @@ export const Container: React.FC<ContainerProps> = ({
     <Component
       className={cn(
         "w-full mx-auto px-4 sm:px-6 lg:px-8",
-        sizeClasses[size],
+        sizeClasses[effectiveSize],
         className
       )}
       {...props}
@@ -44,4 +48,3 @@ export const Container: React.FC<ContainerProps> = ({
     </Component>
   );
 };
-

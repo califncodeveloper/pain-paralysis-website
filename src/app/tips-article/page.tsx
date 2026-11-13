@@ -6,16 +6,16 @@ import { ServicesCTA } from "@/components/services";
 export const metadata: Metadata = {
   title: "Health Tips & Clinical Articles",
   description:
-    "Read expert physiotherapy tips and health articles from Pain and Paralysis clinic in madhanandapuram. Stay informed with evidence-based advice for better mobility.",
+    "Read expert physiotherapy tips and health articles from Pain & Paralysis Hospital in Virugambakkam, Chennai. Stay informed with evidence-based advice for better mobility.",
   alternates: {
     canonical: "https://painandparalysis.com/tips-article",
   },
   openGraph: {
-    title: "Health Tips & Clinical Articles | Pain & Paralysis Clinic",
+    title: "Health Tips & Clinical Articles | Pain & Paralysis Hospital",
     description:
-      "Read expert physiotherapy tips and health articles from Pain and Paralysis clinic in madhanandapuram. Stay informed with evidence-based advice for better mobility.",
+      "Read expert physiotherapy tips and health articles from Pain & Paralysis Hospital in Virugambakkam, Chennai. Stay informed with evidence-based advice for better mobility.",
     url: "https://painandparalysis.com/tips-article",
-    siteName: "Pain and Paralysis Clinic",
+    siteName: "Pain & Paralysis Hospital",
     locale: "en_US",
     type: "website",
   },
@@ -39,10 +39,10 @@ export default function TipsArticleArchivePage() {
 
       {/* 3. Global Consultation CTA Section */}
       <ServicesCTA
-        badge="ABOUT US"
-        heading="Discuss Your Rehabilitation Consultation Options"
-        description="Have questions about persistent spinal discomfort, postural tension, or physical rehabilitation? Consult Dr. Dinesh Anandhan and our clinical team in Madhanandapuram, Chennai for tailored non-surgical guidance."
-        buttonText="About Us"
+        badge="HOSPITAL CONSULTATION"
+        heading="Discuss Your Inpatient or Outpatient Care Options"
+        description="Have questions about persistent spinal discomfort, stroke rehabilitation, or 24-hour inpatient care? Consult Dr. Dinesh Anandhan and our clinical team in Virugambakkam, Chennai for tailored non-surgical guidance."
+        buttonText="About Our Hospital"
       />
     </div>
   );

@@ -3,15 +3,15 @@
  */
 
 export const SITE_CONFIG = {
-  name: "Pain and Paralysis Clinic",
+  name: "Pain and Paralysis Hospital",
   description:
-    "Specialized Ayurvedic & Integrated Healthcare Clinic for Pain and Paralysis Management.",
+    "25-Bedded, 24-Hour Hospital in Virugambakkam, Chennai specializing in Inpatient Care, Robotic Neuro Rehabilitation, and Comprehensive Pain Management.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://painandparalysis.com",
   ogImage: "/images/common/og-image.jpg",
   contact: {
-    phone: "",
-    email: "",
-    address: "",
+    phone: "+91 80155 59609",
+    email: "info@painandparalysis.com",
+    address: "Virugambakkam, Chennai, Tamil Nadu - 600092",
   },
 } as const;
 

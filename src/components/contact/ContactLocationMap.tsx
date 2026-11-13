@@ -24,8 +24,8 @@ export const ContactLocationMap: React.FC = () => {
       <Container size="standard">
         <SectionHeading
           eyebrow="FACILITY LOCATION"
-          title="Find Our Chennai Clinic"
-          description="Plan your visit to Pain and Paralysis Clinic in Madhanandapuram. Conveniently situated for outpatient consultations across Chennai."
+          title="Find Our Chennai Hospital"
+          description="Plan your visit to Pain &amp; Paralysis Hospital in Virugambakkam, Chennai. Offering 25-bed inpatient care, robotic neuro rehabilitation, and 24-hour hospital facilities."
           align="center"
           accent
           className="mb-8 sm:mb-12"
@@ -34,17 +34,26 @@ export const ContactLocationMap: React.FC = () => {
         {/* Map Frame Card */}
         <div className="rounded-2xl border border-secondary/15 overflow-hidden shadow-sm bg-white">
           {/* Responsive Map Embed Container */}
-          <div className="relative w-full h-[340px] sm:h-[420px] md:h-[480px] bg-slate-100">
+          <div className="relative w-full h-[360px] sm:h-[440px] md:h-[500px] bg-slate-100 flex flex-col">
             <iframe
               src={
                 clinicContactInfo.mapEmbedUrl ||
-                "https://maps.google.com/maps?q=13.0182,80.1415&hl=en&z=16&output=embed"
+                "https://maps.google.com/maps?q=PAIN+%26+PARALYSIS+HOSPITAL+Virugambakkam+Chennai&hl=en&t=&z=15&ie=UTF8&iwloc=&output=embed"
               }
-              title="Pain and Paralysis Clinic interactive location map in Madhanandapuram, Chennai"
-              className="w-full h-full border-0 absolute inset-0"
+              title="Pain &amp; Paralysis Hospital interactive location map in Virugambakkam, Chennai"
+              width="100%"
+              height="100%"
+              className="w-full h-full flex-1 border-0 block"
+              style={{
+                border: 0,
+                width: "100%",
+                height: "100%",
+                minHeight: "100%",
+                display: "block",
+              }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              aria-label="Interactive Google Map showing Pain and Paralysis Clinic location"
+              aria-label="Interactive Google Map showing Pain &amp; Paralysis Hospital location in Virugambakkam, Chennai"
             />
           </div>
 

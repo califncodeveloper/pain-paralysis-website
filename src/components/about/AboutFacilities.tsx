@@ -16,28 +16,28 @@ import { clinicContactInfo } from "@/data/navigation";
 export const AboutFacilities: React.FC = () => {
   const facilityHighlights = [
     {
-      title: "Non-Surgical Spine Decompression Suite",
+      title: "25-Bed Inpatient Care & 24-Hour Hospital",
       description:
-        "Computerized decompression tables specifically engineered to create gentle negative intradiscal vacuum pressure for lumbar and cervical disc care.",
+        "Dedicated inpatient hospital beds providing 24-hour supportive care, scheduled multi-session therapy, and structured recovery supervision.",
       icon: <Activity className="h-5 w-5 text-primary" aria-hidden="true" />,
     },
     {
-      title: "Chiropractic & Postural Alignment Bays",
+      title: "Robotic Neuro Rehabilitation Suite",
       description:
-        "Ergonomic treatment stations designed for Gonstead manual adjustments, spinal mobilization, and targeted joint biomechanical correction.",
+        "Technology-assisted guided movement devices providing repetitive, task-oriented kinematic practice for stroke and paralysis recovery.",
+      icon: <Shield className="h-5 w-5 text-primary" aria-hidden="true" />,
+    },
+    {
+      title: "Non-Surgical Spine Decompression Suite",
+      description:
+        "Computerized decompression tables specifically engineered to create gentle negative intradiscal vacuum pressure for lumbar and cervical disc care.",
       icon: <Stethoscope className="h-5 w-5 text-primary" aria-hidden="true" />,
     },
     {
-      title: "Aquatic Therapy Hydrotherapy Pool",
+      title: "Comprehensive Pain Management & Alignment Bays",
       description:
-        "Specialized warm water hydrotherapy pool enabling buoyant, low-gravity movement therapy to restore mobility without joint impact.",
+        "Ergonomic treatment stations designed for targeted chiropractic mobilizations, deep tissue laser therapy, and functional core stabilization.",
       icon: <Waves className="h-5 w-5 text-primary" aria-hidden="true" />,
-    },
-    {
-      title: "Robotic Physiotherapy & Motion Rehab",
-      description:
-        "Modern neuromuscular sensor technologies, advanced laser, and electrotherapy units to accelerate musculoskeletal tissue recovery.",
-      icon: <Shield className="h-5 w-5 text-primary" aria-hidden="true" />,
     },
   ];
 
@@ -47,14 +47,14 @@ export const AboutFacilities: React.FC = () => {
       background="surface"
       spacing="default"
       className="border-t border-secondary/10"
-      aria-label="Clinic Facilities and Treatment Environment"
+      aria-label="Hospital Facilities and Treatment Environment"
     >
       <Container size="standard">
         {/* Section Heading */}
         <SectionHeading
           eyebrow="FACILITIES & CARE ENVIRONMENT"
-          title="Our Dedicated Healing Facility in Chennai"
-          description="Purpose-built in Madhanandapuram, Chennai, our specialized facility offers dedicated treatment suites, computerized decompression units, and hydrotherapy rehabilitation resources."
+          title="Our Dedicated Hospital Facility in Chennai"
+          description="Operating as a 25-bedded, 24-hour hospital in Virugambakkam, Chennai, our facility integrates inpatient recovery accommodations, robotic neuro rehabilitation suites, and computerized decompression units."
           align="center"
           accent
           className="mb-12 sm:mb-16"
@@ -66,7 +66,7 @@ export const AboutFacilities: React.FC = () => {
             <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-secondary/10 bg-white shadow-md">
               <Image
                 src={clinicContactInfo.facilityImage || "/images/common/clinic-exterior.webp"}
-                alt="Pain and Paralysis Clinic modern exterior facade and treatment facility in Madhanandapuram, Chennai"
+                alt="Pain and Paralysis Hospital exterior facade and inpatient facility in Virugambakkam, Chennai"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
@@ -85,7 +85,7 @@ export const AboutFacilities: React.FC = () => {
                       {clinicContactInfo.clinicName}
                     </p>
                     <p className="text-[11px] text-text/80 leading-snug mt-0.5">
-                      Plot no : 5, Madha Nagar Main Road, Madhanandapuram, Chennai - 600125
+                      {clinicContactInfo.address}
                     </p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export const AboutFacilities: React.FC = () => {
             </div>
 
             <p className="text-xs text-text/70 italic text-center">
-              Clinic exterior and dedicated patient consultation facility in Chennai
+              25-Bedded, 24-Hour Hospital Facility in Virugambakkam, Chennai
             </p>
           </div>
 

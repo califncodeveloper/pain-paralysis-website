@@ -14,9 +14,9 @@ This document catalogs all verified static content datasets extracted from `http
 
 | Dataset | TypeScript File | Interface | Item Count | Status | Primary Data Source |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Navigation & Links** | `src/data/navigation.ts` | `NavItem[]`, `HeaderConfig`, `FooterSection[]` | 6 main, 11 footer links | Verified | Header `.main-menu`, Footer columns |
-| **Clinic Contact & Location** | `src/data/navigation.ts` | `ClinicContactInfo`, `SocialLink[]` | 1 contact profile, 3 socials | Verified | Header top bar, Location section, Footer |
-| **Treatment Services** | `src/data/services.ts` | `ServiceItem[]` | 11 Treatment Services | Verified | Homepage Services grid & dedicated subpages |
+| **Navigation & Links** | `src/data/navigation.ts` | `NavItem[]`, `HeaderConfig`, `FooterSection[]` | 6 main, 14 footer links, 3-pillar mega menu | Verified | Header `.main-menu`, 3-pillar services, Footer columns |
+| **Clinic Contact & Location** | `src/data/navigation.ts` | `ClinicContactInfo`, `SocialLink[]` | 1 hospital profile (Virugambakkam, 25 beds, 24h), 3 socials | Verified | Header top bar, Location section, Footer, Contact |
+| **Treatment Services** | `src/data/services.ts` | `ServiceItem[]` | 14 Hospital & Specialized Services | Verified | Homepage Services grid, mega menu, & 14 dedicated subpages |
 | **Specialized Care Areas** | `src/data/care-areas.ts` | `CareAreaItem[]` | 4 Specialized Care Areas | Verified | Services catalog page (`/services/`) |
 | **Patient Testimonials** | `src/data/testimonials.ts` | `TestimonialItem[]` | 3 Patient Reviews | Awaiting Approval | Testimonial carousel `.elementor-element-0a5a785` |
 | **Frequently Asked Questions** | `src/data/faqs.ts` | `FaqItem[]` | 7 FAQs | Documented (Awaiting clinic operational confirmation) | Homepage FAQ section (`.sa-ac-item`) |
@@ -100,6 +100,25 @@ Contains all 11 verified clinical treatment modalities:
     - Route: `/services/pelvic-floor-therapy`
     - Reference URL: `https://painandparalysis.com/#`
     - Status: *Phase 35 Bespoke Service Detail Page Implemented*
+12. `inpatient-care` — **Inpatient Rehabilitation & Hospital Care**
+    - Category: *Hospital & Inpatient Care*
+    - Image: `/images/common/clinic-exterior.webp`
+    - Hero Background: `/images/hero/hero-slide-02.webp`
+    - Route: `/services/inpatient-care`
+    - Capacity: 25 Inpatient Beds; 24-Hour Hospital Care
+    - Status: *Phase 37 Bespoke Service Detail Page Implemented*
+13. `robotic-neuro-rehabilitation` — **Robotic Neuro Rehabilitation**
+    - Category: *Neurological Rehabilitation*
+    - Image: `/images/awards/award-robotic-physio.webp`
+    - Hero Background: `/images/hero/hero-slide-01.webp`
+    - Route: `/services/robotic-neuro-rehabilitation`
+    - Status: *Phase 37 Bespoke Service Detail Page Implemented*
+14. `pain-management` — **Comprehensive Pain Management**
+    - Category: *Pain Management*
+    - Image: `/images/services/care-spine.webp`
+    - Hero Background: `/images/hero/hero-slide-03.webp`
+    - Route: `/services/pain-management`
+    - Status: *Phase 37 Bespoke Service Detail Page Implemented*
 
 ---
 
@@ -663,6 +682,21 @@ Comprehensive resolution matrix of audited clinic services, sensitive clinical c
 | **5. Non-Diagnostic Physical Scope Notice** | Clinical review standards | **Diagnostic Scope Boundary** (Physical therapy does not diagnose visceral infections, urological malignancies, or severe organ prolapse) | **Prominent Disclaimers Integrated**: Added explicit notices emphasizing that acute pain, infection, unexplained bleeding, or structural prolapse requiring surgery must be formally evaluated by treating urologists, gynaecologists, or physicians. | Verified Non-Diagnostic. |
 | **6. Equipment & Adjunct Biofeedback Retraining** | Asset `pelvic-floor.webp` (455x533) | **Authorized Modality Representation** | **Authentic Presentation & Technology Note**: Modality photo featured on 2-column layout with badge *"Pelvic Health & Core"*. Biofeedback framed accurately as an optional, adjunct sensorimotor training tool evaluated individually, not mandatory for all programs. | Fully Authorized. |
 | **7. Cross-Service Navigation Integrity** | Service routing architecture | **Clean Bespoke Cross-Navigation** | **Synchronized to Approved Services**: Related section links directly to 4 approved, bespoke service pages (Advanced Physiotherapy, Biofeedback, High Frequency EMG, Neuro Physiotherapy) and all services catalog (`/services`) with zero broken or placeholder links. | 100% Verified. |
+
+---
+
+### 3.37 Phase 37 Hospital Services Clinical Content & Scope Resolution Matrix
+
+Comprehensive resolution matrix of audited clinic services, hospital positioning facts, robotic rehabilitation boundaries, and pain management scope:
+
+| Content Area / Business Fact / Service Scope | Client Instruction & Source Fact | Clinical Boundary & Ethical Safeguard | Implementation Action Taken | Verification & Client Confirmation Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Business Positioning & Facility Nature** | 25-Bedded, 24-Hour Hospital in Virugambakkam, Chennai | Cannot assume full emergency hospital capabilities (e.g. ICU, trauma emergency room, ambulance fleet) | Framed accurately as a specialized 25-bed inpatient neuro-rehabilitation and pain management hospital. Outpatient clinics operate on scheduled appointments. | Verified Fact; Emergency/ICU capabilities strictly withheld pending client sign-off. |
+| **2. Physical Address & Google Maps Entity** | Share Link `https://share.google/5VIrbuVRpNjK02RIg` | Anti-bot challenge on Google Search prevented automated extraction of street door/plot number. Must not invent or substitute addresses. | Resolved entity to **PAIN & PARALYSIS HOSPITAL** (KGMID `/g/11zysjygdj`) in Virugambakkam, Chennai - 600092. Direct share link embedded across website. | Entity and locality verified; exact door number flagged for client confirmation. |
+| **3. Inpatient Rehabilitation & Hospital Care** | New Service 1: Hospital-based inpatient admission | Must not invent admission bureaucracy, medical specialties, room categories, or ICU coverage | Formulated around structured admissions, multidisciplinary rounds, patient-to-therapist coordination, caregiver education, and discharge planning. | Grounded in safe hospital rehabilitation protocols. |
+| **4. Robotic Neuro Rehabilitation** | New Service 2: Prominent specialist service | Prohibited from claiming cure of paralysis, guaranteed unassisted walking, or inventing specific machine brand/make | Positioned around verified principles: repetitive task-oriented training, body-weight supported gait guidance, and neuroplastic motor relearning. Utilized authentic clinic trophy asset `award-robotic-physio.webp`. | Medically conservative; machine brand/model flagged for client confirmation. |
+| **5. Comprehensive Pain Management** | New Service 3: Dedicated pain category | Must not invent invasive interventional injections, surgical procedures, or unverified pharmaceutical regimens | Grounded in conservative multidisciplinary pain care: physical modalities, spinal decompression, postural biomechanics, joint mobilization, and functional conditioning. | Conservative, non-invasive scope fully compliant. |
+| **6. 14-Service 3-Pillar Taxonomy** | Reorganize into Hospital, Neuro, and Pain pillars | All 11 existing bespoke services must remain 100% intact with zero broken links or deleted pages | Restructured into: Pillar A (Hospital & Inpatient Care), Pillar B (Neurological & Advanced Rehab - 6 services), Pillar C (Pain Management & Specialized Treatments - 7 services). | 14 of 14 bespoke service suites fully operational. |
 
 
 

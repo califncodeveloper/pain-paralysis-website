@@ -9,24 +9,24 @@ import {
 } from "@/components/about";
 
 export const metadata: Metadata = {
-  title: "About Us - Spine Care & Rehabilitation Specialists",
+  title: "About Us - 25-Bed Hospital & Rehabilitation Specialists",
   description:
-    "Learn about Pain and Paralysis Clinic in Chennai, our lead specialist Dr. Dinesh Anandhan, evidence-based chiropractic protocols, and non-surgical spine rehabilitation.",
+    "Learn about Pain & Paralysis Hospital in Virugambakkam, Chennai, our 25-bed inpatient facility, 24-hour hospital care, robotic neuro rehabilitation, and lead specialist Dr. Dinesh Anandhan.",
   alternates: {
     canonical: "https://painandparalysis.com/about-us",
   },
   openGraph: {
-    title: "About Us - Spine Care & Rehabilitation Specialists | Pain & Paralysis Clinic",
+    title: "About Us - 25-Bed Hospital & Rehabilitation | Pain & Paralysis Hospital",
     description:
-      "Specialized healthcare clinic in Chennai for non-surgical spine decompression, evidence-based chiropractic alignment, and paralysis rehabilitation.",
+      "25-Bedded, 24-Hour Hospital in Virugambakkam, Chennai for inpatient recovery, robotic neuro rehabilitation, and non-surgical spine decompression.",
     url: "https://painandparalysis.com/about-us",
-    siteName: "Pain & Paralysis Clinic",
+    siteName: "Pain & Paralysis Hospital",
     images: [
       {
         url: "/images/about/clinic-procedure.webp",
         width: 1024,
         height: 682,
-        alt: "Pain and Paralysis Clinic clinical procedure and patient rehabilitation in Chennai",
+        alt: "Pain and Paralysis Hospital clinical procedure and patient rehabilitation in Chennai",
       },
     ],
   },

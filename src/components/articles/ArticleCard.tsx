@@ -21,11 +21,11 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   const articleHref = `${basePath}/${article.slug}`;
 
   return (
-    <article className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-300">
+    <article className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-[#105156]/12 shadow-[0_4px_20px_rgba(16,81,86,0.06)] hover:shadow-[0_20px_45px_rgba(28,170,182,0.22)] hover:border-primary/50 transition-all duration-400 hover:-translate-y-1.5">
       {/* Featured Image Container */}
       <Link
         href={articleHref}
-        className="relative w-full aspect-[16/10] overflow-hidden bg-slate-100 block"
+        className="relative w-full aspect-[16/10] overflow-hidden bg-surface block"
         tabIndex={-1}
         aria-hidden="true"
       >
@@ -34,20 +34,20 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           alt={article.imageAlt || article.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
-          className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          className="object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#105156]/70 via-transparent to-transparent opacity-30 group-hover:opacity-75 transition-opacity duration-300" />
         
         {/* Category Badge overlay */}
-        <span className="absolute top-4 left-4 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary text-white shadow-md">
-          {article.category || "Research"}
+        <span className="absolute top-4 left-4 inline-flex items-center px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/95 backdrop-blur-md text-secondary shadow-md border border-white/60">
+          {article.category || "Clinical Guide"}
         </span>
       </Link>
 
       {/* Card Body */}
       <div className="flex flex-col flex-grow p-6 sm:p-7">
         {/* Meta Bar */}
-        <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 mb-3">
+        <div className="flex flex-wrap items-center gap-4 text-xs text-[#354547]/70 mb-3">
           <span className="inline-flex items-center gap-1.5 font-medium">
             <Calendar className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
             <time dateTime={article.publishedAt}>{article.publishedDate}</time>
@@ -58,37 +58,22 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           </span>
         </div>
 
-        {/* Title */}
-        <h2 className="text-xl sm:text-2xl font-serif font-semibold text-secondary group-hover:text-primary transition-colors duration-200 line-clamp-2 mb-3 leading-snug">
-          <Link
-            href={articleHref}
-            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
-          >
-            {article.title}
-          </Link>
-        </h2>
+        {/* Article Title */}
+        <h3 className="font-heading text-xl sm:text-2xl font-semibold text-secondary leading-snug mb-3 group-hover:text-primary transition-colors">
+          <Link href={articleHref}>{article.title}</Link>
+        </h3>
 
-        {/* Excerpt */}
-        <p className="text-sm sm:text-base text-slate-600 line-clamp-3 mb-6 flex-grow leading-relaxed font-sans">
+        {/* Article Excerpt */}
+        <p className="font-sans text-xs sm:text-sm text-[#354547]/80 leading-relaxed mb-6 flex-grow line-clamp-3">
           {article.excerpt}
         </p>
 
-        {/* Card Footer / CTA */}
-        <div className="pt-4 border-t border-slate-100 mt-auto">
-          <Link
-            href={articleHref}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary group/btn transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
-            aria-label={`Read article: ${article.title}`}
-          >
-            <span>Read Full Article</span>
-            <ArrowRight
-              className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-200"
-              aria-hidden="true"
-            />
-          </Link>
+        {/* Read Article Link */}
+        <div className="pt-4 border-t border-black/5 flex items-center justify-between text-xs font-semibold text-primary">
+          <span className="group-hover:text-secondary transition-colors">Read Clinical Article</span>
+          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </div>
       </div>
     </article>
   );
 };
-

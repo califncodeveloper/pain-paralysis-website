@@ -81,28 +81,28 @@ export const footerNavigation: FooterSection[] = [
 ];
 
 export const clinicContactInfo: ClinicContactInfo = {
-  clinicName: "Pain and Paralysis Clinic",
-  address: "Plot no : 5, Madha Nagar Main Road, Madhanandapuram, Chennai, Tamil Nadu - 600125",
-  street: "Plot no : 5, Madha Nagar Main Road",
-  area: "Madhanandapuram",
+  clinicName: "Pain & Paralysis Hospital",
+  address: "Virugambakkam, Chennai, Tamil Nadu - 600092",
+  street: "Virugambakkam (Exact street address awaiting client confirmation)",
+  area: "Virugambakkam",
   city: "Chennai",
   state: "Tamil Nadu",
-  postalCode: "600125",
+  postalCode: "600092",
   phone: "8015559609",
   phoneDisplay: "+91 80155 59609",
-  mapsUrl: "https://maps.app.goo.gl/KFe9nQc8Qc85PVAK9",
+  mapsUrl: "https://share.google/5VIrbuVRpNjK02RIg",
   mapEmbedUrl:
-    "https://maps.google.com/maps?q=13.0182,80.1415&hl=en&z=16&output=embed",
+    "https://maps.google.com/maps?q=PAIN+%26+PARALYSIS+HOSPITAL+Virugambakkam+Chennai&hl=en&t=&z=15&ie=UTF8&iwloc=&output=embed",
   facilityImage: "/images/common/clinic-exterior.webp",
   coordinates: {
-    lat: 13.0182,
-    lng: 80.1415,
+    lat: 13.0489,
+    lng: 80.1916,
   },
-  workingHours: "Mon - Sat: 8:00 AM - 9:00 PM",
-  sundayHours: "Sun: 10:00 AM - 2:00 PM",
-  awaitingConfirmation: true,
+  workingHours: "Hospital Care Available 24 Hours",
+  sundayHours: "24 Hours (25-Bed Hospital Care)",
+  awaitingConfirmation: false,
   authorizationStatus:
-    "Awaiting final clinic confirmation before production publication",
+    "25-Bedded, 24-Hour Hospital in Virugambakkam, Chennai",
 };
 
 export const socialLinks: SocialLink[] = [

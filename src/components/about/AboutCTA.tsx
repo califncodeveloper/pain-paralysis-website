@@ -16,14 +16,18 @@ export const AboutCTA: React.FC = () => {
   return (
     <Section
       id="about-cta"
-      background="secondary"
+      background="transparent"
       spacing="default"
-      className="relative scroll-mt-20 sm:scroll-mt-24 border-t border-white/10"
+      className="relative scroll-mt-20 sm:scroll-mt-24 bg-gradient-to-b from-[#0a3134] via-[#105156] to-[#072427] text-white border-t border-white/10 overflow-hidden"
       aria-label="Appointment and Consultation Call to Action"
     >
       {/* Subtle Atmospheric Radial Overlay */}
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/25 via-transparent to-transparent"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none"
         aria-hidden="true"
       />
 
@@ -41,9 +45,9 @@ export const AboutCTA: React.FC = () => {
           </h2>
 
           {/* Subtitle */}
-          <p className="mt-4 font-sans text-sm sm:text-base md:text-lg leading-relaxed text-white/85 max-w-2xl text-balance">
+          <p className="mt-4 font-sans text-sm sm:text-base md:text-lg leading-relaxed text-teal-100/90 max-w-2xl text-balance">
             Have questions about your condition or treatment options? Consult our clinical team
-            in Madhanandapuram, Chennai to discuss non-surgical care tailored to your health needs.
+            in Virugambakkam, Chennai to discuss 25-bed inpatient care, robotic neuro rehab, or specialized non-surgical spine care tailored to your recovery goals.
           </p>
 
           {/* Action Buttons */}

@@ -1,8 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
   experimental: {
     turbopackPluginRuntimeStrategy: "workerThreads",
     cpus: 1,
@@ -92,6 +98,36 @@ const nextConfig: NextConfig = {
       {
         source: "/pelvic-floor-therapy",
         destination: "/services/pelvic-floor-therapy",
+        permanent: true,
+      },
+      {
+        source: "/inpatient-care",
+        destination: "/services/inpatient-care",
+        permanent: true,
+      },
+      {
+        source: "/inpatient-rehabilitation",
+        destination: "/services/inpatient-care",
+        permanent: true,
+      },
+      {
+        source: "/robotic-neuro-rehabilitation",
+        destination: "/services/robotic-neuro-rehabilitation",
+        permanent: true,
+      },
+      {
+        source: "/robotic-rehabilitation",
+        destination: "/services/robotic-neuro-rehabilitation",
+        permanent: true,
+      },
+      {
+        source: "/pain-management",
+        destination: "/services/pain-management",
+        permanent: true,
+      },
+      {
+        source: "/comprehensive-pain-management",
+        destination: "/services/pain-management",
         permanent: true,
       },
       // Verified legacy redirects & SEO duplicate mappings (Phase 29)

@@ -155,9 +155,19 @@ export const BeforeAfterSection: React.FC = () => {
       id="posture-comparison"
       background="surface"
       spacing="default"
-      className="relative scroll-mt-20 border-b border-black/5"
+      className="relative scroll-mt-20 border-b border-black/5 overflow-hidden"
     >
-      <Container size="wide">
+      {/* Background ambient lighting */}
+      <div
+        className="absolute top-1/3 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-10 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <Container size="wide" className="relative z-10">
         {/* Section Heading */}
         <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
           <SectionHeading
@@ -183,10 +193,10 @@ export const BeforeAfterSection: React.FC = () => {
             onPointerCancel={handlePointerUp}
             className={cn(
               "group relative w-full overflow-hidden select-none",
-              "aspect-[1024/571] rounded-xl sm:rounded-2xl lg:rounded-3xl",
-              "bg-secondary/10 shadow-[0_12px_40px_rgba(16,81,86,0.12)] border border-black/8",
+              "aspect-[1024/523] rounded-2xl sm:rounded-3xl",
+              "bg-secondary/10 shadow-[0_20px_60px_rgba(16,81,86,0.14)] border border-[#105156]/15",
               "cursor-ew-resize touch-pan-y",
-              isDragging && "cursor-grabbing ring-2 ring-primary/50 shadow-[0_16px_50px_rgba(28,170,182,0.25)]",
+              isDragging && "cursor-grabbing ring-2 ring-primary/50 shadow-[0_25px_70px_rgba(28,170,182,0.3)]",
               isFocused && "ring-2 ring-primary/40"
             )}
             style={{ touchAction: "pan-y" }}
@@ -195,11 +205,12 @@ export const BeforeAfterSection: React.FC = () => {
             {/* Layer 1: Underneath "After" Image (Right Side by default) */}
             <div className="absolute inset-0 w-full h-full">
               <Image
-                src="/images/about/posture-after.webp"
+                src="/images/about/posture-alignment-after.webp"
                 alt="Post-treatment clinical posture alignment showing restored spinal curvature and biomechanical balance"
                 width={1024}
-                height={571}
+                height={523}
                 priority
+                unoptimized
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
                 className="w-full h-full object-cover select-none pointer-events-none"
               />
@@ -214,11 +225,12 @@ export const BeforeAfterSection: React.FC = () => {
               }}
             >
               <Image
-                src="/images/about/posture-before.webp"
+                src="/images/about/posture-alignment-before.webp"
                 alt="Pre-treatment clinical baseline posture assessment showing spinal misalignment and slouching"
                 width={1024}
-                height={571}
+                height={523}
                 priority
+                unoptimized
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
                 className="w-full h-full object-cover select-none pointer-events-none"
               />
@@ -358,14 +370,14 @@ export const BeforeAfterSection: React.FC = () => {
           </div>
 
           {/* Clinical Posture Restoration Highlights */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-black/5 shadow-xs">
-              <div className="mt-0.5 rounded-lg bg-primary/10 p-2 text-primary shrink-0">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="flex items-start gap-3 p-4 sm:p-5 rounded-2xl bg-white border border-[#105156]/10 shadow-xs transition-all hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5">
+              <div className="mt-0.5 rounded-xl bg-primary/10 p-2.5 text-primary shrink-0">
                 <CheckCircle2 className="w-4 h-4" />
               </div>
               <div>
                 <h3 className="font-heading font-semibold text-secondary text-sm sm:text-base">
-                  Cervical & Head Alignment
+                  Cervical Alignment
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm text-text/75 leading-relaxed">
                   Reduces forward head posture and eases tension along upper trapezius and suboccipital muscles.
@@ -373,13 +385,13 @@ export const BeforeAfterSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-black/5 shadow-xs">
-              <div className="mt-0.5 rounded-lg bg-primary/10 p-2 text-primary shrink-0">
+            <div className="flex items-start gap-3 p-4 sm:p-5 rounded-2xl bg-white border border-[#105156]/10 shadow-xs transition-all hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5">
+              <div className="mt-0.5 rounded-xl bg-primary/10 p-2.5 text-primary shrink-0">
                 <CheckCircle2 className="w-4 h-4" />
               </div>
               <div>
                 <h3 className="font-heading font-semibold text-secondary text-sm sm:text-base">
-                  Thoracic Spine Decompression
+                  Thoracic Unloading
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm text-text/75 leading-relaxed">
                   Counteracts rounded shoulders and hyperkyphosis through gentle mechanical unloading and mobilization.
@@ -387,16 +399,30 @@ export const BeforeAfterSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-black/5 shadow-xs">
-              <div className="mt-0.5 rounded-lg bg-primary/10 p-2 text-primary shrink-0">
+            <div className="flex items-start gap-3 p-4 sm:p-5 rounded-2xl bg-white border border-[#105156]/10 shadow-xs transition-all hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5">
+              <div className="mt-0.5 rounded-xl bg-primary/10 p-2.5 text-primary shrink-0">
                 <CheckCircle2 className="w-4 h-4" />
               </div>
               <div>
                 <h3 className="font-heading font-semibold text-secondary text-sm sm:text-base">
-                  Pelvic & Lumbar Balance
+                  Pelvic &amp; Lumbar Balance
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm text-text/75 leading-relaxed">
                   Rebalances anterior pelvic tilt and stabilizes core musculature to prevent recurring lower back strain.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 sm:p-5 rounded-2xl bg-white border border-[#105156]/10 shadow-xs transition-all hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5">
+              <div className="mt-0.5 rounded-xl bg-primary/10 p-2.5 text-primary shrink-0">
+                <CheckCircle2 className="w-4 h-4" />
+              </div>
+              <div>
+                <h3 className="font-heading font-semibold text-secondary text-sm sm:text-base">
+                  Weight-Bearing Symmetry
+                </h3>
+                <p className="mt-1 text-xs sm:text-sm text-text/75 leading-relaxed">
+                  3D gait analysis maps normalized 50/50 bilateral ground force distribution across both lower extremities.
                 </p>
               </div>
             </div>

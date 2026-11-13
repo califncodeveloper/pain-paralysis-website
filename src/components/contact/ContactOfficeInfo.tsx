@@ -30,13 +30,13 @@ export const ContactOfficeInfo: React.FC = () => {
         <div className="border-b border-secondary/10 pb-5 mb-6">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary mb-2">
             <span className="w-2 h-2 rounded-full bg-primary" aria-hidden="true" />
-            Clinic Headquarters
+            Hospital Facility • 25 Beds • 24 Hours
           </div>
           <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-secondary">
-            Pain and Paralysis Chennai
+            Pain &amp; Paralysis Hospital Chennai
           </h2>
           <p className="text-sm text-charcoal/80 font-sans mt-2 leading-relaxed">
-            Outpatient clinic offering computerized non-surgical spine decompression, evidence-aligned chiropractic care, and comprehensive physical rehabilitation.
+            25-Bedded, 24-Hour Hospital in Virugambakkam, Chennai offering hospital-based inpatient care, robotic neuro rehabilitation, computerized non-surgical spine decompression, and comprehensive pain management.
           </p>
         </div>
 
@@ -44,14 +44,14 @@ export const ContactOfficeInfo: React.FC = () => {
         <div className="relative aspect-[2.06/1] w-full overflow-hidden rounded-xl border border-secondary/10 bg-surface shadow-xs mb-6 group">
           <Image
             src={clinicContactInfo.facilityImage || "/images/common/clinic-exterior.webp"}
-            alt="Pain and Paralysis Clinic facility exterior facade in Madhanandapuram, Chennai"
+            alt="Pain and Paralysis Hospital facility exterior facade in Virugambakkam, Chennai"
             fill
             sizes="(max-width: 1024px) 100vw, 45vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute top-3 left-3 bg-secondary/90 text-white text-[11px] font-medium px-2.5 py-1 rounded backdrop-blur-xs flex items-center gap-1.5 shadow-xs">
             <Building2 className="w-3.5 h-3.5 text-accent" aria-hidden="true" />
-            <span>Madhanandapuram Facility</span>
+            <span>Virugambakkam Hospital • 25 Beds • 24 Hours</span>
           </div>
           <div className="absolute bottom-2 right-2 bg-secondary/80 text-white text-[10px] px-2 py-0.5 rounded font-sans">
             Reference Facility Asset
@@ -77,12 +77,12 @@ export const ContactOfficeInfo: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm sm:text-[15px] font-sans text-secondary font-medium hover:text-primary transition-colors duration-200 mt-0.5 block leading-relaxed"
-                aria-label={`View clinic address on Google Maps: ${clinicContactInfo.address}`}
+                aria-label={`View hospital address on Google Maps: ${clinicContactInfo.address}`}
               >
                 {clinicContactInfo.address}
               </a>
               <span className="text-[11px] text-charcoal/60 block mt-0.5">
-                Madhanandapuram, Chennai, Tamil Nadu – 600125
+                Virugambakkam, Chennai, Tamil Nadu – 600092
               </span>
             </div>
           </div>

@@ -14,4 +14,7 @@ export * from "./high-frequency-emg";
 export * from "./biofeedback";
 export * from "./neuro-physiotherapy";
 export * from "./pelvic-floor-therapy";
+export * from "./inpatient-care";
+export * from "./robotic-neuro";
+export * from "./pain-management";
 

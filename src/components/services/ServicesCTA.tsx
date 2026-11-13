@@ -37,10 +37,10 @@ export interface ServicesCTAProps {
 }
 
 export const ServicesCTA: React.FC<ServicesCTAProps> = ({
-  heading = "Discuss Your Physiotherapy Consultation Options",
-  description = "Have questions about your condition or treatment options? Consult our clinical team in Madhanandapuram, Chennai for non-surgical spine care, focused chiropractic adjustments, and specialized clinical rehabilitation consultations tailored to your functional needs.",
-  badge = "ABOUT US",
-  buttonText = "About Us",
+  heading = "Discuss Your Hospital Care & Rehabilitation Options",
+  description = "Have questions about your condition or inpatient treatment options? Consult our clinical team in Virugambakkam, Chennai for 25-bed inpatient care, robotic neuro rehabilitation, non-surgical spine decompression, and multidisciplinary pain management tailored to your recovery goals.",
+  badge = "ABOUT OUR HOSPITAL",
+  buttonText = "About Our Hospital",
 }) => {
   const [formData, setFormData] = useState({
     name: "",

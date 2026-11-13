@@ -5,7 +5,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-01",
     title: "Advanced Spine Decompression",
     slug: "advanced-spine-decompression",
-    category: "Spine Care & Traction",
+    category: "Pain Management & Specialized Treatments",
     shortDescription:
       "Non-surgical spinal decompression traction therapy designed to relieve herniated, bulging, or degenerated discs and alleviate sciatica.",
     description:
@@ -32,7 +32,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-02",
     title: "Advanced Chiropractor",
     slug: "advanced-chiropractor",
-    category: "Spinal Adjustment & Alignment",
+    category: "Pain Management & Specialized Treatments",
     shortDescription:
       "Targeted manual adjustments designed to support spinal mobility, joint biomechanics, and functional physical comfort.",
     description:
@@ -59,7 +59,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-03",
     title: "Advanced Physiotherapy",
     slug: "advanced-physiotherapy",
-    category: "Physical Rehabilitation",
+    category: "Neurological & Advanced Rehabilitation",
     shortDescription:
       "Outpatient physical therapy consultations and clinical evaluation for physical rehabilitation and movement-related concerns.",
     description:
@@ -86,7 +86,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-04",
     title: "Advanced Aquatic Therapy",
     slug: "advanced-aquatic-therapy",
-    category: "Aquatic Movement & Hydrotherapy Principles",
+    category: "Pain Management & Specialized Treatments",
     shortDescription:
       "Educational overview and outpatient consultation discussing the principles of water-based movement, low-impact exercise, and physical mobility.",
     description:
@@ -113,7 +113,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-05",
     title: "Advanced 3D Gait Analysis",
     slug: "advanced-3d-gait-analysis",
-    category: "Movement & Biomechanical Evaluation",
+    category: "Neurological & Advanced Rehabilitation",
     shortDescription:
       "Educational overview and outpatient evaluation of walking mechanics, movement asymmetry, joint kinetics, and functional biomechanics.",
     description:
@@ -140,7 +140,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-06",
     title: "Advanced Knee Decompression",
     slug: "advanced-knee-decompression",
-    category: "Joint Decompression",
+    category: "Pain Management & Specialized Treatments",
     shortDescription:
       "Mechanical unloading and non-invasive articular distraction therapy designed to reduce osteoarthritic joint friction and support knee mobility.",
     description:
@@ -167,7 +167,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-07",
     title: "Advanced Laser Treatment",
     slug: "advanced-laser-treatment",
-    category: "Photobiomodulation",
+    category: "Pain Management & Specialized Treatments",
     shortDescription:
       "Targeted therapeutic photobiomodulation designed to stimulate cellular energy production, ease localized inflammation, and support soft tissue recovery.",
     description:
@@ -194,7 +194,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-08",
     title: "High Frequency EMG",
     slug: "high-frequency-emg",
-    category: "Neuromuscular Assessment",
+    category: "Neurological & Advanced Rehabilitation",
     shortDescription:
       "Non-invasive surface electromyographic assessment and neuromuscular evaluation to evaluate muscle activation patterns, motor recruitment, and functional rehabilitation progress.",
     description:
@@ -221,7 +221,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-09",
     title: "Biofeedback",
     slug: "biofeedback",
-    category: "Neuromuscular Re-education",
+    category: "Neurological & Advanced Rehabilitation",
     shortDescription:
       "Real-time neuromuscular sensor retraining enabling conscious control of involuntary muscle hypertonicity and spasms.",
     description:
@@ -246,7 +246,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-10",
     title: "Neuro Physiotherapy",
     slug: "neuro-physiotherapy",
-    category: "Neurological Rehabilitation",
+    category: "Neurological & Advanced Rehabilitation",
     shortDescription:
       "Outpatient neurological rehabilitation supporting functional mobility, postural balance, and motor retraining for stroke and movement limitations.",
     description:
@@ -273,7 +273,7 @@ export const servicesData: ServiceItem[] = [
     id: "service-11",
     title: "Pelvic Floor",
     slug: "pelvic-floor-therapy",
-    category: "Pelvic Health & Core",
+    category: "Pain Management & Specialized Treatments",
     shortDescription:
       "Targeted clinical rehabilitation of pelvic floor musculature designed to support core stability and functional pelvic health.",
     description:
@@ -292,6 +292,87 @@ export const servicesData: ServiceItem[] = [
       "Stress & Urge Urinary Incontinence",
       "Postpartum Pelvic Muscle Conditioning",
       "Diastasis Recti & Core Instability",
+    ],
+  },
+  {
+    id: "service-12",
+    title: "Inpatient Rehabilitation & Hospital Care",
+    slug: "inpatient-care",
+    category: "Hospital & Inpatient Services",
+    shortDescription:
+      "24-hour hospital-based inpatient rehabilitation and multidisciplinary clinical care in Virugambakkam, Chennai, featuring 25 dedicated inpatient beds.",
+    description:
+      "Inpatient Rehabilitation & Hospital Care at Pain & Paralysis Hospital provides structured hospital-based recovery for individuals requiring continuous multidisciplinary care. Operating as a 25-bedded, 24-hour hospital facility in Virugambakkam, Chennai, our inpatient program bridges acute medical stabilization and long-term functional recovery through coordinated rehabilitation, regular clinical monitoring, caregiver training, and compassionate discharge planning.",
+    image: "/images/common/clinic-exterior.webp",
+    heroImage: "/images/hero/hero-slide-01.webp",
+    route: "/services/inpatient-care",
+    originalUrl: "https://painandparalysis.com/#",
+    benefits: [
+      "25-bedded dedicated inpatient hospital facility in Virugambakkam, Chennai",
+      "24-hour hospital care environment supporting intensive recovery needs",
+      "Integrated daily physiotherapy, neuro rehabilitation, and mobility support",
+      "Dedicated caregiver training, transition counseling, and structured discharge continuity",
+    ],
+    conditionsTreated: [
+      "Post-Stroke Subacute Inpatient Recovery",
+      "Severe Neurological Mobility Limitations & Hemiparesis",
+      "Complex Post-Surgical Orthopedic Rehabilitation",
+      "Spinal Cord Injury Functional Reconditioning",
+      "Multi-Trauma & Extended Functional Immobility",
+    ],
+  },
+  {
+    id: "service-13",
+    title: "Robotic Neuro Rehabilitation",
+    slug: "robotic-neuro-rehabilitation",
+    category: "Neurological & Advanced Rehabilitation",
+    shortDescription:
+      "High-precision, technology-assisted neurological rehabilitation facilitating repetitive, task-oriented movement retraining for stroke and paralysis recovery.",
+    description:
+      "Robotic Neuro Rehabilitation represents an advanced, technology-assisted approach to neurological physical therapy. By combining robotic guidance with functional task practice, patients engage in intensive, high-repetition movement cycles designed to stimulate neuroplasticity and retrain motor pathways following stroke, brain injury, spinal conditions, or paralysis. Treatment protocols and suitability are strictly determined following thorough clinical evaluation.",
+    image: "/images/services/care-trauma.webp",
+    heroImage: "/images/hero/slide-therapies.webp",
+    route: "/services/robotic-neuro-rehabilitation",
+    originalUrl: "https://painandparalysis.com/#",
+    benefits: [
+      "Consistent, guided kinematic movement trajectories for upper and lower limbs",
+      "High-repetition task practice supporting motor relearning and neuroplasticity",
+      "Objective sensor tracking measuring patient effort, range of motion, and symmetry",
+      "Conservative clinical integration adapted to individual patient tolerance and safety",
+    ],
+    conditionsTreated: [
+      "Post-Stroke Motor Deficits & Hemiplegia",
+      "Paralysis & Neuromuscular Movement Impairments",
+      "Spinal Injury Gait & Locomotion Retraining",
+      "Traumatic Brain Injury Motor Coordination Recovery",
+      "Post-Illness Neurological Muscle Reconditioning",
+    ],
+  },
+  {
+    id: "service-14",
+    title: "Comprehensive Pain Management",
+    slug: "pain-management",
+    category: "Pain Management & Specialized Treatments",
+    shortDescription:
+      "Evidence-guided, non-surgical clinical evaluation and integrated care pathways for persistent spine, joint, nerve, and musculoskeletal pain.",
+    description:
+      "Comprehensive Pain Management at Pain & Paralysis Hospital integrates detailed clinical biomechanical assessments, mechanical traction, manual mobilizations, and therapeutic modalities into customized care plans. Designed for patients experiencing persistent back, neck, knee, or neuropathic discomfort, our conservative multidisciplinary approach prioritizes structural decompression, postural restoration, and functional pain relief without surgical intervention.",
+    image: "/images/services/care-spine.webp",
+    heroImage: "/images/hero/slide-recovery.webp",
+    route: "/services/pain-management",
+    originalUrl: "https://painandparalysis.com/#",
+    benefits: [
+      "Comprehensive clinical assessment evaluating root biomechanical and postural factors",
+      "Individualized non-surgical treatment pathways combining multiple conservative modalities",
+      "Targeted decompression of spinal discs and peripheral joint compartments",
+      "Functional restoration protocols aimed at sustainable mobility and everyday comfort",
+    ],
+    conditionsTreated: [
+      "Chronic Lumbar & Cervical Spine Pain",
+      "Sciatica & Radiating Neuropathic Pain",
+      "Osteoarthritic Joint Discomfort (Knee, Hip, Shoulder)",
+      "Persistent Post-Traumatic Musculoskeletal Stiffness",
+      "Myofascial Pain Syndrome & Complex Postural Fatigue",
     ],
   },
 ];
