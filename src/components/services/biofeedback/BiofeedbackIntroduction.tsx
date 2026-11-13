@@ -37,6 +37,44 @@ const clinicalPillars = [
  * and a prominent Clinical Scope Notice.
  */
 export const BiofeedbackIntroduction: React.FC = () => {
+  // Reusable Equipment Card (Rendered between title & description on mobile, in left column on desktop)
+  const renderEquipmentCard = (isMobile = false) => (
+    <div className={`relative w-full overflow-hidden rounded-2xl bg-surface-soft p-3 sm:p-4 shadow-xl border border-black/5 ${isMobile ? "max-w-md mx-auto my-5" : "max-w-md mx-auto"}`}>
+      {/* Main Modality Image */}
+      <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/5">
+        <Image
+          src="/images/services/biofeedback.webp"
+          alt="Biofeedback clinical consultation and neuromuscular sensor retraining at Pain and Paralysis Clinic Chennai"
+          fill
+          sizes="(min-width: 1280px) 420px, (min-width: 1024px) 380px, (min-width: 768px) 450px, 92vw"
+          className="object-cover object-center transition-transform duration-500 hover:scale-105"
+          priority
+        />
+        {/* Floating Modality Pill */}
+        <div className="absolute top-4 left-4 rounded-full bg-secondary/90 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md border border-white/20 shadow-md">
+          Neuromuscular Retraining
+        </div>
+      </div>
+
+      {/* Informational Callout Beneath Image */}
+      <div className="mt-4 rounded-xl bg-white p-4 border border-black/5 shadow-sm">
+        <div className="flex items-start gap-3">
+          <div className="rounded-lg bg-primary/10 p-2 text-primary flex-shrink-0">
+            <Brain className="h-5 w-5" aria-hidden="true" />
+          </div>
+          <div>
+            <h3 className="font-heading text-sm font-semibold text-secondary uppercase tracking-wider">
+              Sensor-Guided Motor Learning
+            </h3>
+            <p className="mt-0.5 text-xs text-body leading-relaxed">
+              High-sensitivity surface electromyographic sensors detect microvolt-level bioelectric potentials, translating subconscious muscle activity into real-time sensory feedback for targeted motor retraining under qualified therapist supervision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Section
       id="treatment-overview"
@@ -47,42 +85,9 @@ export const BiofeedbackIntroduction: React.FC = () => {
     >
       <Container size="wide">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Left Column: Equipment Photography & Clinical Badges (5 cols on lg) */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-2xl bg-surface-soft p-3 sm:p-4 shadow-xl border border-black/5">
-              {/* Main Modality Image */}
-              <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/5">
-                <Image
-                  src="/images/services/biofeedback.webp"
-                  alt="Biofeedback clinical consultation and neuromuscular sensor retraining at Pain and Paralysis Clinic Chennai"
-                  fill
-                  sizes="(min-width: 1280px) 420px, (min-width: 1024px) 380px, (min-width: 768px) 450px, 92vw"
-                  className="object-cover object-center transition-transform duration-500 hover:scale-105"
-                  priority
-                />
-                {/* Floating Modality Pill */}
-                <div className="absolute top-4 left-4 rounded-full bg-secondary/90 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md border border-white/20 shadow-md">
-                  Neuromuscular Retraining
-                </div>
-              </div>
-
-              {/* Informational Callout Beneath Image */}
-              <div className="mt-4 rounded-xl bg-white p-4 border border-black/5 shadow-sm">
-                <div className="flex items-start gap-3">
-                  <div className="rounded-lg bg-primary/10 p-2 text-primary flex-shrink-0">
-                    <Brain className="h-5 w-5" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-sm font-semibold text-secondary uppercase tracking-wider">
-                      Sensor-Guided Motor Learning
-                    </h3>
-                    <p className="mt-0.5 text-xs text-body leading-relaxed">
-                      High-sensitivity surface electromyographic sensors detect microvolt-level bioelectric potentials, translating subconscious muscle activity into real-time sensory feedback for targeted motor retraining under qualified therapist supervision.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Left Column: Equipment Photography & Clinical Badges (Desktop) */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col items-center">
+            {renderEquipmentCard(false)}
           </div>
 
           {/* Right Column: Detailed Clinical Copy & Action Triggers (7 cols on lg) */}
@@ -96,6 +101,11 @@ export const BiofeedbackIntroduction: React.FC = () => {
             <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-secondary leading-tight text-balance">
               Understanding Biofeedback in Neuromuscular Rehabilitation
             </h2>
+
+            {/* Mobile Image: Positioned strictly between Section Title and Description */}
+            <div className="block lg:hidden w-full">
+              {renderEquipmentCard(true)}
+            </div>
 
             {/* Narrative Paragraphs */}
             <div className="mt-4 space-y-3.5 text-sm sm:text-base text-body leading-relaxed">

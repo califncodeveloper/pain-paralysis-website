@@ -4,6 +4,50 @@ import { Activity, Sparkles, ShieldCheck, CheckCircle2, HeartHandshake, Bed } fr
 import { Container, Section, SectionHeading } from "@/components/ui";
 
 export const AboutIntroduction: React.FC = () => {
+  // Reusable Procedure Media Asset (Rendered between title and description on mobile, in right column on desktop)
+  const renderProcedureImage = (isMobile = false) => (
+    <div className={`group relative w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-secondary/15 bg-surface shadow-xl ${isMobile ? "max-w-md sm:max-w-lg mx-auto my-2" : ""}`}>
+      <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
+        <Image
+          src="/images/about/clinic-procedure.webp"
+          alt="Pain and Paralysis Hospital authentic patient treatment and manual therapy session in Chennai"
+          fill
+          sizes="(min-width: 1024px) 40vw, 100vw"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/25 to-transparent"
+          aria-hidden="true"
+        />
+
+        {/* Top Badge */}
+        <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/90 text-white text-[11px] sm:text-xs font-semibold backdrop-blur-md shadow-md border border-white/20">
+            <Bed className="w-3.5 h-3.5 text-accent" />
+            25-Bed Inpatient Hospital
+          </span>
+        </div>
+
+        {/* Bottom Overlay Card */}
+        <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 rounded-xl sm:rounded-2xl border border-white/30 bg-white/95 p-3 sm:p-4 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <HeartHandshake className="h-4 w-4 sm:h-5 sm:w-5 text-primary" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-xs sm:text-sm font-semibold text-secondary">
+                Patient-Centered Hospital Rehabilitation
+              </p>
+              <p className="text-[10px] sm:text-xs text-text/75 font-medium">
+                Hands-on Clinical Precision in Virugambakkam
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Section
       id="introduction"
@@ -12,17 +56,18 @@ export const AboutIntroduction: React.FC = () => {
       aria-label="Hospital Introduction and Core Philosophy"
     >
       <Container size="standard">
-        {/* Section Heading */}
+        {/* Section Heading with mobileMedia positioned between title & description on mobile */}
         <SectionHeading
           eyebrow="WHY PAIN AND PARALYSIS HOSPITAL?"
           title="Global Expertise. Clinical Precision. Proven Results."
+          mobileMedia={renderProcedureImage(true)}
           description="Operating as a 25-bedded, 24-hour hospital in Virugambakkam, Chennai, we are dedicated to restoring mobility, relieving acute and chronic pain, and rehabilitating neurological deficits without invasive surgery."
           align="left"
           accent
-          className="mb-10 sm:mb-14"
+          className="mb-8 sm:mb-14"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           {/* Left Column: Narrative Copy & 3 Core Values */}
           <div className="lg:col-span-7 flex flex-col space-y-6">
             <p className="font-sans text-sm sm:text-base md:text-[17px] leading-relaxed text-text/90">
@@ -88,69 +133,9 @@ export const AboutIntroduction: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Authentic Procedure Asset & Quality Badges */}
-          <div className="lg:col-span-5 flex flex-col justify-center">
-            <div className="group relative w-full overflow-hidden rounded-3xl border border-secondary/15 bg-surface shadow-xl">
-              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden">
-                <Image
-                  src="/images/about/clinic-procedure.webp"
-                  alt="Pain and Paralysis Hospital authentic patient treatment and manual therapy session in Chennai"
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div
-                  className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/25 to-transparent"
-                  aria-hidden="true"
-                />
-
-                {/* Top Badge */}
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/90 text-white text-xs font-semibold backdrop-blur-md shadow-md border border-white/20">
-                    <Bed className="w-3.5 h-3.5 text-accent" />
-                    25-Bed Inpatient Hospital
-                  </span>
-                </div>
-
-                {/* Bottom Overlay Card */}
-                <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 rounded-2xl border border-white/30 bg-white/95 p-3.5 sm:p-4 shadow-xl backdrop-blur-md">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                      <HeartHandshake className="h-5 w-5 text-primary" aria-hidden="true" />
-                    </div>
-                    <div>
-                      <p className="text-xs sm:text-sm font-semibold text-secondary">
-                        Patient-Centered Hospital Rehabilitation
-                      </p>
-                      <p className="text-[11px] sm:text-xs text-text/75 font-medium">
-                        Hands-on Clinical Precision in Virugambakkam
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Supporting Credential Highlights */}
-              <div className="p-5 sm:p-6 bg-white border-t border-secondary/10">
-                <h4 className="font-heading text-sm sm:text-base font-semibold text-secondary mb-3">
-                  Clinical Care Standards
-                </h4>
-                <div className="space-y-2.5">
-                  {[
-                    "25-Bedded, 24-hour hospital inpatient care",
-                    "Computerized spinal decompression technology",
-                    "Robotic neuro rehabilitation & motor retraining",
-                    "Dedicated hydrotherapy & aquatic therapy center",
-                    "Continuous multidisciplinary patient monitoring",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-2 text-xs sm:text-sm text-text/85">
-                      <CheckCircle2 className="h-4 w-4 text-primary shrink-0" aria-hidden="true" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          {/* Right Column: Authentic Procedure Asset & Quality Badges (Desktop) */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col justify-center">
+            {renderProcedureImage(false)}
           </div>
         </div>
       </Container>

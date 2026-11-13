@@ -334,7 +334,7 @@ export const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="e.g. Rajesh Kumar"
-                className={`w-full rounded-lg border bg-surface-soft px-4 py-3 text-sm text-secondary transition-all duration-200 placeholder:text-charcoal/40 focus:bg-white focus:outline-none focus:ring-2 ${
+                className={`w-full rounded-lg border bg-surface-soft px-4 py-3 text-base sm:text-sm text-secondary transition-all duration-200 placeholder:text-charcoal/40 focus:bg-white focus:outline-none focus:ring-2 ${
                   errors.fullName
                     ? "border-rose-400 focus:border-rose-500 focus:ring-rose-200"
                     : "border-secondary/20 focus:border-primary focus:ring-primary/20"
@@ -376,7 +376,7 @@ export const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="e.g. rajesh@example.com"
-                className={`w-full rounded-lg border bg-surface-soft px-4 py-3 text-sm text-secondary transition-all duration-200 placeholder:text-charcoal/40 focus:bg-white focus:outline-none focus:ring-2 ${
+                className={`w-full rounded-lg border bg-surface-soft px-4 py-3 text-base sm:text-sm text-secondary transition-all duration-200 placeholder:text-charcoal/40 focus:bg-white focus:outline-none focus:ring-2 ${
                   errors.email
                     ? "border-rose-400 focus:border-rose-500 focus:ring-rose-200"
                     : "border-secondary/20 focus:border-primary focus:ring-primary/20"
@@ -421,7 +421,7 @@ export const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="e.g. 9876543210 or +91 98765 43210"
-                className={`w-full rounded-lg border bg-surface-soft px-4 py-3 text-sm text-secondary transition-all duration-200 placeholder:text-charcoal/40 focus:bg-white focus:outline-none focus:ring-2 ${
+                className={`w-full rounded-lg border bg-surface-soft px-4 py-3 text-base sm:text-sm text-secondary transition-all duration-200 placeholder:text-charcoal/40 focus:bg-white focus:outline-none focus:ring-2 ${
                   errors.phone
                     ? "border-rose-400 focus:border-rose-500 focus:ring-rose-200"
                     : "border-secondary/20 focus:border-primary focus:ring-primary/20"
@@ -464,7 +464,7 @@ export const ContactForm: React.FC = () => {
                 value={formData.service}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={`w-full rounded-lg border bg-surface-soft px-4 py-3 text-sm text-secondary transition-all duration-200 focus:bg-white focus:outline-none focus:ring-2 appearance-none cursor-pointer ${
+                className={`w-full rounded-lg border bg-surface-soft px-4 py-3 text-base sm:text-sm text-secondary transition-all duration-200 focus:bg-white focus:outline-none focus:ring-2 appearance-none cursor-pointer ${
                   errors.service
                     ? "border-rose-400 focus:border-rose-500 focus:ring-rose-200"
                     : "border-secondary/20 focus:border-primary focus:ring-primary/20"
@@ -521,7 +521,7 @@ export const ContactForm: React.FC = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Please describe your symptoms, duration of discomfort, previous treatments, or questions..."
-              className={`w-full rounded-lg border bg-surface-soft px-4 py-3 text-sm text-secondary transition-all duration-200 placeholder:text-charcoal/40 focus:bg-white focus:outline-none focus:ring-2 resize-y min-h-[110px] ${
+              className={`w-full rounded-lg border bg-surface-soft px-4 py-3 text-base sm:text-sm text-secondary transition-all duration-200 placeholder:text-charcoal/40 focus:bg-white focus:outline-none focus:ring-2 resize-y min-h-[110px] ${
                 errors.message
                   ? "border-rose-400 focus:border-rose-500 focus:ring-rose-200"
                     : "border-secondary/20 focus:border-primary focus:ring-primary/20"

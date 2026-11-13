@@ -23,6 +23,26 @@ import { clinicContactInfo } from "@/data/navigation";
  * - Reception / facility asset clearly qualified.
  */
 export const ContactOfficeInfo: React.FC = () => {
+  // Facility Preview Image Component (shared)
+  const renderFacilityImage = () => (
+    <div className="relative aspect-[2.06/1] w-full overflow-hidden rounded-xl border border-secondary/10 bg-surface shadow-xs group">
+      <Image
+        src={clinicContactInfo.facilityImage || "/images/common/clinic-exterior.webp"}
+        alt="Pain and Paralysis Hospital facility exterior facade in Virugambakkam, Chennai"
+        fill
+        sizes="(max-width: 1024px) 100vw, 45vw"
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-secondary/90 text-white text-[10px] sm:text-[11px] font-medium px-2.5 py-1 rounded backdrop-blur-xs flex items-center gap-1.5 shadow-xs">
+        <Building2 className="w-3.5 h-3.5 text-accent" aria-hidden="true" />
+        <span>Virugambakkam Hospital • 25 Beds • 24 Hours</span>
+      </div>
+      <div className="absolute bottom-2 right-2 bg-secondary/80 text-white text-[10px] px-2 py-0.5 rounded font-sans">
+        Reference Facility Asset
+      </div>
+    </div>
+  );
+
   return (
     <div className="rounded-2xl bg-white border border-secondary/15 p-6 sm:p-8 lg:p-10 shadow-sm flex flex-col justify-between h-full">
       <div>
@@ -35,27 +55,20 @@ export const ContactOfficeInfo: React.FC = () => {
           <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-secondary">
             Pain &amp; Paralysis Hospital Chennai
           </h2>
+
+          {/* Mobile Image: Positioned strictly between Section Title and Description */}
+          <div className="block lg:hidden my-4">
+            {renderFacilityImage()}
+          </div>
+
           <p className="text-sm text-charcoal/80 font-sans mt-2 leading-relaxed">
             25-Bedded, 24-Hour Hospital in Virugambakkam, Chennai offering hospital-based inpatient care, robotic neuro rehabilitation, computerized non-surgical spine decompression, and comprehensive pain management.
           </p>
         </div>
 
-        {/* Facility Asset Preview */}
-        <div className="relative aspect-[2.06/1] w-full overflow-hidden rounded-xl border border-secondary/10 bg-surface shadow-xs mb-6 group">
-          <Image
-            src={clinicContactInfo.facilityImage || "/images/common/clinic-exterior.webp"}
-            alt="Pain and Paralysis Hospital facility exterior facade in Virugambakkam, Chennai"
-            fill
-            sizes="(max-width: 1024px) 100vw, 45vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute top-3 left-3 bg-secondary/90 text-white text-[11px] font-medium px-2.5 py-1 rounded backdrop-blur-xs flex items-center gap-1.5 shadow-xs">
-            <Building2 className="w-3.5 h-3.5 text-accent" aria-hidden="true" />
-            <span>Virugambakkam Hospital • 25 Beds • 24 Hours</span>
-          </div>
-          <div className="absolute bottom-2 right-2 bg-secondary/80 text-white text-[10px] px-2 py-0.5 rounded font-sans">
-            Reference Facility Asset
-          </div>
+        {/* Desktop Facility Asset Preview (Positioned below description on lg+) */}
+        <div className="hidden lg:block mb-6">
+          {renderFacilityImage()}
         </div>
 
         {/* Structured Contact Details List */}

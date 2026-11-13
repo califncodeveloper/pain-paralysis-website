@@ -36,7 +36,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         aria-label="Chat with Pain & Paralysis Hospital on WhatsApp"
-        className="relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-xl hover:bg-[#20bd5a] hover:scale-105 active:scale-95 transition-all duration-300 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#25D366]/50"
+        className="relative flex items-center justify-center w-[52px] h-[52px] sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-xl hover:bg-[#20bd5a] hover:scale-105 active:scale-95 transition-all duration-300 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#25D366]/50"
       >
         {/* Official WhatsApp SVG Vector Icon */}
         <svg

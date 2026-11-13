@@ -33,6 +33,60 @@ export const TeamSection: React.FC = () => {
           "Biomechanical & Postural Assessment",
         ];
 
+  // Reusable Doctor Portrait Component (Rendered between title and description on mobile, in left column on desktop)
+  const renderDoctorPortrait = (isMobile = false) => (
+    <div className={`group relative w-full ${isMobile ? "max-w-[340px] sm:max-w-[400px] mx-auto my-2" : "max-w-[420px] sm:max-w-[460px] lg:max-w-none"}`}>
+      {/* Decorative Subtle Ambient Glow */}
+      <div
+        className="pointer-events-none absolute -inset-2 rounded-3xl bg-gradient-to-tr from-primary/20 via-accent/15 to-transparent opacity-70 blur-xl transition-opacity duration-500 group-hover:opacity-100"
+        aria-hidden="true"
+      />
+
+      {/* Doctor Portrait Card Wrapper */}
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-secondary/15 bg-surface shadow-[0_12px_40px_-5px_rgba(16,81,86,0.14)] transition-all duration-500 group-hover:shadow-[0_25px_50px_-5px_rgba(28,170,182,0.22)]">
+        <Image
+          src={leadDoctor.image}
+          alt={`Portrait of ${leadDoctor.name}, ${leadDoctor.designation} at Pain and Paralysis Hospital`}
+          fill
+          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 480px"
+          className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+          priority
+        />
+
+        {/* Subtle Medical Contrast Gradient Overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-secondary/85 via-secondary/15 to-transparent opacity-65 transition-opacity duration-300 group-hover:opacity-75"
+          aria-hidden="true"
+        />
+
+        {/* Top Corner Badge: Clinical Leadership */}
+        <div className="pointer-events-none absolute left-3 top-3 sm:left-5 sm:top-5">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-secondary shadow-md backdrop-blur-sm border border-black/5">
+            <Sparkles className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+            Lead Specialist &amp; Founder
+          </span>
+        </div>
+
+        {/* Bottom Overlay Card */}
+        <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 rounded-xl sm:rounded-2xl border border-white/30 bg-white/95 p-3 sm:p-4 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <Award className="h-4 w-4 sm:h-5 sm:w-5 text-primary" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-xs sm:text-sm font-semibold text-secondary">
+                Tamilnadu Award for Excellence
+              </p>
+              <p className="text-[10px] sm:text-xs text-text/75 font-medium">
+                Robotic Chiropractic &amp; Spine Care
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Section
       id="our-team"
@@ -42,72 +96,24 @@ export const TeamSection: React.FC = () => {
       aria-labelledby="team-section-heading"
     >
       <Container size="standard">
-        {/* Section Header */}
+        {/* Section Header with mobileMedia rendered between title & description on mobile */}
         <SectionHeading
           eyebrow="CLINICAL LEADERSHIP"
           title="Meet Our Lead Specialist"
+          mobileMedia={renderDoctorPortrait(true)}
           description="Dr. Dinesh Anandhan directs clinical protocols across non-surgical spine care, robotic neuro rehabilitation, and comprehensive inpatient recovery at Pain & Paralysis Hospital."
           align="center"
           accent
-          className="mb-10 sm:mb-14"
+          className="mb-8 sm:mb-14"
         />
 
         {/* 2-Column Doctor Feature Showcase */}
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12 xl:gap-16">
           {/* ========================================================= */}
-          {/* LEFT COLUMN: Lead Doctor High-Resolution Portrait         */}
+          {/* LEFT COLUMN: Lead Doctor High-Resolution Portrait (Desktop) */}
           {/* ========================================================= */}
-          <div className="w-full lg:col-span-5 flex justify-center">
-            <div className="group relative w-full max-w-[420px] sm:max-w-[460px] lg:max-w-none">
-              {/* Decorative Subtle Ambient Glow */}
-              <div
-                className="pointer-events-none absolute -inset-2 rounded-3xl bg-gradient-to-tr from-primary/20 via-accent/15 to-transparent opacity-70 blur-xl transition-opacity duration-500 group-hover:opacity-100"
-                aria-hidden="true"
-              />
-
-              {/* Doctor Portrait Card Wrapper */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-secondary/15 bg-surface shadow-[0_12px_40px_-5px_rgba(16,81,86,0.14)] transition-all duration-500 group-hover:shadow-[0_25px_50px_-5px_rgba(28,170,182,0.22)]">
-                <Image
-                  src={leadDoctor.image}
-                  alt={`Portrait of ${leadDoctor.name}, ${leadDoctor.designation} at Pain and Paralysis Hospital`}
-                  fill
-                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 480px"
-                  className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                  priority
-                />
-
-                {/* Subtle Medical Contrast Gradient Overlay */}
-                <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-secondary/85 via-secondary/15 to-transparent opacity-65 transition-opacity duration-300 group-hover:opacity-75"
-                  aria-hidden="true"
-                />
-
-                {/* Top Corner Badge: Clinical Leadership */}
-                <div className="pointer-events-none absolute left-4 top-4 sm:left-5 sm:top-5">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3.5 py-1 text-xs font-semibold text-secondary shadow-md backdrop-blur-sm border border-black/5">
-                    <Sparkles className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
-                    Lead Specialist &amp; Founder
-                  </span>
-                </div>
-
-                {/* Bottom Overlay Card */}
-                <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 rounded-2xl border border-white/30 bg-white/95 p-3.5 sm:p-4 shadow-xl backdrop-blur-md">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                      <Award className="h-5 w-5 text-primary" aria-hidden="true" />
-                    </div>
-                    <div>
-                      <p className="text-xs sm:text-sm font-semibold text-secondary">
-                        Tamilnadu Award for Excellence
-                      </p>
-                      <p className="text-[11px] sm:text-xs text-text/75 font-medium">
-                        Robotic Chiropractic &amp; Spine Care
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="hidden lg:flex w-full lg:col-span-5 justify-center">
+            {renderDoctorPortrait(false)}
           </div>
 
           {/* ========================================================= */}

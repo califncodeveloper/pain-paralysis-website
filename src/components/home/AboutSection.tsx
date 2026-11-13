@@ -45,8 +45,76 @@ export const AboutSection: React.FC = () => {
     },
   ];
 
+  // Visual Image Composition with Video Trigger & Badges (Shared between Desktop column & Mobile in-between title/desc)
+  const renderVisualMedia = (isMobile = false) => (
+    <div className={`relative mx-auto w-full ${isMobile ? "max-w-md sm:max-w-lg" : "max-w-[480px] lg:max-w-none"}`}>
+      {/* Main Image Framing */}
+      <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(16,81,86,0.14)] border border-[#105156]/12 bg-white aspect-[4/3.5] sm:aspect-[4/4.8] group">
+        <Image
+          src="/images/about/clinic-procedure.webp"
+          alt="Clinical spine procedure and rehabilitation at Pain and Paralysis Hospital"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+
+        {/* Video Play Overlay Button */}
+        <div className="absolute inset-0 bg-[#105156]/20 flex items-center justify-center transition-colors group-hover:bg-[#105156]/30">
+          <button
+            ref={!isMobile ? triggerButtonRef : undefined}
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="group/btn relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white text-primary shadow-2xl transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/40 cursor-pointer"
+            aria-label="Play hospital overview and procedure video"
+          >
+            <span className="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-75" />
+            <Play className="w-6 h-6 sm:w-8 sm:h-8 fill-primary stroke-none ml-1 group-hover/btn:scale-110 transition-transform" />
+          </button>
+        </div>
+
+        {/* Floating Bottom Trust Chip */}
+        <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-white/95 backdrop-blur-md p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/60 shadow-lg">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+              <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+            </div>
+            <div>
+              <span className="font-heading font-semibold text-secondary text-xs sm:text-sm block">
+                Virugambakkam Hospital
+              </span>
+              <span className="text-[11px] sm:text-xs text-text/75 block">
+                25 Beds • 24-Hour Hospital Facility
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Top Inset Badge: 25-Bed Inpatient Care */}
+      <div className="absolute -top-3.5 -right-2 sm:-top-5 sm:-right-4 lg:-right-6 bg-white/95 backdrop-blur-md text-secondary p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl shadow-xl border border-black/10 flex items-center gap-2.5 sm:gap-3 max-w-[190px] sm:max-w-[220px]">
+        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+          <Bed className="w-4 h-4 sm:w-5 sm:h-5" />
+        </div>
+        <div>
+          <span className="text-[10px] sm:text-[11px] font-bold text-primary uppercase tracking-wider block">
+            Inpatient Suites
+          </span>
+          <span className="text-[11px] sm:text-xs text-secondary font-medium leading-tight block">
+            25 Dedicated Beds
+          </span>
+        </div>
+      </div>
+
+      {/* Decorative Accent Background Frame */}
+      <div
+        className="absolute -bottom-4 -left-4 -z-10 w-full h-full rounded-3xl border-2 border-primary/25 hidden sm:block pointer-events-none"
+        aria-hidden="true"
+      />
+    </div>
+  );
+
   return (
-    <section className="py-20 lg:py-28 bg-[#F8FBFB] relative overflow-hidden" id="about">
+    <section className="py-14 sm:py-20 lg:py-28 bg-[#F8FBFB] relative overflow-hidden" id="about">
       {/* Background visual accents */}
       <div
         className="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2"
@@ -58,89 +126,31 @@ export const AboutSection: React.FC = () => {
       />
 
       <Container wide>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-20 items-center">
-          {/* Left Column: Visual Composition with Layered Inset & Video Trigger (5 cols) */}
-          <div className="lg:col-span-5 relative order-2 lg:order-1">
-            <div className="relative mx-auto max-w-[480px] lg:max-w-none">
-              {/* Main Image Framing */}
-              <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(16,81,86,0.14)] border border-[#105156]/12 bg-white aspect-[4/4.8] group">
-                <Image
-                  src="/images/about/clinic-procedure.webp"
-                  alt="Clinical spine procedure and rehabilitation at Pain and Paralysis Hospital"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-
-                {/* Video Play Overlay Button */}
-                <div className="absolute inset-0 bg-[#105156]/20 flex items-center justify-center transition-colors group-hover:bg-[#105156]/30">
-                  <button
-                    ref={triggerButtonRef}
-                    type="button"
-                    onClick={() => setIsModalOpen(true)}
-                    className="group/btn relative flex items-center justify-center w-20 h-20 rounded-full bg-white text-primary shadow-2xl transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/40 cursor-pointer"
-                    aria-label="Play hospital overview and procedure video"
-                  >
-                    <span className="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-75" />
-                    <Play className="w-8 h-8 fill-primary stroke-none ml-1 group-hover/btn:scale-110 transition-transform" />
-                  </button>
-                </div>
-
-                {/* Floating Bottom Trust Chip */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-white/60 shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                      <Award className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="font-heading font-semibold text-secondary text-sm block">
-                        Virugambakkam Hospital
-                      </span>
-                      <span className="text-xs text-text/75 block">
-                        25 Beds • 24-Hour Hospital Facility
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Top Inset Badge: 25-Bed Inpatient Care */}
-              <div className="absolute -top-5 -right-3 sm:-right-6 bg-white/95 backdrop-blur-md text-secondary p-3.5 rounded-2xl shadow-xl border border-black/10 hidden sm:flex items-center gap-3 max-w-[220px]">
-                <div className="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
-                  <Bed className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[11px] font-bold text-primary uppercase tracking-wider block">
-                    Inpatient Suites
-                  </span>
-                  <span className="text-xs text-secondary font-medium leading-tight block">
-                    25 Dedicated Beds
-                  </span>
-                </div>
-              </div>
-
-              {/* Decorative Accent Background Frame */}
-              <div
-                className="absolute -bottom-4 -left-4 -z-10 w-full h-full rounded-3xl border-2 border-primary/25 hidden sm:block pointer-events-none"
-                aria-hidden="true"
-              />
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 xl:gap-20 items-center">
+          {/* Desktop Left Column: Visual Composition (5 cols on lg, hidden on mobile/tablet) */}
+          <div className="hidden lg:block lg:col-span-5 relative">
+            {renderVisualMedia(false)}
           </div>
 
-          {/* Right Column: Editorial Narrative & Pillars (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col items-start space-y-6 order-1 lg:order-2">
+          {/* Right Column: Editorial Narrative & Pillars (7 cols on lg, 12 cols on mobile) */}
+          <div className="lg:col-span-7 flex flex-col items-start space-y-5 sm:space-y-6">
             {/* Section Tag */}
             <Badge variant="primary" dot size="md">
               Clinical Philosophy &amp; Care Model
             </Badge>
 
             {/* Section Heading */}
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-[44px] font-semibold leading-[1.18] tracking-tight text-secondary">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-semibold leading-[1.18] tracking-tight text-secondary">
               A Specialized Clinical Path to Restoring Spine &amp; Neurological Function.
             </h2>
 
-            {/* Lead Prose */}
-            <p className="text-base text-text/80 leading-relaxed font-sans">
+            {/* Mobile / Tablet Image: Positioned strictly between Section Title and Description */}
+            <div className="block lg:hidden w-full my-3 sm:my-5">
+              {renderVisualMedia(true)}
+            </div>
+
+            {/* Lead Prose (Description) */}
+            <p className="text-sm sm:text-base text-text/80 leading-relaxed font-sans">
               Operating as a <strong>25-bedded, 24-hour hospital in Virugambakkam, Chennai</strong>, Pain &amp; Paralysis Hospital provides structured hospital-based inpatient care, robotic neuro rehabilitation, and specialized non-surgical pain management focused on helping patients recover mobility, functional independence, and quality of life.
             </p>
 

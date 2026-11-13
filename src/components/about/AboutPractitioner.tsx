@@ -36,6 +36,73 @@ export const AboutPractitioner: React.FC = () => {
           "Biomechanical & Postural Assessment",
         ];
 
+  // Reusable Doctor Visual Showcase (Rendered between title and description on mobile, in left column on desktop)
+  const renderDoctorShowcase = (isMobile = false) => (
+    <div className={`group relative w-full ${isMobile ? "max-w-[340px] sm:max-w-[400px] mx-auto my-2" : "max-w-[420px] lg:max-w-none"}`}>
+      {/* Decorative Subtle Ambient Glow */}
+      <div
+        className="pointer-events-none absolute -inset-2 rounded-3xl bg-gradient-to-tr from-primary/20 via-accent/10 to-transparent opacity-70 blur-xl transition-opacity duration-500 group-hover:opacity-100"
+        aria-hidden="true"
+      />
+
+      {/* Main Portrait Card */}
+      <div className="relative overflow-hidden rounded-2xl border border-secondary/10 bg-white p-3 sm:p-4 shadow-lg">
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-surface">
+          <Image
+            src={leadDoctor.image || "/images/doctors/dr-dinesh-anandhan.webp"}
+            alt="Dr. Dinesh Anandhan, Lead Chiropractor and Physiotherapist at Pain and Paralysis Clinic Chennai"
+            fill
+            sizes="(min-width: 1024px) 35vw, 90vw"
+            priority
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/10 to-transparent"
+            aria-hidden="true"
+          />
+
+          {/* Bottom Portrait Badge */}
+          <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 rounded-xl border border-white/20 bg-white/95 p-2.5 sm:p-3 shadow-md backdrop-blur-md">
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <Sparkles className="h-4 w-4 text-primary" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-secondary">
+                  Clinical Director
+                </p>
+                <p className="text-[10px] sm:text-[11px] text-text/75 font-medium">
+                  Spine Care &amp; Rehabilitation
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary Methodology Diagram Inset */}
+        <div className="mt-2.5 sm:mt-4 rounded-xl border border-secondary/10 bg-surface/80 p-2.5 sm:p-3 flex items-center gap-3">
+          <div className="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-lg border border-secondary/10 bg-white">
+            <Image
+              src="/images/about/posture-diagram.webp"
+              alt="Clinical posture and biomechanical analysis diagram"
+              fill
+              sizes="56px"
+              className="object-cover object-center"
+            />
+          </div>
+          <div>
+            <p className="text-xs font-semibold text-secondary">
+              Biomechanical Posture Analysis
+            </p>
+            <p className="text-[10px] sm:text-[11px] text-text/75">
+              Targeted spinal alignment &amp; joint mobility assessment
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Section
       id="practitioner-spotlight"
@@ -45,82 +112,21 @@ export const AboutPractitioner: React.FC = () => {
       aria-label="Lead Clinical Practitioner Feature"
     >
       <Container size="standard">
-        {/* Section Heading */}
+        {/* Section Heading with mobileMedia positioned between title & description on mobile */}
         <SectionHeading
           eyebrow="CLINICAL LEADERSHIP"
           title="Meet Our Lead Specialist"
+          mobileMedia={renderDoctorShowcase(true)}
           description="Experienced clinical direction in non-surgical spine care, robotic physiotherapy, and comprehensive physical rehabilitation."
           align="center"
           accent
-          className="mb-10 sm:mb-14"
+          className="mb-8 sm:mb-14"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column: Visual Showcase (Portrait + Posture Methodology Asset) */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="group relative w-full max-w-[420px] lg:max-w-none">
-              {/* Decorative Subtle Ambient Glow */}
-              <div
-                className="pointer-events-none absolute -inset-2 rounded-3xl bg-gradient-to-tr from-primary/20 via-accent/10 to-transparent opacity-70 blur-xl transition-opacity duration-500 group-hover:opacity-100"
-                aria-hidden="true"
-              />
-
-              {/* Main Portrait Card */}
-              <div className="relative overflow-hidden rounded-2xl border border-secondary/10 bg-white p-3 sm:p-4 shadow-lg">
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-surface">
-                  <Image
-                    src={leadDoctor.image || "/images/doctors/dr-dinesh-anandhan.webp"}
-                    alt="Dr. Dinesh Anandhan, Lead Chiropractor and Physiotherapist at Pain and Paralysis Clinic Chennai"
-                    fill
-                    sizes="(min-width: 1024px) 35vw, 90vw"
-                    priority
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/10 to-transparent"
-                    aria-hidden="true"
-                  />
-
-                  {/* Bottom Portrait Badge */}
-                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 rounded-xl border border-white/20 bg-white/95 p-3 shadow-md backdrop-blur-md">
-                    <div className="flex items-center gap-2.5">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        <Sparkles className="h-4 w-4 text-primary" aria-hidden="true" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-secondary">
-                          Clinical Director
-                        </p>
-                        <p className="text-[11px] text-text/75 font-medium">
-                          Spine Care &amp; Rehabilitation
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Secondary Methodology Diagram Inset */}
-                <div className="mt-3 sm:mt-4 rounded-xl border border-secondary/10 bg-surface/80 p-3 flex items-center gap-3">
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-secondary/10 bg-white">
-                    <Image
-                      src="/images/about/posture-diagram.webp"
-                      alt="Clinical posture and biomechanical analysis diagram"
-                      fill
-                      sizes="56px"
-                      className="object-cover object-center"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-secondary">
-                      Biomechanical Posture Analysis
-                    </p>
-                    <p className="text-[11px] text-text/75">
-                      Targeted spinal alignment &amp; joint mobility assessment
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+          {/* Left Column: Visual Showcase (Portrait + Posture Methodology Asset) (Desktop) */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col items-center">
+            {renderDoctorShowcase(false)}
           </div>
 
           {/* Right Column: Bio, Credentials & Core Modalities */}

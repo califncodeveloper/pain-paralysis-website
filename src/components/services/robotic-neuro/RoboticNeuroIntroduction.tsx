@@ -28,6 +28,41 @@ const principles = [
 ];
 
 export const RoboticNeuroIntroduction: React.FC = () => {
+  // Reusable Award/Modality Card (Rendered between title & description on mobile, in left column on desktop)
+  const renderModalityCard = (isMobile = false) => (
+    <div className={`relative w-full overflow-hidden rounded-2xl bg-surface-soft p-3 sm:p-4 shadow-xl border border-black/5 ${isMobile ? "max-w-md mx-auto my-5" : "max-w-md mx-auto"}`}>
+      <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/5">
+        <Image
+          src="/images/awards/award-robotic-physio.webp"
+          alt="Official award recognition for excellence in robotic physiotherapy and neuro rehabilitation at Pain and Paralysis Clinic Chennai"
+          fill
+          sizes="(min-width: 1280px) 420px, (min-width: 1024px) 380px, (min-width: 768px) 450px, 92vw"
+          className="object-contain object-center p-4 transition-transform duration-500 hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary/85 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute bottom-3 left-3 right-3 text-white text-xs bg-secondary/85 backdrop-blur-sm p-3 rounded-lg border border-white/10">
+          <span className="font-bold text-accent block text-sm mb-0.5 flex items-center gap-1.5">
+            <Award className="w-4 h-4 text-accent" />
+            Excellence in Robotic Physiotherapy
+          </span>
+          <span className="text-white/90">Clinical Recognition for Advanced Neuro Rehabilitation</span>
+        </div>
+      </div>
+
+      {/* Verified Trust Badges */}
+      <div className="mt-4 grid grid-cols-2 gap-2 text-center text-xs">
+        <div className="rounded-lg bg-primary/5 border border-primary/15 p-2.5">
+          <span className="font-bold text-secondary block text-sm">Technology-Assisted</span>
+          <span className="text-text/75 text-[11px]">Motor Relearning</span>
+        </div>
+        <div className="rounded-lg bg-primary/5 border border-primary/15 p-2.5">
+          <span className="font-bold text-secondary block text-sm">Sensor-Guided</span>
+          <span className="text-text/75 text-[11px]">Objective Progress</span>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Section
       id="robotic-overview"
@@ -38,39 +73,9 @@ export const RoboticNeuroIntroduction: React.FC = () => {
     >
       <Container size="wide">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Left Column: Authentic Clinic Award & Modality Asset (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-2xl bg-surface-soft p-3 sm:p-4 shadow-xl border border-black/5">
-              <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/5">
-                <Image
-                  src="/images/awards/award-robotic-physio.webp"
-                  alt="Official award recognition for excellence in robotic physiotherapy and neuro rehabilitation at Pain and Paralysis Clinic Chennai"
-                  fill
-                  sizes="(min-width: 1280px) 420px, (min-width: 1024px) 380px, (min-width: 768px) 450px, 92vw"
-                  className="object-contain object-center p-4 transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/85 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 text-white text-xs bg-secondary/85 backdrop-blur-sm p-3 rounded-lg border border-white/10">
-                  <span className="font-bold text-accent block text-sm mb-0.5 flex items-center gap-1.5">
-                    <Award className="w-4 h-4 text-accent" />
-                    Excellence in Robotic Physiotherapy
-                  </span>
-                  <span className="text-white/90">Clinical Recognition for Advanced Neuro Rehabilitation</span>
-                </div>
-              </div>
-
-              {/* Verified Trust Badges */}
-              <div className="mt-4 grid grid-cols-2 gap-2 text-center text-xs">
-                <div className="rounded-lg bg-primary/5 border border-primary/15 p-2.5">
-                  <span className="font-bold text-secondary block text-sm">Technology-Assisted</span>
-                  <span className="text-text/75 text-[11px]">Motor Relearning</span>
-                </div>
-                <div className="rounded-lg bg-primary/5 border border-primary/15 p-2.5">
-                  <span className="font-bold text-secondary block text-sm">Sensor-Guided</span>
-                  <span className="text-text/75 text-[11px]">Objective Progress</span>
-                </div>
-              </div>
-            </div>
+          {/* Left Column: Authentic Clinic Award & Modality Asset (Desktop) */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col items-center">
+            {renderModalityCard(false)}
           </div>
 
           {/* Right Column: Narrative & Principles (7 cols) */}
@@ -83,6 +88,11 @@ export const RoboticNeuroIntroduction: React.FC = () => {
               <h2 className="font-heading font-semibold text-2xl sm:text-3xl lg:text-4xl text-secondary leading-tight">
                 Precision Guided Movement Retraining for Neurological Conditions
               </h2>
+
+              {/* Mobile Image: Positioned strictly between Section Title and Description */}
+              <div className="block lg:hidden w-full">
+                {renderModalityCard(true)}
+              </div>
             </div>
 
             <p className="font-sans text-sm sm:text-base leading-relaxed text-text/85">

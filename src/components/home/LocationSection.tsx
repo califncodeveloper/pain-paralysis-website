@@ -14,6 +14,43 @@ import { Container, Section, SectionHeading, Button } from "@/components/ui";
 import { clinicContactInfo } from "@/data/navigation";
 
 export const LocationSection: React.FC = () => {
+  // Reusable Facility Image Framing (Rendered between title & description on mobile, in left column on desktop)
+  const renderFacilityImage = (isMobile = false) => (
+    <div className={`relative aspect-[16/10] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-secondary/20 bg-surface shadow-xl group shrink-0 ${isMobile ? "max-w-lg mx-auto my-2" : ""}`}>
+      <Image
+        src={clinicContactInfo.facilityImage || "/images/common/clinic-exterior.webp"}
+        alt="Pain and Paralysis Hospital exterior building and facility in Virugambakkam, Chennai"
+        fill
+        priority={false}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 580px"
+        className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-[#105156]/95 via-[#105156]/30 to-transparent"
+        aria-hidden="true"
+      />
+      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-[#105156]/90 text-white text-[11px] sm:text-xs font-semibold px-3 py-1 sm:px-4 sm:py-1.5 rounded-full backdrop-blur-md shadow-lg border border-white/20 flex items-center gap-1.5 sm:gap-2">
+        <Bed className="w-3.5 h-3.5 text-accent" />
+        <span>25-Bed Inpatient Hospital • 24 Hours</span>
+      </div>
+      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white flex items-end justify-between">
+        <div>
+          <span className="text-[10px] sm:text-xs font-semibold text-accent uppercase tracking-wider block">
+            Campus Facility
+          </span>
+          <h4 className="font-heading text-lg sm:text-xl font-semibold text-white">
+            Virugambakkam, Chennai
+          </h4>
+        </div>
+        <div className="hidden sm:block">
+          <span className="text-[11px] font-medium text-white/90 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+            24/7 Admissions
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Section
       id="location"
@@ -23,10 +60,11 @@ export const LocationSection: React.FC = () => {
       aria-label="Clinic Location and Facility"
     >
       <Container size="standard">
-        {/* Section Heading */}
+        {/* Section Heading with mobileMedia positioned between title & description on mobile */}
         <SectionHeading
           eyebrow="HOSPITAL LOCATION & CAMPUS"
           title="Pain &amp; Paralysis Hospital Chennai"
+          mobileMedia={renderFacilityImage(true)}
           description="Visit our 25-bedded, 24-hour hospital campus for inpatient care, robotic neuro rehabilitation, non-surgical spine decompression, and pain management in Virugambakkam, Chennai."
           align="center"
           accent
@@ -36,39 +74,9 @@ export const LocationSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mt-6 md:mt-10">
           {/* Left Column: Facility Exterior & Structured Contact Card */}
           <div className="flex flex-col space-y-6 h-full justify-between">
-            {/* Facility Exterior Image */}
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl border border-secondary/20 bg-surface shadow-xl group shrink-0">
-              <Image
-                src={clinicContactInfo.facilityImage || "/images/common/clinic-exterior.webp"}
-                alt="Pain and Paralysis Hospital exterior building and facility in Virugambakkam, Chennai"
-                fill
-                priority={false}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 580px"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
-              />
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-[#105156]/95 via-[#105156]/30 to-transparent"
-                aria-hidden="true"
-              />
-              <div className="absolute top-4 left-4 bg-[#105156]/90 text-white text-xs font-semibold px-4 py-1.5 rounded-full backdrop-blur-md shadow-lg border border-white/20 flex items-center gap-2">
-                <Bed className="w-3.5 h-3.5 text-accent" />
-                <span>25-Bed Inpatient Hospital • 24 Hours</span>
-              </div>
-              <div className="absolute bottom-4 left-4 right-4 text-white flex items-end justify-between">
-                <div>
-                  <span className="text-xs font-semibold text-accent uppercase tracking-wider block">
-                    Campus Facility
-                  </span>
-                  <h4 className="font-heading text-xl font-semibold text-white">
-                    Virugambakkam, Chennai
-                  </h4>
-                </div>
-                <div className="hidden sm:block">
-                  <span className="text-[11px] font-medium text-white/90 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-                    24/7 Admissions
-                  </span>
-                </div>
-              </div>
+            {/* Facility Exterior Image (Desktop) */}
+            <div className="hidden lg:block">
+              {renderFacilityImage(false)}
             </div>
 
             {/* Structured Contact & Address Information */}

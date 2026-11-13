@@ -12,6 +12,55 @@ import { Container, Section } from "@/components/ui";
  * Right: Factual, educational explanation of physiotherapy consultations and general consultation topics.
  */
 export const PhysiotherapyIntroduction: React.FC = () => {
+  // Reusable Modality Card (Rendered between title & description on mobile, in left column on desktop)
+  const renderModalityCard = (isMobile = false) => (
+    <div className={`relative w-full overflow-hidden rounded-2xl bg-surface-soft p-3 sm:p-4 shadow-xl border border-black/5 ${isMobile ? "max-w-md mx-auto my-5" : "max-w-md mx-auto"}`}>
+      {/* Main Modality Image */}
+      <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/5">
+        <Image
+          src="/images/services/physiotherapy.webp"
+          alt="Advanced Physiotherapy consultation at Pain and Paralysis Clinic Chennai"
+          fill
+          sizes="(min-width: 1280px) 420px, (min-width: 1024px) 380px, (min-width: 768px) 450px, 92vw"
+          className="object-cover object-center transition-transform duration-500 hover:scale-105"
+          priority
+        />
+        {/* Floating Modality Pill */}
+        <div className="absolute top-4 left-4 rounded-full bg-secondary/90 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md border border-white/20 shadow-md">
+          Clinical Modality
+        </div>
+      </div>
+
+      {/* Informational Callout Beneath Image */}
+      <div className="mt-4 rounded-xl bg-white p-4 border border-black/5 shadow-sm">
+        <div className="flex items-start gap-3">
+          <div className="rounded-lg bg-primary/10 p-2 text-primary flex-shrink-0">
+            <Activity className="h-5 w-5" aria-hidden="true" />
+          </div>
+          <div>
+            <h3 className="font-heading text-sm font-semibold text-secondary uppercase tracking-wider">
+              Consultation Overview
+            </h3>
+            <p className="mt-0.5 text-xs text-body leading-relaxed">
+              Clinical consultation and movement discussion offered in an outpatient clinic setting.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Booking Action */}
+      <div className="mt-4 pt-2">
+        <Link
+          href="/contact-us"
+          className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-medium text-white shadow-md hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-200"
+        >
+          <span>Book Physiotherapy Consultation</span>
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </div>
+    </div>
+  );
+
   return (
     <Section
       id="treatment-overview"
@@ -22,53 +71,9 @@ export const PhysiotherapyIntroduction: React.FC = () => {
     >
       <Container size="wide">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Left Column: Modality Photography & Clinical Badges (5 cols on lg) */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-2xl bg-surface-soft p-3 sm:p-4 shadow-xl border border-black/5">
-              {/* Main Modality Image */}
-              <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/5">
-                <Image
-                  src="/images/services/physiotherapy.webp"
-                  alt="Advanced Physiotherapy consultation at Pain and Paralysis Clinic Chennai"
-                  fill
-                  sizes="(min-width: 1280px) 420px, (min-width: 1024px) 380px, (min-width: 768px) 450px, 92vw"
-                  className="object-cover object-center transition-transform duration-500 hover:scale-105"
-                  priority
-                />
-                {/* Floating Modality Pill */}
-                <div className="absolute top-4 left-4 rounded-full bg-secondary/90 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md border border-white/20 shadow-md">
-                  Clinical Modality
-                </div>
-              </div>
-
-              {/* Informational Callout Beneath Image */}
-              <div className="mt-4 rounded-xl bg-white p-4 border border-black/5 shadow-sm">
-                <div className="flex items-start gap-3">
-                  <div className="rounded-lg bg-primary/10 p-2 text-primary flex-shrink-0">
-                    <Activity className="h-5 w-5" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-sm font-semibold text-secondary uppercase tracking-wider">
-                      Consultation Overview
-                    </h3>
-                    <p className="mt-0.5 text-xs text-body leading-relaxed">
-                      Clinical consultation and movement discussion offered in an outpatient clinic setting.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Quick Booking Action */}
-              <div className="mt-4 pt-2">
-                <Link
-                  href="/contact-us"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-medium text-white shadow-md hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-200"
-                >
-                  <span>Book Physiotherapy Consultation</span>
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
+          {/* Left Column: Modality Photography & Clinical Badges (Desktop) */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col items-center">
+            {renderModalityCard(false)}
           </div>
 
           {/* Right Column: Detailed Clinical Copy & Action Triggers (7 cols on lg) */}
@@ -82,6 +87,11 @@ export const PhysiotherapyIntroduction: React.FC = () => {
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold text-secondary leading-[1.25]">
               Physiotherapy &amp; Physical Rehabilitation
             </h2>
+
+            {/* Mobile Image: Positioned strictly between Section Title and Description */}
+            <div className="block lg:hidden w-full">
+              {renderModalityCard(true)}
+            </div>
 
             {/* Core Explanatory Copy */}
             <div className="mt-5 space-y-4 text-sm sm:text-base text-body leading-relaxed">

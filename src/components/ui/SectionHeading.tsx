@@ -5,6 +5,7 @@ export interface SectionHeadingProps {
   eyebrow?: string;
   title: string;
   description?: string;
+  mobileMedia?: React.ReactNode;
   align?: "left" | "center" | "right";
   headingTag?: "h1" | "h2" | "h3";
   theme?: "light" | "dark";
@@ -20,11 +21,16 @@ export interface SectionHeadingProps {
  * Reusable SectionHeading component.
  * Standardizes section intros with optional uppercase eyebrow badge,
  * serif heading (Marcellus SC), editorial layouts, and contextual description.
+ *
+ * Supports mobileMedia prop to position section images between title
+ * and description specifically on mobile screens while preserving
+ * original desktop layouts.
  */
 export const SectionHeading: React.FC<SectionHeadingProps> = ({
   eyebrow,
   title,
   description,
+  mobileMedia,
   align = "left",
   headingTag: Heading = "h2",
   theme = "light",
@@ -75,6 +81,12 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
           >
             {title}
           </Heading>
+
+          {mobileMedia && (
+            <div className="w-full my-5 block lg:hidden">
+              {mobileMedia}
+            </div>
+          )}
         </div>
 
         <div className="lg:col-span-5 flex flex-col justify-end">
@@ -143,6 +155,12 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       >
         {title}
       </Heading>
+
+      {mobileMedia && (
+        <div className="w-full my-5 block lg:hidden">
+          {mobileMedia}
+        </div>
+      )}
 
       {description && (
         <p

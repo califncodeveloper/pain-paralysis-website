@@ -37,6 +37,36 @@ const consultationTopics = [
  *   withholds unverified claims of clinic camera hardware, real-time diagnostic accuracy, or cure promises.
  */
 export const GaitAnalysisIntroduction: React.FC = () => {
+  // Reusable Showcase Card (Rendered between title & description on mobile, in left column on desktop)
+  const renderShowcaseCard = (isMobile = false) => (
+    <div className={`relative w-full overflow-hidden rounded-2xl bg-secondary/5 p-3 shadow-md border border-black/5 transition-transform duration-300 hover:shadow-xl ${isMobile ? "max-w-[400px] mx-auto my-5" : "max-w-[455px]"}`}>
+      <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/10">
+        <Image
+          src="/images/services/3d-gait-analysis.webp"
+          alt="Educational illustration of three-dimensional human gait and movement analysis"
+          fill
+          sizes="(min-width: 1280px) 430px, (min-width: 1024px) 380px, (min-width: 640px) 455px, 90vw"
+          className="object-cover object-center transition-transform duration-500 hover:scale-105"
+        />
+        {/* Floating Modality Pill */}
+        <div className="absolute top-4 left-4 rounded-full bg-secondary/85 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm border border-white/10">
+          Illustrative Concept
+        </div>
+      </div>
+
+      {/* Card Footer Badge */}
+      <div className="mt-3 flex items-center justify-between px-2 py-1 text-xs text-secondary/80">
+        <span className="font-heading font-medium tracking-wide">
+          Biomechanical Movement
+        </span>
+        <span className="inline-flex items-center gap-1 text-primary font-semibold">
+          <Shield className="h-3.5 w-3.5" aria-hidden="true" />
+          Educational Scope
+        </span>
+      </div>
+    </div>
+  );
+
   return (
     <Section
       id="about-treatment"
@@ -47,34 +77,9 @@ export const GaitAnalysisIntroduction: React.FC = () => {
     >
       <Container size="wide">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Left Column: Modality Showcase Card (5 cols) */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[455px] overflow-hidden rounded-2xl bg-secondary/5 p-3 shadow-md border border-black/5 transition-transform duration-300 hover:shadow-xl">
-              <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/10">
-                <Image
-                  src="/images/services/3d-gait-analysis.webp"
-                  alt="Educational illustration of three-dimensional human gait and movement analysis"
-                  fill
-                  sizes="(min-width: 1280px) 430px, (min-width: 1024px) 380px, (min-width: 640px) 455px, 90vw"
-                  className="object-cover object-center transition-transform duration-500 hover:scale-105"
-                />
-                {/* Floating Modality Pill */}
-                <div className="absolute top-4 left-4 rounded-full bg-secondary/85 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm border border-white/10">
-                  Illustrative Concept
-                </div>
-              </div>
-
-              {/* Card Footer Badge */}
-              <div className="mt-3 flex items-center justify-between px-2 py-1 text-xs text-secondary/80">
-                <span className="font-heading font-medium tracking-wide">
-                  Biomechanical Movement
-                </span>
-                <span className="inline-flex items-center gap-1 text-primary font-semibold">
-                  <Shield className="h-3.5 w-3.5" aria-hidden="true" />
-                  Educational Scope
-                </span>
-              </div>
-            </div>
+          {/* Left Column: Modality Showcase Card (Desktop) */}
+          <div className="hidden lg:flex lg:col-span-5 justify-center">
+            {renderShowcaseCard(false)}
           </div>
 
           {/* Right Column: Narrative Copy & Consultation Checklist (7 cols) */}
@@ -86,6 +91,11 @@ export const GaitAnalysisIntroduction: React.FC = () => {
             <h2 className="text-h2 mt-2 text-secondary font-heading font-semibold text-2xl sm:text-3xl lg:text-4xl leading-tight">
               Understanding Movement Through Objective Locomotion Analysis
             </h2>
+
+            {/* Mobile Image: Positioned strictly between Section Title and Description */}
+            <div className="block lg:hidden w-full">
+              {renderShowcaseCard(true)}
+            </div>
 
             <div className="mt-4 space-y-3 font-sans text-sm sm:text-base text-body leading-relaxed">
               <p>

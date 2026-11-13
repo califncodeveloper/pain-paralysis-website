@@ -1,89 +1,17 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   Calendar,
   ArrowRight,
   Activity,
-  Sparkles,
   Phone,
   Bed,
   Cpu,
-  ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui";
 import { clinicContactInfo } from "@/data/navigation";
 
-interface HeroSlide {
-  id: string;
-  tag: string;
-  title: string;
-  image: string;
-  alt: string;
-  statBadge: string;
-  statLabel: string;
-  route: string;
-}
-
-const heroSlides: HeroSlide[] = [
-  {
-    id: "inpatient",
-    tag: "25-Bed Inpatient Care",
-    title: "24-Hour Inpatient Rehabilitation",
-    image: "/images/hero/hero-slide-02.webp",
-    alt: "Pain and Paralysis Hospital 25-bed inpatient recovery and rehabilitation facility in Virugambakkam Chennai",
-    statBadge: "25 Beds • 24/7 Care",
-    statLabel: "Continuous Monitoring & Clinical Rehabilitation",
-    route: "/services/inpatient-care",
-  },
-  {
-    id: "robotic",
-    tag: "Robotic Neuro Rehab",
-    title: "Robotic Neuro Rehabilitation",
-    image: "/images/hero/slide-therapies.webp",
-    alt: "Technology-assisted robotic neuro rehabilitation for stroke and paralysis recovery",
-    statBadge: "Kinematic Guidance",
-    statLabel: "High-Repetition Motor Retraining",
-    route: "/services/robotic-neuro-rehabilitation",
-  },
-  {
-    id: "spine",
-    tag: "Spine Decompression",
-    title: "Advanced Spine Decompression",
-    image: "/images/services/spine-decompression-hero.webp",
-    alt: "Computerized spinal decompression traction table at Pain and Paralysis Clinic",
-    statBadge: "Non-Surgical Care",
-    statLabel: "Targeted Disc & Sciatica Relief",
-    route: "/services/advanced-spine-decompression",
-  },
-  {
-    id: "consultation",
-    tag: "Clinical Director",
-    title: "Specialist Biomechanical Evaluation",
-    image: "/images/about/clinic-procedure.webp",
-    alt: "Dr. Dinesh Anandhan leading clinical assessment and spinal treatment",
-    statBadge: "Lead Specialist",
-    statLabel: "Targeted Multidisciplinary Protocols",
-    route: "/contact-us",
-  },
-];
-
 export const HeroSection: React.FC = () => {
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const activeSlide = heroSlides[activeSlideIndex];
-
-  // Auto-rotate slides gently every 6 seconds unless paused
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setActiveSlideIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [isPaused]);
-
   return (
     <section className="relative min-h-[90vh] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 bg-gradient-to-b from-[#0a3134] via-[#105156] to-[#072427] text-white overflow-hidden">
       {/* Subtle ambient lighting layers */}
@@ -210,128 +138,29 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Layered Multi-Modality Visual Showcase (5 cols) */}
-          <div
-            className="lg:col-span-5 relative"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <div className="relative mx-auto max-w-[520px] lg:max-w-none">
-              {/* Main Clinical Image in Modern Architectural Framing */}
-              <div className="relative rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.55)] border border-white/20 bg-white/5 aspect-[4/3] sm:aspect-[16/11]">
-                <Image
-                  key={activeSlide.id}
-                  src={activeSlide.image}
-                  alt={activeSlide.alt}
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 520px"
-                  className="object-cover object-center transition-all duration-700 ease-out"
-                />
+          {/* Right Column: Clean Authentic Clinical Photograph (5 cols) */}
+          <div className="lg:col-span-5 relative w-full">
+            {/* Soft Ambient Depth Glow behind frame */}
+            <div
+              className="absolute -inset-4 bg-gradient-to-tr from-primary/20 via-accent/15 to-transparent rounded-3xl blur-2xl opacity-70 pointer-events-none"
+              aria-hidden="true"
+            />
 
-                {/* Subtle gradient vignette for text legibility */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-t from-[#0a2729]/95 via-[#0a2729]/30 to-transparent pointer-events-none"
-                  aria-hidden="true"
-                />
-
-                {/* Top Left Status Badge */}
-                <div className="absolute top-4 left-4 z-20">
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0a2729]/85 text-accent text-xs font-semibold backdrop-blur-md border border-white/20 shadow-lg">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
-                    </span>
-                    <span>{activeSlide.statBadge}</span>
-                  </span>
-                </div>
-
-                {/* Top Right Modality Tag with Clinic Crest */}
-                <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-white/90 p-1 shadow-md border border-white/40 hidden sm:flex items-center justify-center">
-                    <Image
-                      src="/images/logo/clinic-crest.webp"
-                      alt="Hospital Crest"
-                      width={24}
-                      height={24}
-                      className="object-contain"
-                    />
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0a2729]/85 text-teal-100 text-xs font-medium backdrop-blur-md border border-white/20 shadow-lg">
-                    <Sparkles className="w-3.5 h-3.5 text-accent" />
-                    <span>{activeSlide.tag}</span>
-                  </span>
-                </div>
-
-                {/* Unified Bottom Dock: Lead Specialist Highlight & Verified Hospital Care */}
-                <div className="absolute bottom-4 left-4 right-4 z-20 bg-white/95 backdrop-blur-md text-secondary p-3.5 sm:p-4 rounded-2xl shadow-2xl border border-white/60">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden shrink-0 border-2 border-primary relative shadow-sm">
-                        <Image
-                          src="/images/doctors/dr-dinesh-anandhan.webp"
-                          alt="Dr. Dinesh Anandhan Lead Specialist"
-                          fill
-                          sizes="48px"
-                          className="object-cover object-top"
-                        />
-                      </div>
-                      <div className="min-w-0">
-                        <div className="flex items-center gap-2">
-                          <h4 className="font-heading font-semibold text-sm sm:text-base text-secondary truncate">
-                            Dr. Dinesh Anandhan
-                          </h4>
-                          <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-semibold uppercase tracking-wider">
-                            Lead Specialist
-                          </span>
-                        </div>
-                        <p className="text-xs text-text/80 truncate">
-                          Clinical Director • 25-Bed Hospital
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-                      <div className="hidden xs:flex flex-col items-end text-right">
-                        <div className="flex items-center gap-0.5 text-[#FEC624] text-xs">
-                          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                        <span className="text-[10px] font-semibold text-secondary/80">Verified Hospital</span>
-                      </div>
-                      <Link
-                        href="/contact-us"
-                        className="w-8 h-8 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-white flex items-center justify-center transition-all shadow-sm"
-                        aria-label="Book appointment with Dr. Dinesh Anandhan"
-                      >
-                        <ChevronRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Interactive Modality Switcher Chips below image */}
-              <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
-                {heroSlides.map((slide, idx) => (
-                  <button
-                    key={slide.id}
-                    type="button"
-                    onClick={() => setActiveSlideIndex(idx)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer flex items-center gap-1.5 ${
-                      activeSlideIndex === idx
-                        ? "bg-accent text-[#0a3134] font-semibold shadow-[0_2px_12px_rgba(7,204,236,0.35)] scale-105"
-                        : "bg-white/10 hover:bg-white/20 text-white/85 border border-white/10"
-                    }`}
-                  >
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full ${
-                        activeSlideIndex === idx ? "bg-[#0a3134]" : "bg-accent"
-                      }`}
-                    />
-                    <span>{slide.tag}</span>
-                  </button>
-                ))}
-              </div>
+            {/* Authentic Architectural Photo Frame */}
+            <div className="relative mx-auto max-w-[540px] lg:max-w-none rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.55)] border border-white/20 bg-white/5 aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3]">
+              <Image
+                src="/images/hero/hero-slide-02.webp"
+                alt="Pain and Paralysis Hospital 25-bed inpatient recovery and rehabilitation facility in Virugambakkam Chennai"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 540px"
+                className="object-cover object-center"
+              />
+              {/* Subtle natural gradient for deep rich contrast */}
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-[#0a2729]/40 via-transparent to-transparent pointer-events-none"
+                aria-hidden="true"
+              />
             </div>
           </div>
         </div>

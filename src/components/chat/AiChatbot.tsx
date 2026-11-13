@@ -182,7 +182,7 @@ export const AiChatbot: React.FC = () => {
     <div className="relative pointer-events-none flex flex-col items-end">
       {/* 1. Floating Welcome Message: "👋 Hi! How can we help you!" with 3s fade out */}
       <div
-        className={`pointer-events-auto absolute right-full mr-3 bottom-1.5 transition-all duration-700 ease-out flex items-center ${
+        className={`pointer-events-auto absolute right-full mr-3 bottom-1.5 transition-all duration-700 ease-out flex items-center max-w-[calc(100vw-5.5rem)] sm:max-w-xs ${
           showWelcomePill && !isOpen
             ? "opacity-100 translate-x-0"
             : "opacity-0 translate-x-4 pointer-events-none"
@@ -190,12 +190,12 @@ export const AiChatbot: React.FC = () => {
         role="status"
         aria-live="polite"
       >
-        <div className="relative flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white text-secondary font-medium text-xs sm:text-sm shadow-xl border border-primary/25 whitespace-nowrap">
-          <span>👋 Hi! How can we help you!</span>
+        <div className="relative flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-white text-secondary font-medium text-xs sm:text-sm shadow-xl border border-primary/25 overflow-hidden">
+          <span className="truncate">👋 Hi! How can we help you!</span>
           <button
             onClick={() => setShowWelcomePill(false)}
             aria-label="Dismiss welcome message"
-            className="text-text/50 hover:text-secondary p-0.5 rounded transition-colors"
+            className="text-text/50 hover:text-secondary p-0.5 rounded transition-colors shrink-0"
           >
             <X className="w-3.5 h-3.5" />
           </button>
@@ -210,7 +210,7 @@ export const AiChatbot: React.FC = () => {
           role="dialog"
           aria-modal="true"
           aria-label="Pain & Paralysis Hospital AI Clinical Assistant"
-          className="pointer-events-auto fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-2rem)] max-w-[420px] h-[580px] max-h-[calc(100vh-7.5rem)] bg-white rounded-2xl shadow-2xl border border-primary/25 flex flex-col overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-200"
+          className="pointer-events-auto fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-2rem)] max-w-[420px] h-[520px] sm:h-[580px] max-h-[calc(100dvh-7rem)] bg-white rounded-2xl shadow-2xl border border-primary/25 flex flex-col overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-200"
         >
           {/* Header */}
           <div className="bg-gradient-to-r from-[#105156] via-[#14666d] to-[#1CAAB6] text-white p-3.5 sm:p-4 flex items-center justify-between shadow-sm select-none">
@@ -393,7 +393,7 @@ export const AiChatbot: React.FC = () => {
                 placeholder="Ask about hospital care, pain, rehab..."
                 disabled={isLoading}
                 aria-label="Type your message"
-                className="flex-1 bg-surface-soft border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-text placeholder:text-text/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all disabled:opacity-60"
+                className="flex-1 bg-surface-soft border border-slate-200 rounded-xl px-3.5 py-2.5 text-base sm:text-sm text-text placeholder:text-text/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all disabled:opacity-60"
               />
               <button
                 type="submit"
@@ -434,7 +434,7 @@ export const AiChatbot: React.FC = () => {
           onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close AI Clinical Assistant" : "Open AI Clinical Assistant"}
-          className={`relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full text-white shadow-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-primary/50 hover:scale-105 active:scale-95 ${
+          className={`relative flex items-center justify-center w-[52px] h-[52px] sm:w-14 sm:h-14 rounded-full text-white shadow-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-primary/50 hover:scale-105 active:scale-95 ${
             isOpen
               ? "bg-secondary text-white hover:bg-secondary/90"
               : "bg-gradient-to-br from-[#105156] via-[#157178] to-[#1CAAB6] hover:shadow-primary/30"

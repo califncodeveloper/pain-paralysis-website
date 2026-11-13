@@ -28,6 +28,38 @@ const painPillars = [
 ];
 
 export const PainManagementIntroduction: React.FC = () => {
+  // Reusable Service Photo Card (Rendered between title & description on mobile, in left column on desktop)
+  const renderPhotoCard = (isMobile = false) => (
+    <div className={`relative w-full overflow-hidden rounded-2xl bg-surface-soft p-3 sm:p-4 shadow-xl border border-black/5 ${isMobile ? "max-w-md mx-auto my-5" : "max-w-md mx-auto"}`}>
+      <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/5">
+        <Image
+          src="/images/services/care-spine.webp"
+          alt="Specialized spine care and comprehensive pain management at Pain and Paralysis Hospital Chennai"
+          fill
+          sizes="(min-width: 1280px) 420px, (min-width: 1024px) 380px, (min-width: 768px) 450px, 92vw"
+          className="object-cover object-center transition-transform duration-500 hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary/85 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute bottom-3 left-3 right-3 text-white text-xs bg-secondary/80 backdrop-blur-sm p-3 rounded-lg border border-white/10">
+          <span className="font-bold text-accent block text-sm mb-0.5">Non-Surgical Pain Care</span>
+          <span className="text-white/90">Virugambakkam Hospital • Multidisciplinary Clinical Protocols</span>
+        </div>
+      </div>
+
+      {/* Verified Trust Badges */}
+      <div className="mt-4 grid grid-cols-2 gap-2 text-center text-xs">
+        <div className="rounded-lg bg-primary/5 border border-primary/15 p-2.5">
+          <span className="font-bold text-secondary block text-sm">Non-Invasive</span>
+          <span className="text-text/75 text-[11px]">Conservative Care</span>
+        </div>
+        <div className="rounded-lg bg-primary/5 border border-primary/15 p-2.5">
+          <span className="font-bold text-secondary block text-sm">Targeted Relief</span>
+          <span className="text-text/75 text-[11px]">Functional Restoration</span>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Section
       id="pain-overview"
@@ -38,36 +70,9 @@ export const PainManagementIntroduction: React.FC = () => {
     >
       <Container size="wide">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Left Column: Authentic Service Photo & Badges (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-2xl bg-surface-soft p-3 sm:p-4 shadow-xl border border-black/5">
-              <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/5">
-                <Image
-                  src="/images/services/care-spine.webp"
-                  alt="Specialized spine care and comprehensive pain management at Pain and Paralysis Hospital Chennai"
-                  fill
-                  sizes="(min-width: 1280px) 420px, (min-width: 1024px) 380px, (min-width: 768px) 450px, 92vw"
-                  className="object-cover object-center transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/85 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 text-white text-xs bg-secondary/80 backdrop-blur-sm p-3 rounded-lg border border-white/10">
-                  <span className="font-bold text-accent block text-sm mb-0.5">Non-Surgical Pain Care</span>
-                  <span className="text-white/90">Virugambakkam Hospital • Multidisciplinary Clinical Protocols</span>
-                </div>
-              </div>
-
-              {/* Verified Trust Badges */}
-              <div className="mt-4 grid grid-cols-2 gap-2 text-center text-xs">
-                <div className="rounded-lg bg-primary/5 border border-primary/15 p-2.5">
-                  <span className="font-bold text-secondary block text-sm">Non-Invasive</span>
-                  <span className="text-text/75 text-[11px]">Conservative Care</span>
-                </div>
-                <div className="rounded-lg bg-primary/5 border border-primary/15 p-2.5">
-                  <span className="font-bold text-secondary block text-sm">Targeted Relief</span>
-                  <span className="text-text/75 text-[11px]">Functional Restoration</span>
-                </div>
-              </div>
-            </div>
+          {/* Left Column: Authentic Service Photo & Badges (Desktop) */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col items-center">
+            {renderPhotoCard(false)}
           </div>
 
           {/* Right Column: Detailed Narrative (7 cols) */}
@@ -80,6 +85,11 @@ export const PainManagementIntroduction: React.FC = () => {
               <h2 className="font-heading font-semibold text-2xl sm:text-3xl lg:text-4xl text-secondary leading-tight">
                 Addressing Root Biomechanical Causes of Persistent Pain
               </h2>
+
+              {/* Mobile Image: Positioned strictly between Section Title and Description */}
+              <div className="block lg:hidden w-full">
+                {renderPhotoCard(true)}
+              </div>
             </div>
 
             <p className="font-sans text-sm sm:text-base leading-relaxed text-text/85">

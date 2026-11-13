@@ -35,6 +35,44 @@ const clinicalPillars = [
  * Right: Detailed clinical explanation of photobiomodulation, cellular energetics, and consultation CTA.
  */
 export const LaserTreatmentIntroduction: React.FC = () => {
+  // Reusable Equipment Card (Rendered between title & description on mobile, in left column on desktop)
+  const renderEquipmentCard = (isMobile = false) => (
+    <div className={`relative w-full overflow-hidden rounded-2xl bg-surface-soft p-3 sm:p-4 shadow-xl border border-black/5 ${isMobile ? "max-w-md mx-auto my-5" : "max-w-md mx-auto"}`}>
+      {/* Main Modality Image */}
+      <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/5">
+        <Image
+          src="/images/services/laser-therapy.webp"
+          alt="Advanced Laser Treatment therapeutic photobiomodulation modality at Pain and Paralysis Clinic"
+          fill
+          sizes="(min-width: 1280px) 420px, (min-width: 1024px) 380px, (min-width: 768px) 450px, 92vw"
+          className="object-cover object-center transition-transform duration-500 hover:scale-105"
+          priority
+        />
+        {/* Floating Modality Pill */}
+        <div className="absolute top-4 left-4 rounded-full bg-secondary/90 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md border border-white/20 shadow-md">
+          Clinical Modality
+        </div>
+      </div>
+
+      {/* Informational Callout Beneath Image */}
+      <div className="mt-4 rounded-xl bg-white p-4 border border-black/5 shadow-sm">
+        <div className="flex items-start gap-3">
+          <div className="rounded-lg bg-primary/10 p-2 text-primary flex-shrink-0">
+            <Sparkles className="h-5 w-5" aria-hidden="true" />
+          </div>
+          <div>
+            <h3 className="font-heading text-sm font-semibold text-secondary uppercase tracking-wider">
+              Equipment Capability
+            </h3>
+            <p className="mt-0.5 text-xs text-body leading-relaxed">
+              Calibrated photobiomodulation system configured to deliver targeted optical energy wavelengths to superficial and deeper musculoskeletal tissues under strict practitioner supervision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Section
       id="treatment-overview"
@@ -45,42 +83,9 @@ export const LaserTreatmentIntroduction: React.FC = () => {
     >
       <Container size="wide">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Left Column: Equipment Photography & Clinical Badges (5 cols on lg) */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-2xl bg-surface-soft p-3 sm:p-4 shadow-xl border border-black/5">
-              {/* Main Modality Image */}
-              <div className="relative aspect-[455/533] w-full overflow-hidden rounded-xl bg-secondary/5">
-                <Image
-                  src="/images/services/laser-therapy.webp"
-                  alt="Advanced Laser Treatment therapeutic photobiomodulation modality at Pain and Paralysis Clinic"
-                  fill
-                  sizes="(min-width: 1280px) 420px, (min-width: 1024px) 380px, (min-width: 768px) 450px, 92vw"
-                  className="object-cover object-center transition-transform duration-500 hover:scale-105"
-                  priority
-                />
-                {/* Floating Modality Pill */}
-                <div className="absolute top-4 left-4 rounded-full bg-secondary/90 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md border border-white/20 shadow-md">
-                  Clinical Modality
-                </div>
-              </div>
-
-              {/* Informational Callout Beneath Image */}
-              <div className="mt-4 rounded-xl bg-white p-4 border border-black/5 shadow-sm">
-                <div className="flex items-start gap-3">
-                  <div className="rounded-lg bg-primary/10 p-2 text-primary flex-shrink-0">
-                    <Sparkles className="h-5 w-5" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-sm font-semibold text-secondary uppercase tracking-wider">
-                      Equipment Capability
-                    </h3>
-                    <p className="mt-0.5 text-xs text-body leading-relaxed">
-                      Calibrated photobiomodulation system configured to deliver targeted optical energy wavelengths to superficial and deeper musculoskeletal tissues under strict practitioner supervision.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Left Column: Equipment Photography & Clinical Badges (Desktop) */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col items-center">
+            {renderEquipmentCard(false)}
           </div>
 
           {/* Right Column: Detailed Clinical Copy & Action Triggers (7 cols on lg) */}
@@ -94,6 +99,11 @@ export const LaserTreatmentIntroduction: React.FC = () => {
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold text-secondary leading-[1.25]">
               Targeted Photobiomodulation &amp; Cellular Rehabilitation
             </h2>
+
+            {/* Mobile Image: Positioned strictly between Section Title and Description */}
+            <div className="block lg:hidden w-full">
+              {renderEquipmentCard(true)}
+            </div>
 
             {/* Core Explanatory Copy */}
             <div className="mt-5 space-y-4 text-sm sm:text-base text-body leading-relaxed">

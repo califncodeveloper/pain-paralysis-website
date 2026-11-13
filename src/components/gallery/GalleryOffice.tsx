@@ -45,6 +45,76 @@ export const GalleryOffice: React.FC<GalleryOfficeProps> = ({
     },
   ];
 
+  const renderOfficePhotoCard = (isMobile = false) => (
+    <button
+      type="button"
+      onClick={onOpenLightbox}
+      aria-label="View enlarged hospital interior reception and facility photograph"
+      className={`group relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-[#105156]/15 bg-white shadow-lg hover:shadow-2xl transition-all duration-500 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 flex flex-col justify-between cursor-pointer ${
+        isMobile ? "max-w-lg mx-auto my-2" : "h-full min-h-[300px] sm:min-h-[380px]"
+      }`}
+    >
+      {/* Image Frame */}
+      <div className="relative w-full aspect-[16/10] bg-secondary/5 overflow-hidden">
+        <Image
+          src={officeItem.src}
+          alt={officeItem.alt}
+          fill
+          sizes="(max-width: 1024px) 100vw, 58vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+
+        {/* Subtle gradient vignette */}
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-75 transition-opacity"
+          aria-hidden="true"
+        />
+
+        {/* Hover Overlay with Zoom affordance */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]"
+        >
+          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/95 text-white text-xs font-semibold shadow-2xl border border-white/25 transform group-hover:scale-105 transition-transform">
+            <ZoomIn className="w-4 h-4 text-accent" />
+            Inspect Full Facility Photo
+          </span>
+        </div>
+
+        {/* Facility Identification Badge */}
+        <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-secondary/90 text-white text-[11px] sm:text-xs font-semibold backdrop-blur-md border border-white/20 shadow-md">
+            <Building2 className="w-3.5 h-3.5 text-accent" />
+            Reception &amp; Waiting Lounge
+          </span>
+        </div>
+
+        {/* Hospital Status Tag */}
+        <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 hidden sm:block">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-primary/95 text-white text-[11px] sm:text-xs font-semibold backdrop-blur-md shadow-md border border-white/20">
+            25 Beds • 24 Hours
+          </span>
+        </div>
+      </div>
+
+      {/* Lower Details Bar */}
+      <div className="p-4 sm:p-6 bg-white border-t border-secondary/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 className="font-heading font-semibold text-base sm:text-lg text-secondary group-hover:text-primary transition-colors">
+            {officeItem.title}
+          </h3>
+          <p className="text-xs sm:text-sm text-text/80 font-sans mt-0.5">
+            {officeItem.caption}
+          </p>
+        </div>
+        <div className="text-xs font-semibold text-primary inline-flex items-center gap-1.5 shrink-0 bg-primary/10 px-3 py-1.5 rounded-full">
+          <span>Enlarge Facility</span>
+          <ZoomIn className="w-3.5 h-3.5" />
+        </div>
+      </div>
+    </button>
+  );
+
   return (
     <Section
       id="office"
@@ -64,106 +134,22 @@ export const GalleryOffice: React.FC<GalleryOfficeProps> = ({
       />
 
       <Container size="standard" className="relative z-10">
-        {/* Section Heading */}
+        {/* Section Heading with mobileMedia rendered between title & description on mobile */}
         <SectionHeading
           eyebrow="HOSPITAL FACILITY & ENVIRONMENT"
           title="FACILITY & RECEPTION"
+          mobileMedia={renderOfficePhotoCard(true)}
           description="Operating as a 25-bedded, 24-hour hospital in Virugambakkam, Chennai, our care environment is purpose-built for inpatient recovery, robotic neuro rehabilitation, and specialized outpatient spine care."
           align="center"
           accent
-          className="mb-10 sm:mb-14"
+          className="mb-8 sm:mb-14"
         />
 
         {/* 2-Column Responsive Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          {/* Left Column: Interactive Facility Image (7 cols on lg) */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
-            <button
-              type="button"
-              onClick={onOpenLightbox}
-              aria-label="View enlarged hospital interior reception and facility photograph"
-              className="group relative w-full h-full min-h-[300px] sm:min-h-[380px] rounded-3xl overflow-hidden border border-[#105156]/15 bg-white shadow-lg hover:shadow-2xl transition-all duration-500 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 flex flex-col justify-between cursor-pointer"
-            >
-              {/* Image Frame */}
-              <div className="relative w-full aspect-[16/10] bg-secondary/5 overflow-hidden">
-                <Image
-                  src={officeItem.src}
-                  alt={officeItem.alt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-
-                {/* Subtle gradient vignette */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-75 transition-opacity"
-                  aria-hidden="true"
-                />
-
-                {/* Hover Overlay with Zoom affordance */}
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]"
-                >
-                  <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/95 text-white text-xs font-semibold shadow-2xl border border-white/25 transform group-hover:scale-105 transition-transform">
-                    <ZoomIn className="w-4 h-4 text-accent" />
-                    Inspect Full Facility Photo
-                  </span>
-                </div>
-
-                {/* Facility Identification Badge */}
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-secondary/90 text-white text-xs font-semibold backdrop-blur-md border border-white/20 shadow-md">
-                    <Building2 className="w-3.5 h-3.5 text-accent" />
-                    Reception &amp; Waiting Lounge
-                  </span>
-                </div>
-
-                {/* Hospital Status Tag */}
-                <div className="absolute top-4 right-4 z-10 hidden sm:block">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/95 text-white text-xs font-semibold backdrop-blur-md shadow-md border border-white/20">
-                    25 Beds • 24 Hours
-                  </span>
-                </div>
-              </div>
-
-              {/* Lower Details Bar */}
-              <div className="p-5 sm:p-6 bg-white border-t border-secondary/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <h3 className="font-heading font-semibold text-lg text-secondary group-hover:text-primary transition-colors">
-                    {officeItem.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-text/80 font-sans mt-0.5">
-                    {officeItem.caption}
-                  </p>
-                </div>
-                <div className="text-xs font-semibold text-primary inline-flex items-center gap-1.5 shrink-0 bg-primary/10 px-3 py-1.5 rounded-full">
-                  <span>Click to expand</span>
-                  <ZoomIn className="w-3.5 h-3.5" />
-                </div>
-              </div>
-            </button>
-
-            {/* Quick 3-Pillar Facility Badges */}
-            <div className="grid grid-cols-3 gap-3 mt-4">
-              {facilityPillars.map((p) => {
-                const Icon = p.icon;
-                return (
-                  <div
-                    key={p.title}
-                    className="p-3.5 rounded-2xl bg-white border border-[#105156]/12 text-center flex flex-col items-center justify-center shadow-xs hover:border-primary/40 hover:shadow-sm transition-all"
-                  >
-                    <Icon className="w-4 h-4 text-primary mb-1.5" />
-                    <span className="font-heading font-semibold text-xs text-secondary block truncate w-full">
-                      {p.title}
-                    </span>
-                    <span className="text-[10px] text-text/75 block truncate w-full">
-                      {p.subtitle}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
+          {/* Left Column: Interactive Facility Image (Desktop) */}
+          <div className="hidden lg:flex lg:col-span-7 flex-col justify-between">
+            {renderOfficePhotoCard(false)}
           </div>
 
           {/* Right Column: Office Location & Contact Card (5 cols on lg) */}

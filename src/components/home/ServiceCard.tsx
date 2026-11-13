@@ -17,37 +17,43 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   featured = false,
 }) => {
   if (featured) {
+    const renderFeaturedImage = () => (
+      <div className="relative w-full aspect-[16/10] lg:aspect-auto lg:h-full overflow-hidden bg-surface">
+        <Image
+          src={service.heroImage || service.image}
+          alt={`${service.title} clinical treatment at Pain & Paralysis Hospital`}
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          priority={priority}
+        />
+        <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 flex flex-wrap gap-2">
+          <Badge variant="gold" dot size="sm">
+            Featured Hospital Service
+          </Badge>
+          <span className="px-3 py-1 rounded-full bg-secondary/90 backdrop-blur-md text-white font-semibold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm">
+            25 Beds • 24 Hours
+          </span>
+        </div>
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent opacity-70 group-hover:opacity-50 transition-opacity"
+          aria-hidden="true"
+        />
+      </div>
+    );
+
     return (
       <Link
         href={service.route}
         className="group relative flex flex-col lg:flex-row w-full overflow-hidden rounded-3xl bg-white border border-[#105156]/12 shadow-[0_10px_35px_rgba(16,81,86,0.08)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(28,170,182,0.20)] hover:border-primary/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         aria-label={`Explore marquee treatment: ${service.title}`}
       >
-        {/* Left / Top Image Frame */}
-        <div className="relative w-full lg:w-1/2 aspect-[16/10] lg:aspect-auto overflow-hidden bg-surface">
-          <Image
-            src={service.heroImage || service.image}
-            alt={`${service.title} clinical treatment at Pain & Paralysis Hospital`}
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            priority={priority}
-          />
-          <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
-            <Badge variant="gold" dot size="sm">
-              Featured Hospital Service
-            </Badge>
-            <span className="px-3 py-1 rounded-full bg-secondary/90 backdrop-blur-md text-white font-semibold text-[11px] uppercase tracking-wider shadow-sm">
-              25 Beds • 24 Hours
-            </span>
-          </div>
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent opacity-70 group-hover:opacity-50 transition-opacity"
-            aria-hidden="true"
-          />
+        {/* Desktop Left Image Frame (50% on lg, hidden on mobile) */}
+        <div className="hidden lg:block lg:w-1/2">
+          {renderFeaturedImage()}
         </div>
 
-        {/* Right Content */}
+        {/* Content Side */}
         <div className="flex flex-1 flex-col justify-between p-6 sm:p-8 lg:p-10">
           <div>
             <div className="flex items-center gap-2 mb-2">
@@ -59,6 +65,12 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
             <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-secondary mb-3 group-hover:text-primary transition-colors">
               {service.title}
             </h3>
+
+            {/* Mobile Image: Positioned strictly between Title and Description */}
+            <div className="block lg:hidden rounded-2xl overflow-hidden my-4">
+              {renderFeaturedImage()}
+            </div>
+
             <p className="text-sm sm:text-base text-text/80 leading-relaxed font-sans mb-6">
               {service.description || service.shortDescription}
             </p>

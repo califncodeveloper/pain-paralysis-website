@@ -41,6 +41,43 @@ export const AboutFacilities: React.FC = () => {
     },
   ];
 
+  const renderFacilityPhoto = (isMobile = false) => (
+    <div className={`flex flex-col space-y-3 ${isMobile ? "max-w-md sm:max-w-lg mx-auto my-2" : "w-full"}`}>
+      <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-secondary/10 bg-white shadow-md">
+        <Image
+          src={clinicContactInfo.facilityImage || "/images/common/clinic-exterior.webp"}
+          alt="Pain and Paralysis Hospital exterior facade and inpatient facility in Virugambakkam, Chennai"
+          fill
+          sizes="(min-width: 1024px) 40vw, 100vw"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent"
+          aria-hidden="true"
+        />
+
+        {/* Bottom Address Inset */}
+        <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 rounded-xl border border-white/20 bg-white/95 p-3 sm:p-3.5 shadow-md backdrop-blur-md">
+          <div className="flex items-start gap-2.5">
+            <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+            <div>
+              <p className="text-xs font-semibold text-secondary">
+                {clinicContactInfo.clinicName}
+              </p>
+              <p className="text-[10px] sm:text-[11px] text-text/80 leading-snug mt-0.5">
+                {clinicContactInfo.address}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p className="text-xs text-text/70 italic text-center">
+        25-Bedded, 24-Hour Hospital Facility in Virugambakkam, Chennai
+      </p>
+    </div>
+  );
+
   return (
     <Section
       id="facilities"
@@ -50,51 +87,21 @@ export const AboutFacilities: React.FC = () => {
       aria-label="Hospital Facilities and Treatment Environment"
     >
       <Container size="standard">
-        {/* Section Heading */}
+        {/* Section Heading with mobileMedia positioned between title & description on mobile */}
         <SectionHeading
           eyebrow="FACILITIES & CARE ENVIRONMENT"
           title="Our Dedicated Hospital Facility in Chennai"
+          mobileMedia={renderFacilityPhoto(true)}
           description="Operating as a 25-bedded, 24-hour hospital in Virugambakkam, Chennai, our facility integrates inpatient recovery accommodations, robotic neuro rehabilitation suites, and computerized decompression units."
           align="center"
           accent
-          className="mb-12 sm:mb-16"
+          className="mb-8 sm:mb-16"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Column: Facility Photo & Address Badge */}
-          <div className="lg:col-span-5 flex flex-col space-y-4">
-            <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-secondary/10 bg-white shadow-md">
-              <Image
-                src={clinicContactInfo.facilityImage || "/images/common/clinic-exterior.webp"}
-                alt="Pain and Paralysis Hospital exterior facade and inpatient facility in Virugambakkam, Chennai"
-                fill
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent"
-                aria-hidden="true"
-              />
-
-              {/* Bottom Address Inset */}
-              <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/20 bg-white/95 p-3.5 shadow-md backdrop-blur-md">
-                <div className="flex items-start gap-2.5">
-                  <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
-                  <div>
-                    <p className="text-xs font-semibold text-secondary">
-                      {clinicContactInfo.clinicName}
-                    </p>
-                    <p className="text-[11px] text-text/80 leading-snug mt-0.5">
-                      {clinicContactInfo.address}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-xs text-text/70 italic text-center">
-              25-Bedded, 24-Hour Hospital Facility in Virugambakkam, Chennai
-            </p>
+          {/* Left Column: Facility Photo & Address Badge (Desktop) */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col space-y-4">
+            {renderFacilityPhoto(false)}
           </div>
 
           {/* Right Column: 4 Facilities Highlight Cards */}
